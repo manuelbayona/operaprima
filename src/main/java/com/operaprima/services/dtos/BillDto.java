@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import org.joda.time.DateTime;
 
+import com.operaprima.commons.dtos.AmountDto;
+
 /**
  * @author Adesis
  *
@@ -12,7 +14,7 @@ public class BillDto implements Serializable {
 
 	private static final long serialVersionUID = -1173756596149776348L;
 
-	private String amount;
+	private AmountDto amount;
 	private DateTime paymentDay;
 	private PersonDto owner;
 	private String concept;
@@ -20,7 +22,7 @@ public class BillDto implements Serializable {
 	/**
 	 * @return the amount
 	 */
-	public String getAmount() {
+	public AmountDto getAmount() {
 		return amount;
 	}
 
@@ -28,7 +30,7 @@ public class BillDto implements Serializable {
 	 * @param amount
 	 *            the amount to set
 	 */
-	public void setAmount(final String amount) {
+	public void setAmount(final AmountDto amount) {
 		this.amount = amount;
 	}
 
