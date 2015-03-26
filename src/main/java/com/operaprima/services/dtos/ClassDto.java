@@ -3,6 +3,8 @@ package com.operaprima.services.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import com.operaprima.commons.dtos.PriceDto;
+
 /**
  * @author Adesis
  *

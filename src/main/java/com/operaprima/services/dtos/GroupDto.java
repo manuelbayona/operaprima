@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 
+import com.operaprima.commons.dtos.PriceDto;
+
 /**
  * @author Adesis
  *

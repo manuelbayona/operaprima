@@ -1,4 +1,4 @@
-package com.operaprima.services.dtos;
+package com.operaprima.commons.dtos;
 
 import java.io.Serializable;
 
