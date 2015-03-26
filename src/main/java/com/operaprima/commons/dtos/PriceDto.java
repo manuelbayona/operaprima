@@ -10,24 +10,8 @@ public class PriceDto implements Serializable {
 
 	private static final long serialVersionUID = 3773473366758876453L;
 
-	private String id;
 	private AmountDto amount;
 	private AmountDto specialAmount;
-
-	/**
-	 * @return the id
-	 */
-	public String getId() {
-		return id;
-	}
-
-	/**
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(final String id) {
-		this.id = id;
-	}
 
 	/**
 	 * @return the amount

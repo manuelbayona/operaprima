@@ -6,6 +6,7 @@ import java.util.List;
 import org.joda.time.DateTime;
 
 import com.operaprima.commons.dtos.PriceDto;
+import com.operaprima.commons.dtos.ScheduleDto;
 
 /**
  * @author Adesis

@@ -10,6 +10,7 @@ import com.operaprima.commons.dtos.PriceDto;
  *
  */
 public class ClassDto implements Serializable {
+
 	private static final long serialVersionUID = 5535803118011605983L;
 
 	private String id;

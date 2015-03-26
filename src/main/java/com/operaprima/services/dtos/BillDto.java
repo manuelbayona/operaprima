@@ -14,6 +14,7 @@ public class BillDto implements Serializable {
 
 	private static final long serialVersionUID = -1173756596149776348L;
 
+	private String id;
 	private AmountDto amount;
 	private DateTime paymentDay;
 	private PersonDto owner;
@@ -77,6 +78,20 @@ public class BillDto implements Serializable {
 	 */
 	public void setConcept(final String concept) {
 		this.concept = concept;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }
