@@ -1,4 +1,4 @@
-package com.operaprima.services.business.users;
+package com.operaprima.services.dao.persons;
 
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
@@ -7,7 +7,7 @@ import com.operaprima.services.business.dtos.UsersIntDto;
  * @author Adesis
  *
  */
-public interface IIntUsersService {
+public interface IPersonsDao {
 
 	/**
 	 * @param UserIntDto
