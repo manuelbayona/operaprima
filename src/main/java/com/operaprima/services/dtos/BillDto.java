@@ -15,6 +15,7 @@ public class BillDto implements Serializable {
 	private String amount;
 	private DateTime paymentDay;
 	private PersonDto owner;
+	private String concept;
 
 	/**
 	 * @return the amount
@@ -59,6 +60,21 @@ public class BillDto implements Serializable {
 	 */
 	public void setOwner(final PersonDto owner) {
 		this.owner = owner;
+	}
+
+	/**
+	 * @return the concept
+	 */
+	public String getConcept() {
+		return concept;
+	}
+
+	/**
+	 * @param concept
+	 *            the concept to set
+	 */
+	public void setConcept(final String concept) {
+		this.concept = concept;
 	}
 
 }

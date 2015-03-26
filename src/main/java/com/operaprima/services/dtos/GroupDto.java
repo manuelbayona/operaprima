@@ -11,7 +11,7 @@ import org.joda.time.DateTime;
  */
 public class GroupDto implements Serializable {
 
-	private static final long serialVersionUID = -4648193946790819031L;
+	private static final long serialVersionUID = 5896641952472603087L;
 
 	private String id;
 	private String name;
@@ -20,9 +20,10 @@ public class GroupDto implements Serializable {
 	private List<PersonDto> students;
 	private BoardDto board;
 	private List<SessionDto> sessions;
-	private ScheduleDto schedule;
+	private List<ScheduleDto> schedules;
 	private DateTime unusualDates;
 	private PriceDto price;
+	private String equipments;
 
 	/**
 	 * @return the id
@@ -130,18 +131,18 @@ public class GroupDto implements Serializable {
 	}
 
 	/**
-	 * @return the schedule
+	 * @return the schedules
 	 */
-	public ScheduleDto getSchedule() {
-		return schedule;
+	public List<ScheduleDto> getSchedules() {
+		return schedules;
 	}
 
 	/**
-	 * @param schedule
-	 *            the schedule to set
+	 * @param schedules
+	 *            the schedules to set
 	 */
-	public void setSchedule(final ScheduleDto schedule) {
-		this.schedule = schedule;
+	public void setSchedules(final List<ScheduleDto> schedules) {
+		this.schedules = schedules;
 	}
 
 	/**
@@ -172,6 +173,21 @@ public class GroupDto implements Serializable {
 	 */
 	public void setPrice(final PriceDto price) {
 		this.price = price;
+	}
+
+	/**
+	 * @return the equipments
+	 */
+	public String getEquipments() {
+		return equipments;
+	}
+
+	/**
+	 * @param equipments
+	 *            the equipments to set
+	 */
+	public void setEquipments(final String equipments) {
+		this.equipments = equipments;
 	}
 
 }

@@ -24,7 +24,7 @@ public class PersonDto implements Serializable {
 	private UserTypeEnum type;
 	private List<PhoneDto> phones;
 	private UserStateEnum state;
-	private List<GroupDto> group;
+	private List<SubjectDto> group;
 
 	/**
 	 * @return the id
@@ -149,14 +149,14 @@ public class PersonDto implements Serializable {
 	/**
 	 * @return the group
 	 */
-	public List<GroupDto> getGroup() {
+	public List<SubjectDto> getGroup() {
 		return group;
 	}
 
 	/**
 	 * @param group the group to set
 	 */
-	public void setGroup(List<GroupDto> group) {
+	public void setGroup(List<SubjectDto> group) {
 		this.group = group;
 	}
 
