@@ -15,7 +15,7 @@ public interface UsersService {
 	 * @param UserDto
 	 * @return String
 	 */
-	String addUserString(final UserDto user);
+	String addUser(final UserDto user);
 
 	/**
 	 * Servicio de negocio que consulta todos los usuarios
