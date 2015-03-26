@@ -4,6 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public class GroupsServices implements IGroupsServices {
 	 */
 	@POST
 	@Path("/")
-	public String addGroups(final GroupDto groupDto) {
+	public GroupDto addGroups(final GroupDto groupDto) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -49,7 +50,7 @@ public class GroupsServices implements IGroupsServices {
 	 */
 	@GET
 	@Path("/{id}")
-	public GroupDto getGroups(final String id) {
+	public GroupDto getGroups(@PathParam("id") final String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -61,7 +62,7 @@ public class GroupsServices implements IGroupsServices {
 	 */
 	@PUT
 	@Path("/")
-	public String updateGroups(final GroupDto group) {
+	public GroupDto updateGroups(final GroupDto group) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -17,7 +17,7 @@ public class UsersDao implements IUsersDao {
 	 * 
 	 * @see com.operaprima.services.dao.IUsersDao#addUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
-	public String addUser(final UserIntDto user) {
+	public UserIntDto addUser(final UserIntDto user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -47,7 +47,7 @@ public class UsersDao implements IUsersDao {
 	 * 
 	 * @see com.operaprima.services.dao.IUsersDao#updateUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
-	public String updateUser(final UserIntDto user) {
+	public UserIntDto updateUser(final UserIntDto user) {
 		// TODO Auto-generated method stub
 		return null;
 	}

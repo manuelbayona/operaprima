@@ -13,7 +13,7 @@ public interface IIntClassService {
 	 * @param ClassDto
 	 * @return String
 	 */
-	String addClass(final ClassIntDto classdto);
+	ClassIntDto addClass(final ClassIntDto classdto);
 
 	/**
 	 * @return ClassesDto
@@ -30,6 +30,6 @@ public interface IIntClassService {
 	 * @param ClassDto
 	 * @return String
 	 */
-	String updateClass(ClassIntDto classdto);
+	ClassIntDto updateClass(ClassIntDto classdto);
 
 }

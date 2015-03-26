@@ -13,7 +13,7 @@ public interface IGroupsDao {
 	 * @param GroupDto
 	 * @return String
 	 */
-	String addGroups(final GroupIntDto groupDto);
+	GroupIntDto addGroups(final GroupIntDto groupDto);
 
 	/**
 	 * @return GroupsDto
@@ -30,6 +30,6 @@ public interface IGroupsDao {
 	 * @param GroupDto
 	 * @return String
 	 */
-	String updateGroups(final GroupIntDto group);
+	GroupIntDto updateGroups(final GroupIntDto group);
 
 }

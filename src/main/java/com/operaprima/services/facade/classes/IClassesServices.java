@@ -13,7 +13,7 @@ public interface IClassesServices {
 	 * @param ClassDto
 	 * @return String
 	 */
-	String addClass(final ClassDto classdto);
+	ClassDto addClass(final ClassDto classdto);
 
 	/**
 	 * @return ClassesDto
@@ -30,6 +30,6 @@ public interface IClassesServices {
 	 * @param ClassDto
 	 * @return String
 	 */
-	String updateClass(ClassDto classdto);
+	ClassDto updateClass(ClassDto classdto);
 
 }

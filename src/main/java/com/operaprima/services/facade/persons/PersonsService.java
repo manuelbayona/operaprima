@@ -21,19 +21,19 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.persons.IPersonService#addPerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
 	@POST
 	@Path("/")
-	public String addPerson(final PersonDto person) {
+	public PersonDto addPerson(final PersonDto person) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.persons.IPersonService#listPersons()
 	 */
 	@GET
@@ -45,7 +45,7 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.persons.IPersonService#getPerson(java.lang.String)
 	 */
 	@GET
@@ -57,12 +57,12 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.persons.IPersonService#updatePerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
 	@PUT
 	@Path("/")
-	public String updatePerson(final PersonDto person) {
+	public PersonDto updatePerson(final PersonDto person) {
 		// TODO Auto-generated method stub
 		return null;
 	}

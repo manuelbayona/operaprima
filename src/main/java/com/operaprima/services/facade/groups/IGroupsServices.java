@@ -13,7 +13,7 @@ public interface IGroupsServices {
 	 * @param GroupDto
 	 * @return String
 	 */
-	String addGroups(final GroupDto groupDto);
+	GroupDto addGroups(final GroupDto groupDto);
 
 	/**
 	 * @return GroupsDto
@@ -30,6 +30,6 @@ public interface IGroupsServices {
 	 * @param GroupDto
 	 * @return String
 	 */
-	String updateGroups(final GroupDto group);
+	GroupDto updateGroups(final GroupDto group);
 
 }

@@ -21,19 +21,19 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#addUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
 	@POST
 	@Path("/")
-	public String addUser(final UserDto user) {
+	public UserDto addUser(final UserDto user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#listUsers()
 	 */
 	@GET
@@ -45,7 +45,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#getUser(java.lang.String)
 	 */
 	@GET
@@ -57,12 +57,12 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#updateUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
 	@PUT
 	@Path("/")
-	public String updateUser(final UserDto user) {
+	public UserDto updateUser(final UserDto user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
