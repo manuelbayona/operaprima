@@ -1,14 +1,11 @@
-package com.operaprima.commons.service.dtos;
+package com.operaprima.commons.service.business.dtos;
 
-import java.io.Serializable;
 
 /**
  * @author Adesis
  *
  */
-public class EmailDto implements Serializable {
-
-	private static final long serialVersionUID = 715826128558945308L;
+public class EmailIntDto {
 
 	private String address;
 

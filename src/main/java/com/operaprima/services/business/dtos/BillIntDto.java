@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import org.joda.time.DateTime;
 
-import com.operaprima.commons.business.dtos.AmountIntDto;
+import com.operaprima.commons.service.business.dtos.AmountIntDto;
 
 /**
  * @author Adesis

@@ -1,4 +1,4 @@
-package com.operaprima.commons.service.dtos.enums;
+package com.operaprima.commons.service.facade.dtos.enums;
 
 /**
  * @author Adesis

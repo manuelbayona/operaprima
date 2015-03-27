@@ -2,22 +2,38 @@ package com.operaprima.services.facade.dtos;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import org.joda.time.DateTime;
 
-import com.operaprima.commons.service.dtos.AmountDto;
+import com.operaprima.commons.service.facade.dtos.AmountDto;
+import com.operaprima.commons.utils.adapter.DateTimeAdapter;
 
 /**
  * @author Adesis
  *
  */
+@XmlRootElement(name = "bill")
 public class BillDto implements Serializable {
 
 	private static final long serialVersionUID = -1173756596149776348L;
 
+	@XmlElement(name = "id")
 	private String id;
+
+	@XmlElement(name = "amount")
 	private AmountDto amount;
+
+	@XmlJavaTypeAdapter(DateTimeAdapter.class)
+	@XmlElement(name = "paymentDay")
 	private DateTime paymentDay;
+
+	@XmlElement(name = "owner")
 	private PersonDto owner;
+
+	@XmlElement(name = "concept")
 	private String concept;
 
 	/**

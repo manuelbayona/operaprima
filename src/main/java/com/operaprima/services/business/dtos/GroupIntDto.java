@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 
-import com.operaprima.commons.business.dtos.PriceIntDto;
-import com.operaprima.commons.business.dtos.ScheduleIntDto;
+import com.operaprima.commons.service.business.dtos.PriceIntDto;
+import com.operaprima.commons.service.business.dtos.ScheduleIntDto;
 
 /**
  * @author Adesis

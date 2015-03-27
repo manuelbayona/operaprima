@@ -1,16 +1,23 @@
-package com.operaprima.commons.service.dtos;
+package com.operaprima.commons.service.facade.dtos;
 
 import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author Adesis
  *
  */
+@XmlRootElement(name = "amount")
 public class AmountDto implements Serializable {
 
 	private static final long serialVersionUID = -2612896823259419677L;
 
+	@XmlElement(name = "amount")
 	private String amount;
+
+	@XmlElement(name = "currency")
 	private String currency;
 
 	/**

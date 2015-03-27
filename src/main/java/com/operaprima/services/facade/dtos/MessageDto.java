@@ -2,19 +2,34 @@ package com.operaprima.services.facade.dtos;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import org.joda.time.DateTime;
+
+import com.operaprima.commons.utils.adapter.DateTimeAdapter;
 
 /**
  * @author Adesis
  *
  */
+@XmlRootElement(name = "messages")
 public class MessageDto implements Serializable {
 
 	private static final long serialVersionUID = -2633515094459912891L;
 
+	@XmlElement(name = "id")
 	private String id;
+
+	@XmlElement(name = "author")
 	private PersonDto author;
+
+	@XmlElement(name = "content")
 	private String content;
+
+	@XmlJavaTypeAdapter(DateTimeAdapter.class)
+	@XmlElement(name = "date")
 	private DateTime date;
 
 	/**
