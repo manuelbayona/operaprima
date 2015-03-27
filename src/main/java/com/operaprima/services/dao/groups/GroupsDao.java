@@ -1,5 +1,7 @@
 package com.operaprima.services.dao.groups;
 
+import org.springframework.stereotype.Repository;
+
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 
@@ -7,6 +9,7 @@ import com.operaprima.services.business.dtos.GroupsIntDto;
  * @author Adesis
  *
  */
+@Repository
 public class GroupsDao implements IGroupsDao {
 
 	/*

@@ -1,6 +1,7 @@
 package com.operaprima.services.business.groups;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
@@ -10,6 +11,7 @@ import com.operaprima.services.dao.groups.IGroupsDao;
  * @author Adesis
  *
  */
+@Service
 public class IntGroupServices implements IIntGroupsServices {
 
 	@Autowired
