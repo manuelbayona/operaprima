@@ -1,7 +1,7 @@
 package com.operaprima.services.dao.persons;
 
-import com.operaprima.services.business.dtos.UserIntDto;
-import com.operaprima.services.business.dtos.UsersIntDto;
+import com.operaprima.services.business.dtos.PersonIntDto;
+import com.operaprima.services.business.dtos.PersonsIntDto;
 
 /**
  * @author Adesis
@@ -10,25 +10,26 @@ import com.operaprima.services.business.dtos.UsersIntDto;
 public interface IPersonsDao {
 
 	/**
-	 * @param UserIntDto
+	 * @param PersonIntDto
 	 * @return String
 	 */
-	String addUser(final UserIntDto user);
+	PersonIntDto addPerson(final PersonIntDto person);
 
 	/**
-	 * @return UsersDto
+	 * @return PersonsIntDto
 	 */
-	UsersIntDto listUsers();
+	PersonsIntDto listPersons();
 
 	/**
 	 * @param String
-	 * @return UserDto
+	 * @return PersonIntDto
 	 */
-	UserIntDto getUser(String id);
+	PersonIntDto getPerson(final String id);
 
 	/**
+	 * @param PersonIntDto
 	 * @return String
 	 */
-	String updateUser(UserIntDto user);
+	PersonIntDto updatePerson(PersonIntDto person);
 
 }

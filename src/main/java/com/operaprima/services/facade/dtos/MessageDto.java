@@ -2,6 +2,8 @@ package com.operaprima.services.facade.dtos;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -15,6 +17,7 @@ import com.operaprima.commons.utils.adapter.DateTimeAdapter;
  *
  */
 @XmlRootElement(name = "messages")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class MessageDto implements Serializable {
 
 	private static final long serialVersionUID = -2633515094459912891L;

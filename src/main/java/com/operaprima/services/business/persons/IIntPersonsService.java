@@ -13,7 +13,7 @@ public interface IIntPersonsService {
 	 * @param PersonIntDto
 	 * @return String
 	 */
-	String addPerson(final PersonIntDto person);
+	PersonIntDto addPerson(final PersonIntDto person);
 
 	/**
 	 * @return PersonsIntDto
@@ -30,6 +30,6 @@ public interface IIntPersonsService {
 	 * @param PersonIntDto
 	 * @return String
 	 */
-	String updatePerson(PersonIntDto person);
+	PersonIntDto updatePerson(PersonIntDto person);
 
 }

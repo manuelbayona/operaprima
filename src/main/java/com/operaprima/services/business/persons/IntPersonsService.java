@@ -1,26 +1,29 @@
 package com.operaprima.services.business.persons;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.operaprima.services.facade.dtos.PersonDto;
-import com.operaprima.services.facade.dtos.PersonsDto;
-import com.operaprima.services.facade.persons.IPersonsService;
+import com.operaprima.services.business.dtos.PersonIntDto;
+import com.operaprima.services.business.dtos.PersonsIntDto;
+import com.operaprima.services.dao.persons.IPersonsDao;
 
 /**
  * @author Adesis
  *
  */
 @Service
-public class IntPersonsService implements IPersonsService {
+public class IntPersonsService implements IIntPersonsService {
+
+	@Autowired
+	private IPersonsDao personsDao;
 
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#addPerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
-	public PersonDto addPerson(final PersonDto person) {
-		// TODO Auto-generated method stub
-		return null;
+	public PersonIntDto addPerson(final PersonIntDto person) {
+		return personsDao.addPerson(person);
 	}
 
 	/*
@@ -28,9 +31,8 @@ public class IntPersonsService implements IPersonsService {
 	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#listPersons()
 	 */
-	public PersonsDto listPersons() {
-		// TODO Auto-generated method stub
-		return null;
+	public PersonsIntDto listPersons() {
+		return personsDao.listPersons();
 	}
 
 	/*
@@ -38,9 +40,8 @@ public class IntPersonsService implements IPersonsService {
 	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#getPerson(java.lang.String)
 	 */
-	public PersonDto getPerson(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public PersonIntDto getPerson(final String id) {
+		return personsDao.getPerson(id);
 	}
 
 	/*
@@ -48,9 +49,8 @@ public class IntPersonsService implements IPersonsService {
 	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#updatePerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
-	public PersonDto updatePerson(final PersonDto person) {
-		// TODO Auto-generated method stub
-		return null;
+	public PersonIntDto updatePerson(final PersonIntDto person) {
+		return personsDao.updatePerson(person);
 	}
 
 }
