@@ -3,6 +3,8 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -18,6 +20,7 @@ import com.operaprima.commons.utils.adapter.DateTimeAdapter;
  *
  */
 @XmlRootElement(name = "group")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class GroupDto implements Serializable {
 
 	private static final long serialVersionUID = 5896641952472603087L;

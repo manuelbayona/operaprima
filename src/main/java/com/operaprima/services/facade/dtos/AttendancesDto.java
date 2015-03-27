@@ -2,6 +2,8 @@ package com.operaprima.services.facade.dtos;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -10,6 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  */
 @XmlRootElement(name = "attendances")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class AttendancesDto implements Serializable {
 
 	private static final long serialVersionUID = 5306949025171703942L;
