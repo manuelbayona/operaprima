@@ -1,36 +1,39 @@
-/**
- * 
- */
-package com.operaprima;
+package com.operaprima.dao.entities;
 
 import java.util.List;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.operaprima.config.SpringMongoConfig;
-import com.operaprima.dao.entities.UserEntity;
+import com.operaprima.dao.UserDao;
+import com.operaprima.dao.config.SpringMongoConfig;
 
-/**
- * @author ExpertoJava
- *
- */
-public class Main {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml" })
+public class UserEntitytest {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+	
+	
+	@Autowired
+	SpringMongoConfig springMongoConfig;
+	
+	@Autowired
+	UserDao UserDao;
+
+	
+	@Test
+	public void Test() {
 		
-		// For Annotation
-		ApplicationContext ctx = 
-	             new AnnotationConfigApplicationContext(SpringMongoConfig.class);
-		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
-	 
+		MongoOperations mongoOperation = springMongoConfig.createMongoOperation();
+		
 		UserEntity user = new UserEntity("javiL", "password123");
 	 
 		// save
@@ -56,12 +59,36 @@ public class Main {
 		System.out.println("3. updatedUser : " + updatedUser);
 	 
 		// delete
-		//mongoOperation.remove(searchUserQuery, UserEntity.class);
+		mongoOperation.remove(searchUserQuery, UserEntity.class);
 	 
 		// List, it should be empty now.
 		List<UserEntity> listUser = mongoOperation.findAll(UserEntity.class);
 		System.out.println("4. Number of user = " + listUser.size());
-
+		
 	}
-
+	
+	@Test
+	public void Test2(){
+		
+		List<UserEntity> listUser =  (List<UserEntity>) UserDao.findAll();
+		
+		Assert.assertNotNull(listUser);
+		
+		System.out.println("4. Number of user = " + listUser.size());
+		
+		
+	}
+	
+	@Test
+	public void Test3(){
+		
+		UserEntity user =   UserDao.getByUsername("JaviConsole");
+		
+		Assert.assertNotNull(user);
+		
+		System.out.println("User = " + user.toString());
+		
+		
+	}
+	
 }
