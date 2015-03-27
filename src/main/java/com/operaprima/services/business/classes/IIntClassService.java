@@ -11,24 +11,24 @@ public interface IIntClassService {
 
 	/**
 	 * @param ClassDto
-	 * @return String
+	 * @return ClassIntDto
 	 */
 	ClassIntDto addClass(final ClassIntDto classdto);
 
 	/**
-	 * @return ClassesDto
+	 * @return ClassesIntDto
 	 */
 	ClassesIntDto listClasses();
 
 	/**
 	 * @param String
-	 * @return ClassDto
+	 * @return ClassIntDto
 	 */
 	ClassIntDto getClass(String id);
 
 	/**
-	 * @param ClassDto
-	 * @return String
+	 * @param ClassIntDto
+	 * @return ClassIntDto
 	 */
 	ClassIntDto updateClass(ClassIntDto classdto);
 

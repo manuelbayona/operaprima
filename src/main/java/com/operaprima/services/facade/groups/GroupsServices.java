@@ -1,13 +1,20 @@
 package com.operaprima.services.facade.groups;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
+import org.dozer.Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.operaprima.services.business.dtos.GroupIntDto;
+import com.operaprima.services.business.dtos.GroupsIntDto;
+import com.operaprima.services.business.groups.IIntGroupsServices;
 import com.operaprima.services.facade.dtos.GroupDto;
 import com.operaprima.services.facade.dtos.GroupsDto;
 
@@ -17,7 +24,15 @@ import com.operaprima.services.facade.dtos.GroupsDto;
  */
 @Service("groupsService")
 @Path("V01/groups")
+@Consumes("application/json")
+@Produces("application/json")
 public class GroupsServices implements IGroupsServices {
+
+	@Autowired
+	private Mapper mapper;
+
+	@Autowired
+	private IIntGroupsServices iIntGroupServices;
 
 	/*
 	 * (non-Javadoc)
@@ -27,8 +42,9 @@ public class GroupsServices implements IGroupsServices {
 	@POST
 	@Path("/")
 	public GroupDto addGroups(final GroupDto groupDto) {
-		// TODO Auto-generated method stub
-		return null;
+		final GroupIntDto map = mapper.map(groupDto, GroupIntDto.class);
+		final GroupIntDto addGroups = iIntGroupServices.addGroups(map);
+		return mapper.map(addGroups, GroupDto.class);
 	}
 
 	/*
@@ -39,8 +55,8 @@ public class GroupsServices implements IGroupsServices {
 	@GET
 	@Path("/")
 	public GroupsDto listGroups() {
-		// TODO Auto-generated method stub
-		return null;
+		final GroupsIntDto listGroups = iIntGroupServices.listGroups();
+		return mapper.map(listGroups, GroupsDto.class);
 	}
 
 	/*
@@ -51,8 +67,8 @@ public class GroupsServices implements IGroupsServices {
 	@GET
 	@Path("/{id}")
 	public GroupDto getGroups(@PathParam("id") final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		final GroupIntDto getGroups = iIntGroupServices.getGroups(id);
+		return mapper.map(getGroups, GroupDto.class);
 	}
 
 	/*
@@ -63,8 +79,9 @@ public class GroupsServices implements IGroupsServices {
 	@PUT
 	@Path("/")
 	public GroupDto updateGroups(final GroupDto group) {
-		// TODO Auto-generated method stub
-		return null;
+		final GroupIntDto map = mapper.map(group, GroupIntDto.class);
+		final GroupIntDto updateGroups = iIntGroupServices.updateGroups(map);
+		return mapper.map(updateGroups, GroupDto.class);
 	}
 
 }
