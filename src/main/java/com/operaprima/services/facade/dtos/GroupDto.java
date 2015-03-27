@@ -3,29 +3,60 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import org.joda.time.DateTime;
 
-import com.operaprima.commons.service.dtos.PriceDto;
-import com.operaprima.commons.service.dtos.ScheduleDto;
+import com.operaprima.commons.service.facade.dtos.PriceDto;
+import com.operaprima.commons.service.facade.dtos.ScheduleDto;
+import com.operaprima.commons.utils.adapter.DateTimeAdapter;
 
 /**
  * @author Adesis
  *
  */
+@XmlRootElement(name = "group")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class GroupDto implements Serializable {
 
 	private static final long serialVersionUID = 5896641952472603087L;
 
+	@XmlElement(name = "id")
 	private String id;
+
+	@XmlElement(name = "name")
 	private String name;
+
+	@XmlElement(name = "description")
 	private String description;
+
+	@XmlElement(name = "teacher")
 	private PersonDto teacher;
+
+	@XmlElement(name = "stud")
 	private List<PersonDto> students;
+
+	@XmlElement(name = "board")
 	private BoardDto board;
+
+	@XmlElement(name = "sessions")
 	private List<SessionDto> sessions;
+
+	@XmlElement(name = "schedules")
 	private List<ScheduleDto> schedules;
+
+	@XmlJavaTypeAdapter(DateTimeAdapter.class)
+	@XmlElement(name = "unusualDate")
 	private DateTime unusualDates;
+
+	@XmlElement(name = "price")
 	private PriceDto price;
+
+	@XmlElement(name = "equipments")
 	private String equipments;
 
 	/**

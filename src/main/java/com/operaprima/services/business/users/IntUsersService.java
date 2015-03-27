@@ -1,9 +1,11 @@
 package com.operaprima.services.business.users;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
+import com.operaprima.services.dao.users.IUsersDao;
 
 /**
  * @author Adesis
@@ -12,44 +14,43 @@ import com.operaprima.services.business.dtos.UsersIntDto;
 @Service
 public class IntUsersService implements IIntUsersService {
 
+	@Autowired
+	private IUsersDao userDao;
+
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.IIntUsersService#addUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
-	public String addUser(final UserIntDto user) {
-		// TODO Auto-generated method stub
-		return null;
+	public UserIntDto addUser(final UserIntDto user) {
+		return userDao.addUser(user);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.IIntUsersService#listUsers()
 	 */
 	public UsersIntDto listUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.listUsers();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.IIntUsersService#getUser(java.lang.String)
 	 */
 	public UserIntDto getUser(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return userDao.getUser(id);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.IIntUsersService#updateUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
-	public String updateUser(final UserIntDto user) {
-		// TODO Auto-generated method stub
-		return null;
+	public UserIntDto updateUser(final UserIntDto user) {
+		return userDao.updateUser(user);
 	}
 
 }

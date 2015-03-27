@@ -1,22 +1,37 @@
-package com.operaprima.commons.service.dtos;
+package com.operaprima.commons.service.facade.dtos;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import org.joda.time.DateTime;
 
-import com.operaprima.commons.service.dtos.enums.DayOfWeekEnum;
+import com.operaprima.commons.service.facade.dtos.enums.DayOfWeekEnum;
+import com.operaprima.commons.utils.adapter.DateTimeAdapter;
 
 /**
  * @author Adesis
  *
  */
+@XmlRootElement(name = "schedule")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ScheduleDto implements Serializable {
 
 	private static final long serialVersionUID = -1132226108704735465L;
 
+	@XmlElement(name = "day")
 	private DayOfWeekEnum day;
+
+	@XmlJavaTypeAdapter(DateTimeAdapter.class)
+	@XmlElement(name = "hour")
 	private DateTime hour;
+
+	@XmlElement(name = "duration")
 	private BigDecimal duration;
 
 	/**

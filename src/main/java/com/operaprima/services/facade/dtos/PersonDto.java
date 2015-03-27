@@ -3,9 +3,17 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import org.joda.time.DateTime;
 
-import com.operaprima.commons.service.dtos.PhoneDto;
+import com.operaprima.commons.service.facade.dtos.PhoneDto;
+import com.operaprima.commons.utils.adapter.DateTimeAdapter;
 import com.operaprima.services.facade.dtos.enums.UserStateEnum;
 import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
 
@@ -13,18 +21,39 @@ import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
  * @author Adesis
  *
  */
+@XmlRootElement(name = "person")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class PersonDto implements Serializable {
 
 	private static final long serialVersionUID = -7277315609468397094L;
 
+	@XmlElement(name = "id")
 	private String id;
+
+	@XmlElement(name = "name")
 	private String name;
+
+	@XmlElement(name = "lastName")
 	private String lastName;
+
+	@XmlElement(name = "avatar")
 	private byte[] avatar;
+
+	@XmlElement(name = "birthDate")
+	@XmlSchemaType(name = "dateTime")
+	@XmlJavaTypeAdapter(DateTimeAdapter.class)
 	private DateTime birthDate;
+
+	@XmlElement(name = "type")
 	private UserTypeEnum type;
+
+	@XmlElement(name = "phones")
 	private List<PhoneDto> phones;
+
+	@XmlElement(name = "state")
 	private UserStateEnum state;
+
+	@XmlElement(name = "group")
 	private List<SubjectDto> group;
 
 	/**

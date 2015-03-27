@@ -15,7 +15,7 @@ public interface IUsersService {
 	 * @param UserIntDto
 	 * @return String
 	 */
-	String addUser(final UserDto user);
+	UserDto addUser(final UserDto user);
 
 	/**
 	 * Servicio de negocio que consulta todos los usuarios
@@ -37,6 +37,6 @@ public interface IUsersService {
 	 *
 	 * @return String
 	 */
-	String updateUser(UserDto user);
+	UserDto updateUser(UserDto user);
 
 }

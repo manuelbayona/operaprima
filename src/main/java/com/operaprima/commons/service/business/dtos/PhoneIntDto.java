@@ -1,14 +1,11 @@
-package com.operaprima.commons.service.dtos;
+package com.operaprima.commons.service.business.dtos;
 
-import java.io.Serializable;
 
 /**
  * @author Adesis
  *
  */
-public class PhoneDto implements Serializable {
-
-	private static final long serialVersionUID = -5261627429407811274L;
+public class PhoneIntDto {
 
 	private String number;
 

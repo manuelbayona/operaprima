@@ -1,4 +1,4 @@
-package com.operaprima.commons.business.dtos;
+package com.operaprima.commons.service.business.dtos;
 
 import java.math.BigDecimal;
 
