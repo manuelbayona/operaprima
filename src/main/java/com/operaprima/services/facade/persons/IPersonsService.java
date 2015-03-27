@@ -15,7 +15,7 @@ public interface IPersonsService {
 	 * @param PersonDto
 	 * @return String
 	 */
-	String addPerson(final PersonDto person);
+	PersonDto addPerson(final PersonDto person);
 
 	/**
 	 * Servicio de negocio que consulta todas las personas
@@ -34,10 +34,10 @@ public interface IPersonsService {
 
 	/**
 	 * Servicio de negocio que actualiza una persona
-	 * 
+	 *
 	 * @param PersonDto
 	 * @return String
 	 */
-	String updatePerson(final PersonDto person);
+	PersonDto updatePerson(final PersonDto person);
 
 }

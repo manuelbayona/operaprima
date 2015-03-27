@@ -3,15 +3,22 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * @author Adesis
  *
  */
+@XmlRootElement(name = "board")
 public class BoardDto implements Serializable {
 
 	private static final long serialVersionUID = 2161288867940235988L;
 
+	@XmlElement(name = "id")
 	private String id;
+
+	@XmlElement(name = "messages")
 	private List<MessageDto> messages;
 
 	/**

@@ -11,17 +11,17 @@ public class IntGroupServices implements IIntGroupsServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#addGroups(com.operaprima.services.business.dtos.GroupIntDto)
 	 */
-	public String addGroups(final GroupIntDto groupDto) {
+	public GroupIntDto addGroups(final GroupIntDto groupDto) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#listGroups()
 	 */
 	public GroupsIntDto listGroups() {
@@ -31,7 +31,7 @@ public class IntGroupServices implements IIntGroupsServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#getGroups(java.lang.String)
 	 */
 	public GroupIntDto getGroups(final String id) {
@@ -41,10 +41,10 @@ public class IntGroupServices implements IIntGroupsServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#updateGroups(com.operaprima.services.business.dtos.GroupIntDto)
 	 */
-	public String updateGroups(final GroupIntDto group) {
+	public GroupIntDto updateGroups(final GroupIntDto group) {
 		// TODO Auto-generated method stub
 		return null;
 	}

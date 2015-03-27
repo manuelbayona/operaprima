@@ -3,19 +3,30 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
-import com.operaprima.commons.service.dtos.PriceDto;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.operaprima.commons.service.facade.dtos.PriceDto;
 
 /**
  * @author Adesis
  *
  */
+@XmlRootElement(name = "class")
 public class ClassDto implements Serializable {
 
 	private static final long serialVersionUID = 5535803118011605983L;
 
+	@XmlElement(name = "id")
 	private String id;
+
+	@XmlElement(name = "note")
 	private String note;
+
+	@XmlElement(name = "groups")
 	private List<GroupDto> groups;
+
+	@XmlElement(name = "price")
 	private PriceDto price;
 
 	/**

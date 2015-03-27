@@ -13,7 +13,7 @@ public interface IUsersDao {
 	 * @param UserIntDto
 	 * @return String
 	 */
-	String addUser(final UserIntDto user);
+	UserIntDto addUser(final UserIntDto user);
 
 	/**
 	 * @return UsersDto
@@ -29,6 +29,6 @@ public interface IUsersDao {
 	/**
 	 * @return String
 	 */
-	String updateUser(UserIntDto user);
+	UserIntDto updateUser(UserIntDto user);
 
 }

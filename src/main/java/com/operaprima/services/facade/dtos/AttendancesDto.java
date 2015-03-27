@@ -1,16 +1,26 @@
 package com.operaprima.services.facade.dtos;
+
 import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author Adesis
  *
  */
+@XmlRootElement(name = "attendances")
 public class AttendancesDto implements Serializable {
 
 	private static final long serialVersionUID = 5306949025171703942L;
 
+	@XmlElement(name = "id")
 	private String id;
+
+	@XmlElement(name = "attend")
 	private Boolean attend;
+
+	@XmlElement(name = "note")
 	private String note;
 
 	/**

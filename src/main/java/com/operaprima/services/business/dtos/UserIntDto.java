@@ -3,7 +3,7 @@ package com.operaprima.services.business.dtos;
 import java.io.Serializable;
 import java.util.List;
 
-import com.operaprima.commons.business.dtos.EmailIntDto;
+import com.operaprima.commons.service.business.dtos.EmailIntDto;
 
 /**
  * @author Adesis

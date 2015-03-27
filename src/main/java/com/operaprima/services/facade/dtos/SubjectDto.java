@@ -3,16 +3,25 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * @author Adesis
  *
  */
+@XmlRootElement(name = "subject")
 public class SubjectDto implements Serializable {
 
 	private static final long serialVersionUID = -4648193946790819031L;
 
+	@XmlElement(name = "id")
 	private String id;
+
+	@XmlElement(name = "description")
 	private String description;
+
+	@XmlElement(name = "classes")
 	private List<ClassDto> classes;
 
 	/**

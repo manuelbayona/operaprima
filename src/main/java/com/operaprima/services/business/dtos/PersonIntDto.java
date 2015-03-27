@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 
-import com.operaprima.commons.business.dtos.PhoneIntDto;
+import com.operaprima.commons.service.business.dtos.PhoneIntDto;
 import com.operaprima.services.facade.dtos.enums.UserStateEnum;
 import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
 

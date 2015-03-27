@@ -21,19 +21,19 @@ public class ClassesServices implements IClassesServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.classes.IClassesServices#addClass(com.operaprima.services.facade.dtos.ClassDto)
 	 */
 	@POST
 	@Path("/")
-	public String addClass(final ClassDto classdto) {
+	public ClassDto addClass(final ClassDto classdto) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.classes.IClassesServices#listClasses()
 	 */
 	@GET
@@ -45,7 +45,7 @@ public class ClassesServices implements IClassesServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.classes.IClassesServices#getClass(java.lang.String)
 	 */
 	@GET
@@ -57,12 +57,12 @@ public class ClassesServices implements IClassesServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.classes.IClassesServices#updateClass(com.operaprima.services.facade.dtos.ClassDto)
 	 */
 	@PUT
 	@Path("/")
-	public String updateClass(final ClassDto classdto) {
+	public ClassDto updateClass(final ClassDto classdto) {
 		// TODO Auto-generated method stub
 		return null;
 	}

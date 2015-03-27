@@ -15,17 +15,17 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#addPerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
-	public String addPerson(final PersonDto person) {
+	public PersonDto addPerson(final PersonDto person) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#listPersons()
 	 */
 	public PersonsDto listPersons() {
@@ -35,7 +35,7 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#getPerson(java.lang.String)
 	 */
 	public PersonDto getPerson(final String id) {
@@ -45,10 +45,10 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#updatePerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
-	public String updatePerson(final PersonDto person) {
+	public PersonDto updatePerson(final PersonDto person) {
 		// TODO Auto-generated method stub
 		return null;
 	}

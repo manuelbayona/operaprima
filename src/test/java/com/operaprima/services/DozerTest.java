@@ -8,7 +8,7 @@ import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.joda.time.DateTime;
 
-import com.operaprima.commons.business.dtos.PhoneIntDto;
+import com.operaprima.commons.service.business.dtos.PhoneIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.facade.dtos.PersonDto;
 import com.operaprima.services.facade.dtos.enums.UserStateEnum;
