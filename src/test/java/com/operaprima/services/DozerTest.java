@@ -14,7 +14,7 @@ import com.operaprima.services.facade.dtos.PersonDto;
 import com.operaprima.services.facade.dtos.enums.UserStateEnum;
 import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
 
-public class Prueba {
+public class DozerTest {
 
 	public static void main(final String[] args) {
 
@@ -40,10 +40,7 @@ public class Prueba {
 		personaInterior.setPhones(lista);
 		personaInterior.setState(UserStateEnum.ACTIVE);
 
-		final List conf = new ArrayList();
-		conf.add("dozer-mappers.xsl");
-
-		final Mapper mapper = new DozerBeanMapper(conf);
+		final Mapper mapper = new DozerBeanMapper();
 
 		final PersonDto personaExterior = mapper.map(personaInterior, PersonDto.class);
 		System.out.println("Wiii!");
