@@ -11,7 +11,7 @@ import com.operaprima.services.facade.persons.IPersonsService;
  *
  */
 @Service
-public class PersonsService implements IPersonsService {
+public class IntPersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
