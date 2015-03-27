@@ -1,10 +1,13 @@
 package com.operaprima.services.facade.users;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,8 @@ import com.operaprima.services.facade.dtos.UsersDto;
  */
 @Service("userService")
 @Path("V01/users")
+@Consumes({ MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_JSON })
 public class UsersService implements IUsersService {
 
 	@Autowired
@@ -32,7 +37,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#addUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
 	@POST
@@ -45,7 +50,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#listUsers()
 	 */
 	@GET
@@ -57,7 +62,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#getUser(java.lang.String)
 	 */
 	@GET
@@ -69,7 +74,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#updateUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
 	@PUT

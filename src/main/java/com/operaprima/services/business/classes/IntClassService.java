@@ -1,9 +1,11 @@
 package com.operaprima.services.business.classes;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.dtos.ClassIntDto;
 import com.operaprima.services.business.dtos.ClassesIntDto;
+import com.operaprima.services.dao.classes.IClassDao;
 
 /**
  * @author Adesis
@@ -12,14 +14,16 @@ import com.operaprima.services.business.dtos.ClassesIntDto;
 @Service
 public class IntClassService implements IIntClassService {
 
+	@Autowired
+	private IClassDao iClassDao;
+
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see com.operaprima.services.business.classes.IIntClassService#addClass(com.operaprima.services.business.dtos.ClassIntDto)
 	 */
 	public ClassIntDto addClass(final ClassIntDto classdto) {
-		// TODO Auto-generated method stub
-		return null;
+		return iClassDao.addClass(classdto);
 	}
 
 	/*
@@ -28,8 +32,7 @@ public class IntClassService implements IIntClassService {
 	 * @see com.operaprima.services.business.classes.IIntClassService#listClasses()
 	 */
 	public ClassesIntDto listClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		return iClassDao.listClasses();
 	}
 
 	/*
@@ -38,8 +41,7 @@ public class IntClassService implements IIntClassService {
 	 * @see com.operaprima.services.business.classes.IIntClassService#getClass(java.lang.String)
 	 */
 	public ClassIntDto getClass(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return iClassDao.getClass(id);
 	}
 
 	/*
@@ -48,8 +50,7 @@ public class IntClassService implements IIntClassService {
 	 * @see com.operaprima.services.business.classes.IIntClassService#updateClass(com.operaprima.services.business.dtos.ClassIntDto)
 	 */
 	public ClassIntDto updateClass(final ClassIntDto classdto) {
-		// TODO Auto-generated method stub
-		return null;
+		return iClassDao.updateClass(classdto);
 	}
 
 }

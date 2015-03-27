@@ -10,26 +10,26 @@ import com.operaprima.services.business.dtos.ClassesIntDto;
 public interface IClassDao {
 
 	/**
-	 * @param ClassDto
-	 * @return String
+	 * @param ClassIntDto
+	 * @return ClassIntDto
 	 */
-	String addClass(final ClassIntDto classdto);
+	ClassIntDto addClass(final ClassIntDto classdto);
 
 	/**
-	 * @return ClassesDto
+	 * @return ClassesIntDto
 	 */
 	ClassesIntDto listClasses();
 
 	/**
 	 * @param String
-	 * @return ClassDto
+	 * @return ClassIntDto
 	 */
 	ClassIntDto getClass(String id);
 
 	/**
-	 * @param ClassDto
-	 * @return String
+	 * @param ClassIntDto
+	 * @return ClassIntDto
 	 */
-	String updateClass(ClassIntDto classdto);
+	ClassIntDto updateClass(ClassIntDto classdto);
 
 }

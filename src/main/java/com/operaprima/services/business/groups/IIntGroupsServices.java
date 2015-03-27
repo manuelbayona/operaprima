@@ -11,7 +11,7 @@ public interface IIntGroupsServices {
 
 	/**
 	 * @param GroupDto
-	 * @return String
+	 * @return GroupDto
 	 */
 	GroupIntDto addGroups(final GroupIntDto groupDto);
 
@@ -28,7 +28,7 @@ public interface IIntGroupsServices {
 
 	/**
 	 * @param GroupDto
-	 * @return String
+	 * @return GroupDto
 	 */
 	GroupIntDto updateGroups(final GroupIntDto group);
 
