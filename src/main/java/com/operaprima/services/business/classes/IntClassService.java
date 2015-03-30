@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.dtos.ClassIntDto;
 import com.operaprima.services.business.dtos.ClassesIntDto;
-import com.operaprima.services.dao.classes.IClassDao;
+import com.operaprima.services.dao.classes.IClassesDao;
 
 /**
  * @author Adesis
@@ -15,7 +15,7 @@ import com.operaprima.services.dao.classes.IClassDao;
 public class IntClassService implements IIntClassService {
 
 	@Autowired
-	private IClassDao iClassDao;
+	private IClassesDao iClassDao;
 
 	/*
 	 * (non-Javadoc)

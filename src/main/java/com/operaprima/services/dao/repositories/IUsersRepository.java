@@ -3,9 +3,9 @@ package com.operaprima.services.dao.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.operaprima.dao.entities.UserEntity;
+import com.operaprima.services.dao.repositories.entities.UserEntity;
 
-public interface UsersRepository extends CrudRepository<UserEntity, String> {
+public interface IUsersRepository extends CrudRepository<UserEntity, String> {
 
 	UserEntity getByUsername(String username);
 }

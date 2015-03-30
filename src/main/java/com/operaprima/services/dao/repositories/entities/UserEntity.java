@@ -1,4 +1,4 @@
-package com.operaprima.dao.entities;
+package com.operaprima.services.dao.repositories.entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

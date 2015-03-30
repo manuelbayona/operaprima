@@ -10,7 +10,7 @@ import com.operaprima.services.business.dtos.ClassesIntDto;
  *
  */
 @Repository
-public class IIntClassDao implements IClassDao {
+public class ClassesDao implements IClassesDao {
 
 	/*
 	 * (non-Javadoc)

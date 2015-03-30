@@ -1,4 +1,4 @@
-package com.operaprima.dao.entities;
+package com.operaprima.services.dao.repositories.entities;
 
 import java.util.List;
 
@@ -13,12 +13,13 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.operaprima.dao.config.SpringMongoConfig;
-import com.operaprima.services.dao.repositories.UsersRepository;
+import com.operaprima.services.dao.config.SpringMongoConfig;
+import com.operaprima.services.dao.repositories.IUsersRepository;
+import com.operaprima.services.dao.repositories.entities.UserEntity;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml" })
-public class UserEntitytest {
+public class UserEntityTest {
 
 	
 	
@@ -26,7 +27,7 @@ public class UserEntitytest {
 	SpringMongoConfig springMongoConfig;
 	
 	@Autowired
-	UsersRepository UserDao;
+	IUsersRepository UserDao;
 
 	
 	@Test

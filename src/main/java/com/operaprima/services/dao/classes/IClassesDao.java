@@ -7,7 +7,7 @@ import com.operaprima.services.business.dtos.ClassesIntDto;
  * @author Adesis
  *
  */
-public interface IClassDao {
+public interface IClassesDao {
 
 	/**
 	 * @param ClassIntDto
