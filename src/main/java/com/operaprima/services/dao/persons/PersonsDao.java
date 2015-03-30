@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.joda.time.DateTime;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.service.business.dtos.PhoneIntDto;
@@ -19,6 +20,7 @@ import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
  *
  */
 @Repository
+@Primary
 public class PersonsDao implements IPersonsDao {
 
 	/*

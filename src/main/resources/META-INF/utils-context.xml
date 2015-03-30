@@ -3,12 +3,17 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:cxf="http://cxf.apache.org/core"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="
                         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
                         http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
-                        http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+                        http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+                        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd"
+                        >
 
+	<util:properties id="aplicacionProperties" location="classpath:aplicacion.properties" />
+	
 	<!-- DOZER MAPPER BEAN -->
 	<bean id="mapper" class="org.dozer.DozerBeanMapper" />
 
@@ -28,5 +33,8 @@
 				</list>
 			</property>
 	</bean>
+	
+	<!-- BeanPostProcessors -->
+    <bean class="com.operaprima.mock.MockPostProcessor"/>
 
 </beans>

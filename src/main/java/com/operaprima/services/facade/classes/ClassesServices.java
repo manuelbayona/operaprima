@@ -1,13 +1,20 @@
 package com.operaprima.services.facade.classes;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
+import org.dozer.Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.operaprima.services.business.classes.IIntClassService;
+import com.operaprima.services.business.dtos.ClassIntDto;
+import com.operaprima.services.business.dtos.ClassesIntDto;
 import com.operaprima.services.facade.dtos.ClassDto;
 import com.operaprima.services.facade.dtos.ClassesDto;
 
@@ -17,7 +24,15 @@ import com.operaprima.services.facade.dtos.ClassesDto;
  */
 @Service("classesService")
 @Path("V01/classes")
+@Consumes("application/json")
+@Produces("application/json")
 public class ClassesServices implements IClassesServices {
+
+	@Autowired
+	private Mapper mapper;
+
+	@Autowired
+	private IIntClassService iIntClassService;
 
 	/*
 	 * (non-Javadoc)
@@ -27,8 +42,9 @@ public class ClassesServices implements IClassesServices {
 	@POST
 	@Path("/")
 	public ClassDto addClass(final ClassDto classdto) {
-		// TODO Auto-generated method stub
-		return null;
+		final ClassIntDto map = mapper.map(classdto, ClassIntDto.class);
+		final ClassIntDto addClass = iIntClassService.addClass(map);
+		return mapper.map(addClass, ClassDto.class);
 	}
 
 	/*
@@ -39,8 +55,8 @@ public class ClassesServices implements IClassesServices {
 	@GET
 	@Path("/")
 	public ClassesDto listClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		final ClassesIntDto listClasses = iIntClassService.listClasses();
+		return mapper.map(listClasses, ClassesDto.class);
 	}
 
 	/*
@@ -51,8 +67,8 @@ public class ClassesServices implements IClassesServices {
 	@GET
 	@Path("/{id}")
 	public ClassDto getClass(@PathParam("id") final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		final ClassIntDto getClass = iIntClassService.getClass(id);
+		return mapper.map(getClass, ClassDto.class);
 	}
 
 	/*
@@ -63,8 +79,9 @@ public class ClassesServices implements IClassesServices {
 	@PUT
 	@Path("/")
 	public ClassDto updateClass(final ClassDto classdto) {
-		// TODO Auto-generated method stub
-		return null;
+		final ClassIntDto map = mapper.map(classdto, ClassIntDto.class);
+		final ClassIntDto updateClass = iIntClassService.updateClass(map);
+		return mapper.map(updateClass, ClassDto.class);
 	}
 
 }

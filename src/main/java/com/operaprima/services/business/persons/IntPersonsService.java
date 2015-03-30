@@ -3,6 +3,7 @@ package com.operaprima.services.business.persons;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.operaprima.mock.Mockeable;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.dao.persons.IPersonsDao;
@@ -12,6 +13,7 @@ import com.operaprima.services.dao.persons.IPersonsDao;
  *
  */
 @Service
+@Mockeable
 public class IntPersonsService implements IIntPersonsService {
 
 	@Autowired
