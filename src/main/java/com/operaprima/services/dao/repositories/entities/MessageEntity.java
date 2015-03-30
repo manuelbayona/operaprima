@@ -6,6 +6,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -17,10 +18,11 @@ public class MessageEntity {
 
 	@Id
 	private ObjectId id;
-	// TODO Completar
-	// private PersonEntity author;
 	private String content;
 	private DateTime date;
+
+	@DBRef
+	private PersonEntity author;
 
 	/**
 	 * @return the content

@@ -19,7 +19,6 @@ public class SubjectEntity {
 
 	@Id
 	private ObjectId id;
-
 	private String description;
 
 	@DBRef

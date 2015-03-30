@@ -8,6 +8,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.operaprima.services.facade.dtos.PersonDto;
@@ -18,14 +19,25 @@ public class GroupEntity {
 	private ObjectId id;
 	private String name;
 	private String description;
-	private PersonDto teacher;
-	private List<PersonDto> students;
-	private BoardEntity board;
-	private List<SessionEntity> sessions;
-	private List<ScheduleEntity> schedules;
+
 	private DateTime unusualDates;
 	private PriceEntity price;
 	private String equipments;
+
+	@DBRef
+	private PersonEntity teacher;
+
+	@DBRef
+	private BoardEntity board;
+
+	@DBRef
+	private List<SessionEntity> sessions;
+
+	@DBRef
+	private List<ScheduleEntity> schedules;
+
+	@DBRef
+	private List<PersonDto> students;
 
 	/**
 	 * @return the id
@@ -75,7 +87,7 @@ public class GroupEntity {
 	/**
 	 * @return the teacher
 	 */
-	public PersonDto getTeacher() {
+	public PersonEntity getTeacher() {
 		return teacher;
 	}
 
@@ -83,7 +95,7 @@ public class GroupEntity {
 	 * @param teacher
 	 *            the teacher to set
 	 */
-	public void setTeacher(final PersonDto teacher) {
+	public void setTeacher(final PersonEntity teacher) {
 		this.teacher = teacher;
 	}
 

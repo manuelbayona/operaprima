@@ -2,39 +2,34 @@ package com.operaprima.services.dao.repositories.entities;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "persons")
 public class PersonEntity {
 
 	@Id
-	private String id;
+	private ObjectId id;
 	private String name;
 	private String dni;
 	private String lastName;
 	private byte[] avatar;
 	private DateTime birthDate;
 	private String type;
-	private List<PhoneEntity> phones;
 	private String state;
+	private List<PhoneEntity> phones;
 
-	// private List<SubjectEntity> subjects;
+	@DBRef
+	private List<SubjectEntity> subjects;
 
 	/**
 	 * @return the id
 	 */
-	public String getId() {
+	public ObjectId getId() {
 		return id;
-	}
-
-	/**
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(final String id) {
-		this.id = id;
 	}
 
 	/**

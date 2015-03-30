@@ -5,11 +5,13 @@ import java.math.BigDecimal;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author Adesis
  *
  */
+@Document
 public class AmountEntity {
 	BigDecimal amount;
 	String currency;
@@ -66,7 +68,7 @@ public class AmountEntity {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override

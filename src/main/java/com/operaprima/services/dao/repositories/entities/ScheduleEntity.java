@@ -6,6 +6,7 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.joda.time.LocalTime;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.operaprima.commons.business.dtos.enums.DayOfWeekIntEnum;
 
@@ -13,6 +14,7 @@ import com.operaprima.commons.business.dtos.enums.DayOfWeekIntEnum;
  * @author Adesis
  *
  */
+@Document
 public class ScheduleEntity {
 	private DayOfWeekIntEnum day;
 	private LocalTime hour;

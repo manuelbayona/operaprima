@@ -5,6 +5,9 @@ import java.util.List;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -14,7 +17,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "board")
 public class BoardEntity {
 
-	private String id;
+	@Id
+	private ObjectId id;
+
+	@DBRef
 	private List<MessageEntity> messages;
 
 	/**
@@ -35,7 +41,7 @@ public class BoardEntity {
 	/**
 	 * @return the id
 	 */
-	public String getId() {
+	public ObjectId getId() {
 		return id;
 	}
 
