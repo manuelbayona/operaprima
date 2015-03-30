@@ -1,72 +1,133 @@
 package com.operaprima.services.dao.repositories.entities;
 
+import java.util.List;
+
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author Adesis
- *
+ * 
  */
-@Document(collection="users")
+@Document(collection = "users")
 public class UserEntity {
 
 	@Id
-	private String id;
-	
+	private ObjectId id;
 	private String username;
 	private String publicPassword;
-	
-	
-	
-	public UserEntity(String username, String publicPassword) {
+
+	@DBRef
+	// @CascadeSave
+	private List<PersonEntity> profiles;
+	private String email;
+
+	public UserEntity(final String username, final String publicPassword, final String email) {
+		super();
+		this.username = username;
+		this.publicPassword = publicPassword;
+		this.email = email;
+	}
+
+	public UserEntity(final String username, final String publicPassword) {
 		super();
 		this.username = username;
 		this.publicPassword = publicPassword;
 	}
+
 	/**
 	 * @return the id
 	 */
-	public String getId() {
+	public ObjectId getId() {
 		return id;
 	}
+
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
-	public void setId(String id) {
+	public void setId(final ObjectId id) {
 		this.id = id;
 	}
+
 	/**
-	 * @return the userName
+	 * @return the username
 	 */
 	public String getUsername() {
 		return username;
 	}
+
 	/**
-	 * @param userName the userName to set
+	 * @param username
+	 *            the username to set
 	 */
-	public void setUsername(String userName) {
-		this.username = userName;
+	public void setUsername(final String username) {
+		this.username = username;
 	}
+
 	/**
 	 * @return the publicPassword
 	 */
 	public String getPublicPassword() {
 		return publicPassword;
 	}
+
 	/**
-	 * @param publicPassword the publicPassword to set
+	 * @param publicPassword
+	 *            the publicPassword to set
 	 */
-	public void setPublicPassword(String publicPassword) {
+	public void setPublicPassword(final String publicPassword) {
 		this.publicPassword = publicPassword;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
+
+	/**
+	 * @return the profiles
 	 */
-	@Override
-	public String toString() {
-		return "UserEntity [id=" + id + ", username=" + username
-				+ ", publicPassword=" + publicPassword + "]";
+	public List<PersonEntity> getProfiles() {
+		return profiles;
 	}
-	
-	
+
+	/**
+	 * @param profiles
+	 *            the profiles to set
+	 */
+	public void setProfiles(final List<PersonEntity> profiles) {
+		this.profiles = profiles;
+	}
+
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email
+	 *            the email to set
+	 */
+	public void setEmail(final String email) {
+		this.email = email;
+	}
+
+	@Override
+	public boolean equals(final Object other) {
+		if (!(other instanceof UserEntity)) {
+			return false;
+		}
+		final UserEntity castOther = (UserEntity) other;
+		return new EqualsBuilder().append(id, castOther.id).append(username, castOther.username)
+				.append(publicPassword, castOther.publicPassword).append(profiles, castOther.profiles).append(email, castOther.email)
+				.isEquals();
+	}
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder().append(id).append(username).append(publicPassword).append(profiles).append(email).toHashCode();
+	}
+
 }

@@ -21,8 +21,6 @@ import com.operaprima.services.dao.repositories.entities.UserEntity;
 @ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml" })
 public class UserEntityTest {
 
-	
-	
 	@Autowired
 	SpringMongoConfig springMongoConfig;
 	
