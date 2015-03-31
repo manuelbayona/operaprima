@@ -12,11 +12,11 @@ import com.operaprima.services.business.dtos.ClassesIntDto;
  */
 @Repository
 @Primary
-public class IIntClassDao implements IClassDao {
+public class ClassDao implements IClassDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.classes.IClassDao#addClass(com.operaprima.services.business.dtos.ClassIntDto)
 	 */
 	@Override
@@ -27,7 +27,7 @@ public class IIntClassDao implements IClassDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.classes.IClassDao#listClasses()
 	 */
 	@Override
@@ -38,7 +38,7 @@ public class IIntClassDao implements IClassDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.classes.IClassDao#getClass(java.lang.String)
 	 */
 	@Override
@@ -49,7 +49,7 @@ public class IIntClassDao implements IClassDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.classes.IClassDao#updateClass(com.operaprima.services.business.dtos.ClassIntDto)
 	 */
 	@Override

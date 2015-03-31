@@ -31,7 +31,7 @@ public interface IIntPersonsService {
 	 * @param person
 	 * @return id
 	 */
-	PersonIntDto updatePerson(PersonIntDto person);
+	PersonIntDto updatePerson(final PersonIntDto person);
 
 	/**
 	 * @param id

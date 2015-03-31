@@ -4,7 +4,7 @@ import com.operaprima.services.business.dtos.SubjectIntDto;
 import com.operaprima.services.business.dtos.SubjectsIntDto;
 
 /**
- * @author adesis
+ * @author Adesis
  *
  */
 public interface IIntSubjectsService {
@@ -13,7 +13,7 @@ public interface IIntSubjectsService {
 	 * @param subject
 	 * @return
 	 */
-	SubjectIntDto addSubject(SubjectIntDto subject);
+	SubjectIntDto addSubject(final SubjectIntDto subject);
 
 	/**
 	 * @return
@@ -24,12 +24,12 @@ public interface IIntSubjectsService {
 	 * @param id
 	 * @return
 	 */
-	SubjectIntDto getSubject(String id);
+	SubjectIntDto getSubject(final String id);
 
 	/**
 	 * @param subject
 	 * @return
 	 */
-	SubjectIntDto updateSubject(SubjectIntDto subject);
+	SubjectIntDto updateSubject(final SubjectIntDto subject);
 
 }

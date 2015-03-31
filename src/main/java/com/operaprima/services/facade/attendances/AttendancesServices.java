@@ -5,6 +5,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -36,7 +37,7 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#addAttendance(com.operaprima.services.facade.dtos.AttendanceDto)
 	 */
 	@Override
@@ -50,7 +51,7 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#listAttendances()
 	 */
 	@Override
@@ -63,20 +64,20 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#getAttendance(java.lang.String)
 	 */
 	@Override
 	@GET
 	@Path("/{id}")
-	public AttendanceDto getAttendance(final String id) {
+	public AttendanceDto getAttendance(@PathParam("id") final String id) {
 		final AttendanceIntDto attendance = intAttendancesServices.getAttendance(id);
 		return mapper.map(attendance, AttendanceDto.class);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
 	 * com.operaprima.services.facade.attendances.IAttendancesServices#updateAttendance(com.operaprima.services.facade.dtos.AttendanceDto)
 	 */

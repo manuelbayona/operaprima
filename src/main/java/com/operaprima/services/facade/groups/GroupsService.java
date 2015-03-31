@@ -40,7 +40,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#addGroups(com.operaprima.services.facade.dtos.GroupDto)
 	 */
 	@Override
@@ -54,7 +54,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listGroups()
 	 */
 	@Override
@@ -67,7 +67,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#getGroups(java.lang.String)
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#updateGroups(com.operaprima.services.facade.dtos.GroupDto)
 	 */
 	@Override
@@ -94,13 +94,13 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listSessionsByGroup(java.lang.String)
 	 */
 	@Override
 	@GET
 	@Path("/{id}/sessions")
-	public List<SessionDto> listSessionsByGroup(final String id) {
+	public List<SessionDto> listSessionsByGroup(@PathParam("id") final String id) {
 		final GroupIntDto listSessionsByGroup = iIntGroupService.listSessionsByGroup(id);
 		final GroupDto listSessionsByGroupReturn = mapper.map(listSessionsByGroup, GroupDto.class);
 		return listSessionsByGroupReturn.getSessions();

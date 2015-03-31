@@ -5,6 +5,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -36,7 +37,7 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.boards.IBoardsService#addBoard(com.operaprima.services.facade.dtos.BoardDto)
 	 */
 	@Override
@@ -50,7 +51,7 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.boards.IBoardsService#listBoards()
 	 */
 	@Override
@@ -63,20 +64,20 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.boards.IBoardsService#getBoard(java.lang.String)
 	 */
 	@Override
 	@GET
 	@Path("/{id}")
-	public BoardDto getBoard(final String id) {
+	public BoardDto getBoard(@PathParam("id") final String id) {
 		final BoardIntDto board = iIntBoardsService.getBoard(id);
 		return mapper.map(board, BoardDto.class);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.boards.IBoardsService#updateBoard(com.operaprima.services.facade.dtos.BoardDto)
 	 */
 	@Override

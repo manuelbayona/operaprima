@@ -5,6 +5,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -36,7 +37,7 @@ public class SessionsService implements ISessionsService {
 
 	/*
 	 * Servicio de negocio encargado de dar de alta una nueva sesión (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.sessions.ISessionsService#addSessions(com.operaprima.services.facade.dtos.SessionDto)
 	 */
 	@Override
@@ -50,7 +51,7 @@ public class SessionsService implements ISessionsService {
 
 	/*
 	 * Servicio de negocio que consulta todas las sesiones (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.sessions.ISessionsService#listSessions()
 	 */
 	@Override
@@ -63,20 +64,20 @@ public class SessionsService implements ISessionsService {
 
 	/*
 	 * Servicio de negocio que consulta una sesión (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.sessions.ISessionsService#getSessions(java.lang.String)
 	 */
 	@Override
 	@GET
 	@Path("/{id}")
-	public SessionDto getSession(final String id) {
+	public SessionDto getSession(@PathParam("id") final String id) {
 		final SessionIntDto sessions = intSessionsService.getSession(id);
 		return mapper.map(sessions, SessionDto.class);
 	}
 
 	/*
 	 * Servicio de negocio que actualiza una sesión (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.sessions.ISessionsService#updateSessions(com.operaprima.services.facade.dtos.SessionDto)
 	 */
 	@Override
