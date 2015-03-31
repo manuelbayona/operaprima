@@ -1,17 +1,36 @@
-package com.operaprima.services.business.dtos;
+package com.operaprima.services.facade.dtos;
 
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author Adesis
  *
  */
-public class AttendancesIntDto {
+@XmlRootElement(name = "attendances")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class AttendanceDto implements Serializable {
 
+	private static final long serialVersionUID = 5306949025171703942L;
+
+	@XmlElement(name = "id")
 	private String id;
+
+	@XmlElement(name = "attend")
 	private Boolean attend;
+
+	@XmlElement(name = "note")
 	private String note;
-	private PersonIntDto student;
-	private SessionIntDto session;
+
+	@XmlElement(name = "student")
+	private PersonDto student;
+
+	@XmlElement(name = "session")
+	private SessionDto session;
 
 	/**
 	 * @return the id
@@ -59,24 +78,9 @@ public class AttendancesIntDto {
 	}
 
 	/**
-	 * @return the student
-	 */
-	public PersonIntDto getStudent() {
-		return student;
-	}
-
-	/**
-	 * @param student
-	 *            the student to set
-	 */
-	public void setStudent(final PersonIntDto student) {
-		this.student = student;
-	}
-
-	/**
 	 * @return the session
 	 */
-	public SessionIntDto getSession() {
+	public SessionDto getSession() {
 		return session;
 	}
 
@@ -84,7 +88,7 @@ public class AttendancesIntDto {
 	 * @param session
 	 *            the session to set
 	 */
-	public void setSession(final SessionIntDto session) {
+	public void setSession(final SessionDto session) {
 		this.session = session;
 	}
 
