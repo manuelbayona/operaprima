@@ -18,7 +18,7 @@ public class DozerUtils implements IDozerUtils {
 	private Mapper mapper;
 
 	@Override
-	public List<?> parseList(final List<?> listToConvert, final Class<?> typeToConvert) {
+	public List<?> listMapper(final List<?> listToConvert, final Class<?> typeToConvert) {
 
 		final List<Object> convertedList = new ArrayList<Object>();
 
@@ -27,5 +27,11 @@ public class DozerUtils implements IDozerUtils {
 		}
 
 		return convertedList;
+	}
+
+	@Override
+	public Object classMapper(final Object classToConvert, final Class<?> typeToConvert) {
+
+		return mapper.map(classToConvert, typeToConvert);
 	}
 }
