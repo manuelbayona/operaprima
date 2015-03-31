@@ -21,6 +21,7 @@ public class ClassEntity {
 	private ObjectId id;
 	private String note;
 	private PriceEntity price;
+	private Boolean active;
 
 	@DBRef
 	private List<GroupEntity> groups;
@@ -95,6 +96,14 @@ public class ClassEntity {
 		this.subject = subject;
 	}
 
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(final Boolean active) {
+		this.active = active;
+	}
+
 	@Override
 	public boolean equals(final Object other) {
 		if (!(other instanceof ClassEntity)) {
@@ -102,18 +111,18 @@ public class ClassEntity {
 		}
 		final ClassEntity castOther = (ClassEntity) other;
 		return new EqualsBuilder().append(id, castOther.id).append(note, castOther.note).append(price, castOther.price)
-				.append(groups, castOther.groups).append(subject, castOther.subject).isEquals();
+				.append(active, castOther.active).append(groups, castOther.groups).append(subject, castOther.subject).isEquals();
 	}
 
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder().append(id).append(note).append(price).append(groups).append(subject).toHashCode();
+		return new HashCodeBuilder().append(id).append(note).append(price).append(active).append(groups).append(subject).toHashCode();
 	}
 
 	@Override
 	public String toString() {
-		return new ToStringBuilder(this).append("id", id).append("note", note).append("price", price).append("groups", groups)
-				.append("subject", subject).toString();
+		return new ToStringBuilder(this).append("id", id).append("note", note).append("price", price).append("active", active)
+				.append("groups", groups).append("subject", subject).toString();
 	}
 
 }

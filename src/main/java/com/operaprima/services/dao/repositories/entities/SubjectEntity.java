@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author Adesis
- *
+ * 
  */
 @Document(collection = "subjects")
 public class SubjectEntity {
@@ -20,6 +20,7 @@ public class SubjectEntity {
 	@Id
 	private ObjectId id;
 	private String description;
+	private Boolean active;
 
 	@DBRef
 	private List<ClassEntity> classes;
@@ -61,9 +62,12 @@ public class SubjectEntity {
 		return id;
 	}
 
-	@Override
-	public String toString() {
-		return new ToStringBuilder(this).append("id", id).append("description", description).append("classes", classes).toString();
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(final Boolean active) {
+		this.active = active;
 	}
 
 	@Override
@@ -72,13 +76,19 @@ public class SubjectEntity {
 			return false;
 		}
 		final SubjectEntity castOther = (SubjectEntity) other;
-		return new EqualsBuilder().append(id, castOther.id).append(description, castOther.description).append(classes, castOther.classes)
-				.isEquals();
+		return new EqualsBuilder().append(id, castOther.id).append(description, castOther.description).append(active, castOther.active)
+				.append(classes, castOther.classes).isEquals();
 	}
 
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder().append(id).append(description).append(classes).toHashCode();
+		return new HashCodeBuilder().append(id).append(description).append(active).append(classes).toHashCode();
+	}
+
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).append("id", id).append("description", description).append("active", active)
+				.append("classes", classes).toString();
 	}
 
 }

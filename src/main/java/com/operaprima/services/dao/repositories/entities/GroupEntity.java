@@ -11,8 +11,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.operaprima.services.facade.dtos.PersonDto;
-
 @Document(collection = "groups")
 public class GroupEntity {
 	@Id
@@ -23,6 +21,7 @@ public class GroupEntity {
 	private DateTime unusualDates;
 	private PriceEntity price;
 	private String equipments;
+	private Boolean active;
 
 	@DBRef
 	private PersonEntity teacher;
@@ -36,7 +35,10 @@ public class GroupEntity {
 	private List<ScheduleEntity> schedules;
 
 	@DBRef
-	private List<PersonDto> students;
+	private List<PersonEntity> students;
+
+	@DBRef
+	private ClassEntity sClass;
 
 	/**
 	 * @return the id
@@ -93,7 +95,7 @@ public class GroupEntity {
 	/**
 	 * @return the students
 	 */
-	public List<PersonDto> getStudents() {
+	public List<PersonEntity> getStudents() {
 		return students;
 	}
 
@@ -101,7 +103,7 @@ public class GroupEntity {
 	 * @param students
 	 *            the students to set
 	 */
-	public void setStudents(final List<PersonDto> students) {
+	public void setStudents(final List<PersonEntity> students) {
 		this.students = students;
 	}
 
@@ -195,9 +197,22 @@ public class GroupEntity {
 		this.equipments = equipments;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(final Boolean active) {
+		this.active = active;
+	}
+
+	public ClassEntity getSClass() {
+		return sClass;
+	}
+
+	public void setSClass(final ClassEntity sClass) {
+		this.sClass = sClass;
+	}
+
 	@Override
 	public boolean equals(final Object other) {
 		if (!(other instanceof GroupEntity)) {
@@ -205,29 +220,24 @@ public class GroupEntity {
 		}
 		final GroupEntity castOther = (GroupEntity) other;
 		return new EqualsBuilder().append(id, castOther.id).append(name, castOther.name).append(description, castOther.description)
-				.append(teacher, castOther.teacher).append(students, castOther.students).append(board, castOther.board)
-				.append(sessions, castOther.sessions).append(schedules, castOther.schedules).append(unusualDates, castOther.unusualDates)
-				.append(price, castOther.price).append(equipments, castOther.equipments).isEquals();
+				.append(unusualDates, castOther.unusualDates).append(price, castOther.price).append(equipments, castOther.equipments)
+				.append(active, castOther.active).append(teacher, castOther.teacher).append(board, castOther.board)
+				.append(sessions, castOther.sessions).append(schedules, castOther.schedules).append(students, castOther.students)
+				.isEquals();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder().append(id).append(name).append(description).append(teacher).append(students).append(board)
-				.append(sessions).append(schedules).append(unusualDates).append(price).append(equipments).toHashCode();
+		return new HashCodeBuilder().append(id).append(name).append(description).append(unusualDates).append(price).append(equipments)
+				.append(active).append(teacher).append(board).append(sessions).append(schedules).append(students).toHashCode();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public String toString() {
 		return new ToStringBuilder(this).append("id", id).append("name", name).append("description", description)
-				.append("teacher", teacher).append("students", students).append("board", board).append("sessions", sessions)
-				.append("schedules", schedules).append("unusualDates", unusualDates).append("price", price)
-				.append("equipments", equipments).toString();
+				.append("unusualDates", unusualDates).append("price", price).append("equipments", equipments).append("active", active)
+				.append("teacher", teacher).append("board", board).append("sessions", sessions).append("schedules", schedules)
+				.append("students", students).toString();
 	}
 
 }
