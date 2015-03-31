@@ -3,7 +3,6 @@ package com.operaprima.services.dao.persons;
 import java.util.List;
 
 import org.bson.types.ObjectId;
-import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
@@ -17,14 +16,11 @@ import com.operaprima.services.dao.repositories.entities.PersonEntity;
 
 /**
  * @author Adesis
- * 
+ *
  */
 @Repository
 @Primary
 public class PersonsDao implements IPersonsDao {
-
-	@Autowired
-	private Mapper mapper;
 
 	@Autowired
 	private IPersonsRepository personsRepository;
@@ -34,12 +30,12 @@ public class PersonsDao implements IPersonsDao {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#addPerson(com.operaprima.services.business.dtos.PersonIntDto)
 	 */
 	@Override
 	public PersonIntDto addPerson(final PersonIntDto person) {
-		PersonEntity entity = mapper.map(person, PersonEntity.class);
+		PersonEntity entity = (PersonEntity) dozerUtils.classMapper(person, PersonEntity.class);
 		entity = personsRepository.save(entity);
 		person.setId(entity.getId().toString());
 		return person;
@@ -47,7 +43,7 @@ public class PersonsDao implements IPersonsDao {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#listPersons()
 	 */
 	@Override
@@ -66,24 +62,24 @@ public class PersonsDao implements IPersonsDao {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#getPerson(java.lang.String)
 	 */
 	@Override
 	public PersonIntDto getPerson(final String id) {
 		final PersonEntity personEntity = personsRepository.findOne(new ObjectId(id));
-		final PersonIntDto person = mapper.map(personEntity, PersonIntDto.class);
+		final PersonIntDto person = (PersonIntDto) dozerUtils.classMapper(personEntity, PersonIntDto.class);
 		return person;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#updatePerson(com.operaprima.services.business.dtos.PersonIntDto)
 	 */
 	@Override
 	public PersonIntDto updatePerson(final PersonIntDto person) {
-		final PersonEntity entity = mapper.map(person, PersonEntity.class);
+		final PersonEntity entity = (PersonEntity) dozerUtils.classMapper(person, PersonEntity.class);
 		personsRepository.save(entity);
 		return person;
 

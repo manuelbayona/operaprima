@@ -13,7 +13,7 @@ import com.operaprima.services.business.dtos.UsersIntDto;
 import com.operaprima.services.dao.users.IUsersDao;
 
 /**
- * @author Javier Lacalle
+ * @author Adessis
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)

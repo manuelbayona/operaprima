@@ -3,7 +3,6 @@ package com.operaprima.services.dao.groups;
 import java.util.List;
 
 import org.bson.types.ObjectId;
-import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +15,7 @@ import com.operaprima.services.dao.repositories.entities.GroupEntity;
 
 /**
  * @author Adesis
- * 
+ *
  */
 @Repository
 public class GroupsDao implements IGroupsDao {
@@ -25,14 +24,11 @@ public class GroupsDao implements IGroupsDao {
 	private IGroupsRepository groupsRepository;
 
 	@Autowired
-	private Mapper mapper;
-
-	@Autowired
 	private IDozerUtils dozerUtils;
 
 	@Override
 	public GroupIntDto addGroup(final GroupIntDto group) {
-		GroupEntity entity = mapper.map(group, GroupEntity.class);
+		GroupEntity entity = (GroupEntity) dozerUtils.classMapper(group, GroupEntity.class);
 		entity = groupsRepository.save(entity);
 		group.setId(entity.getId().toString());
 		return group;
@@ -41,19 +37,19 @@ public class GroupsDao implements IGroupsDao {
 	@Override
 	public GroupIntDto getGroup(final String id) {
 		final GroupEntity groupEntity = groupsRepository.findOne(new ObjectId(id));
-		final GroupIntDto group = mapper.map(groupEntity, GroupIntDto.class);
+		final GroupIntDto group = (GroupIntDto) dozerUtils.classMapper(groupEntity, GroupIntDto.class);
 		return group;
 	}
 
 	@Override
 	public GroupIntDto updateGroup(final GroupIntDto group) {
-		final GroupEntity entity = mapper.map(group, GroupEntity.class);
+		final GroupEntity entity = (GroupEntity) dozerUtils.classMapper(group, GroupEntity.class);
 		groupsRepository.save(entity);
 		return group;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -73,7 +69,7 @@ public class GroupsDao implements IGroupsDao {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.groups.IGroupsDao#listSessionsByGroup(java.lang.String)
 	 */
 	@Override

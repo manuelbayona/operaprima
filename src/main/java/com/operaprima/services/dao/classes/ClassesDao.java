@@ -3,7 +3,6 @@ package com.operaprima.services.dao.classes;
 import java.util.List;
 
 import org.bson.types.ObjectId;
-import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +14,7 @@ import com.operaprima.services.dao.repositories.entities.ClassEntity;
 
 /**
  * @author Adesis
- * 
+ *
  */
 @Repository
 public class ClassesDao implements IClassesDao {
@@ -24,14 +23,11 @@ public class ClassesDao implements IClassesDao {
 	private IClassesRepository classesRepository;
 
 	@Autowired
-	private Mapper mapper;
-
-	@Autowired
 	private IDozerUtils dozerUtils;
 
 	@Override
 	public ClassIntDto addClass(final ClassIntDto sclass) {
-		ClassEntity entity = mapper.map(sclass, ClassEntity.class);
+		ClassEntity entity = (ClassEntity) dozerUtils.classMapper(sclass, ClassEntity.class);
 		entity = classesRepository.save(entity);
 		sclass.setId(entity.getId().toString());
 		return sclass;
@@ -40,13 +36,13 @@ public class ClassesDao implements IClassesDao {
 	@Override
 	public ClassIntDto getClass(final String id) {
 		final ClassEntity classEntity = classesRepository.findOne(new ObjectId(id));
-		final ClassIntDto sclass = mapper.map(classEntity, ClassIntDto.class);
+		final ClassIntDto sclass = (ClassIntDto) dozerUtils.classMapper(classEntity, ClassIntDto.class);
 		return sclass;
 	}
 
 	@Override
 	public ClassIntDto updateClass(final ClassIntDto sclass) {
-		final ClassEntity entity = mapper.map(sclass, ClassEntity.class);
+		final ClassEntity entity = (ClassEntity) dozerUtils.classMapper(sclass, ClassEntity.class);
 		classesRepository.save(entity);
 		return sclass;
 	}
