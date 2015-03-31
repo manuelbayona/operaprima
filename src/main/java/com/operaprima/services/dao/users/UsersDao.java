@@ -3,6 +3,7 @@ package com.operaprima.services.dao.users;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.services.business.dtos.PersonsIntDto;
@@ -14,11 +15,12 @@ import com.operaprima.services.business.dtos.UsersIntDto;
  *
  */
 @Repository
+@Primary
 public class UsersDao implements IUsersDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.IUsersDao#addUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
 	@Override
@@ -29,7 +31,7 @@ public class UsersDao implements IUsersDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.IUsersDao#listUsers()
 	 */
 	@Override
@@ -43,7 +45,7 @@ public class UsersDao implements IUsersDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.IUsersDao#getUser(java.lang.String)
 	 */
 	@Override
@@ -55,7 +57,7 @@ public class UsersDao implements IUsersDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.IUsersDao#updateUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
 	@Override
@@ -65,7 +67,7 @@ public class UsersDao implements IUsersDao {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.users.IUsersDao#listPersonsByUser(java.lang.String)
 	 */
 	@Override

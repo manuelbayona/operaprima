@@ -7,11 +7,11 @@ import com.operaprima.services.facade.dtos.ClassesDto;
  * @author Adesis
  *
  */
-public interface IClassesServices {
+public interface IClassesService {
 
 	/**
-	 * @param ClassDto
-	 * @return String
+	 * @param classDto
+	 * @return ClassDto
 	 */
 	ClassDto addClass(final ClassDto classdto);
 
@@ -21,14 +21,14 @@ public interface IClassesServices {
 	ClassesDto listClasses();
 
 	/**
-	 * @param String
+	 * @param id
 	 * @return ClassDto
 	 */
 	ClassDto getClass(String id);
 
 	/**
-	 * @param ClassDto
-	 * @return String
+	 * @param classDto
+	 * @return ClassDto
 	 */
 	ClassDto updateClass(ClassDto classdto);
 

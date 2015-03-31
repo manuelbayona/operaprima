@@ -13,8 +13,8 @@ public interface IUsersService {
 	/**
 	 * Servicio de negocio encargado de dar de alta un nuevo usuario
 	 *
-	 * @param UserIntDto
-	 * @return String
+	 * @param user
+	 * @return UserDto
 	 */
 	UserDto addUser(final UserDto user);
 
@@ -28,7 +28,7 @@ public interface IUsersService {
 	/**
 	 * Servicio de negocio que consulta un usuario
 	 *
-	 * @param String
+	 * @param id
 	 * @return UserDto
 	 */
 	UserDto getUser(String id);
@@ -43,7 +43,7 @@ public interface IUsersService {
 	/**
 	 * Servicio de negocio que devuelve las personas a las que pertenece un usuario
 	 *
-	 * @param String
+	 * @param id
 	 * @return PersonsDto
 	 */
 	PersonsDto listPersonsByUser(final String id);

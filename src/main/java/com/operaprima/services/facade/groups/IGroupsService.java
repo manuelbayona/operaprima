@@ -10,13 +10,13 @@ import com.operaprima.services.facade.dtos.SessionDto;
  * @author Adesis
  *
  */
-public interface IGroupsServices {
+public interface IGroupsService {
 
 	/**
-	 * @param GroupDto
+	 * @param groupDto
 	 * @return GroupDto
 	 */
-	GroupDto addGroups(final GroupDto groupDto);
+	GroupDto addGroup(final GroupDto groupDto);
 
 	/**
 	 * @return GroupsDto
@@ -24,19 +24,19 @@ public interface IGroupsServices {
 	GroupsDto listGroups();
 
 	/**
-	 * @param String
+	 * @param id
 	 * @return GroupDto
 	 */
-	GroupDto getGroups(final String id);
+	GroupDto getGroup(final String id);
 
 	/**
-	 * @param GroupDto
+	 * @param id
 	 * @return GroupDto
 	 */
-	GroupDto updateGroups(final GroupDto group);
+	GroupDto updateGroup(final GroupDto group);
 
 	/**
-	 * @param String
+	 * @param id
 	 * @return List<SessionDto>
 	 */
 	List<SessionDto> listSessionsByGroup(final String id);

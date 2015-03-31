@@ -11,8 +11,8 @@ import com.operaprima.services.business.dtos.PersonsIntDto;
 public interface IIntPersonsService {
 
 	/**
-	 * @param PersonIntDto
-	 * @return String
+	 * @param person
+	 * @return PersonIntDto
 	 */
 	PersonIntDto addPerson(final PersonIntDto person);
 
@@ -22,20 +22,20 @@ public interface IIntPersonsService {
 	PersonsIntDto listPersons();
 
 	/**
-	 * @param String
+	 * @param id
 	 * @return PersonIntDto
 	 */
 	PersonIntDto getPerson(final String id);
 
 	/**
-	 * @param PersonIntDto
-	 * @return String
+	 * @param person
+	 * @return id
 	 */
 	PersonIntDto updatePerson(PersonIntDto person);
 
 	/**
-	 * @param GroupsIntDto
-	 * @return String
+	 * @param id
+	 * @return GroupsIntDto
 	 */
 	GroupsIntDto listGroupsByPerson(String id);
 

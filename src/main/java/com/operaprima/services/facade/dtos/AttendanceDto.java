@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "attendances")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class AttendancesDto implements Serializable {
+public class AttendanceDto implements Serializable {
 
 	private static final long serialVersionUID = 5306949025171703942L;
 

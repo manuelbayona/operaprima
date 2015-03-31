@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
-import com.operaprima.services.business.groups.IIntGroupsServices;
+import com.operaprima.services.business.groups.IIntGroupsService;
 import com.operaprima.services.facade.dtos.GroupDto;
 import com.operaprima.services.facade.dtos.GroupsDto;
 import com.operaprima.services.facade.dtos.SessionDto;
@@ -29,13 +29,13 @@ import com.operaprima.services.facade.dtos.SessionDto;
 @Path("V01/groups")
 @Consumes("application/json")
 @Produces("application/json")
-public class GroupsServices implements IGroupsServices {
+public class GroupsService implements IGroupsService {
 
 	@Autowired
 	private Mapper mapper;
 
 	@Autowired
-	private IIntGroupsServices iIntGroupServices;
+	private IIntGroupsService iIntGroupService;
 
 	/*
 	 * (non-Javadoc)
@@ -45,9 +45,9 @@ public class GroupsServices implements IGroupsServices {
 	@Override
 	@POST
 	@Path("/")
-	public GroupDto addGroups(final GroupDto groupDto) {
+	public GroupDto addGroup(final GroupDto groupDto) {
 		final GroupIntDto map = mapper.map(groupDto, GroupIntDto.class);
-		final GroupIntDto addGroups = iIntGroupServices.addGroups(map);
+		final GroupIntDto addGroups = iIntGroupService.addGroup(map);
 		return mapper.map(addGroups, GroupDto.class);
 	}
 
@@ -60,7 +60,7 @@ public class GroupsServices implements IGroupsServices {
 	@GET
 	@Path("/")
 	public GroupsDto listGroups() {
-		final GroupsIntDto listGroups = iIntGroupServices.listGroups();
+		final GroupsIntDto listGroups = iIntGroupService.listGroups();
 		return mapper.map(listGroups, GroupsDto.class);
 	}
 
@@ -72,8 +72,8 @@ public class GroupsServices implements IGroupsServices {
 	@Override
 	@GET
 	@Path("/{id}")
-	public GroupDto getGroups(@PathParam("id") final String id) {
-		final GroupIntDto getGroups = iIntGroupServices.getGroups(id);
+	public GroupDto getGroup(@PathParam("id") final String id) {
+		final GroupIntDto getGroups = iIntGroupService.getGroup(id);
 		return mapper.map(getGroups, GroupDto.class);
 	}
 
@@ -85,9 +85,9 @@ public class GroupsServices implements IGroupsServices {
 	@Override
 	@PUT
 	@Path("/")
-	public GroupDto updateGroups(final GroupDto group) {
+	public GroupDto updateGroup(final GroupDto group) {
 		final GroupIntDto map = mapper.map(group, GroupIntDto.class);
-		final GroupIntDto updateGroups = iIntGroupServices.updateGroups(map);
+		final GroupIntDto updateGroups = iIntGroupService.updateGroup(map);
 		return mapper.map(updateGroups, GroupDto.class);
 	}
 
@@ -100,7 +100,7 @@ public class GroupsServices implements IGroupsServices {
 	@GET
 	@Path("/{id}/sessions")
 	public List<SessionDto> listSessionsByGroup(final String id) {
-		final GroupIntDto listSessionsByGroup = iIntGroupServices.listSessionsByGroup(id);
+		final GroupIntDto listSessionsByGroup = iIntGroupService.listSessionsByGroup(id);
 		final GroupDto listSessionsByGroupReturn = mapper.map(listSessionsByGroup, GroupDto.class);
 		return listSessionsByGroupReturn.getSessions();
 	}
