@@ -25,8 +25,8 @@ import com.operaprima.services.facade.dtos.ClassesDto;
  */
 @Service("classesService")
 @Path("V01/classes")
-@Consumes("application/json")
-@Produces("application/json")
+@Consumes({ MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_JSON })
 public class ClassesService implements IClassesService {
 	@Autowired
 	private Mapper mapper;

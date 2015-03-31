@@ -28,9 +28,10 @@ import com.operaprima.services.facade.dtos.SessionDto;
  */
 @Service("groupsService")
 @Path("V01/groups")
-@Consumes("application/json")
-@Produces("application/json")
+@Consumes({ MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_JSON })
 public class GroupsService implements IGroupsService {
+
 	@Autowired
 	private Mapper mapper;
 
@@ -39,7 +40,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#addGroups(com.operaprima.services.facade.dtos.GroupDto)
 	 */
 	@Override
@@ -53,7 +54,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listGroups()
 	 */
 	@Override
@@ -66,7 +67,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#getGroups(java.lang.String)
 	 */
 	@Override
@@ -79,7 +80,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#updateGroups(com.operaprima.services.facade.dtos.GroupDto)
 	 */
 	@Override
@@ -93,7 +94,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listSessionsByGroup(java.lang.String)
 	 */
 	@Override
