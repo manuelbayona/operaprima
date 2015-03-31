@@ -12,7 +12,9 @@
 		<cxf.version>3.0.4</cxf.version>
 		<spring.version>4.1.5.RELEASE</spring.version>
 		<jackson.version>2.5.1</jackson.version>
-
+		<spring.data.mongodb>1.6.2.RELEASE</spring.data.mongodb>
+		<mongo.java.driver>2.13.0-rc2</mongo.java.driver>
+		<calib.version>3.1</calib.version>
 	</properties>
 
 
@@ -30,6 +32,11 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
@@ -82,6 +89,26 @@
 			<artifactId>commons-logging</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
+		<!-- mongodb java driver -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>${mongo.java.driver}</version>
+		</dependency>
+ 
+		<!-- Spring data mongodb -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${spring.data.mongodb}</version>
+		</dependency>
+ 
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>${calib.version}</version>
+		</dependency>		
 	</dependencies>
 	<build>
 		<finalName>spring-cxf-rest-example</finalName>
