@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.operaprima.services.business.dtos.ClassIntDto;
 import com.operaprima.services.business.dtos.ClassesIntDto;
+import com.operaprima.services.dao.repositories.IClassesRepository;
 
 /**
  * @author Adesis
@@ -13,6 +14,9 @@ import com.operaprima.services.business.dtos.ClassesIntDto;
  */
 @Repository
 public class ClassesDao implements IClassesDao {
+
+	@Autowired
+	private IClassesRepository classesRepository;
 
 	@Autowired
 	private Mapper mapper;
