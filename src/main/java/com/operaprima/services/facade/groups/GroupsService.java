@@ -9,6 +9,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +28,10 @@ import com.operaprima.services.facade.dtos.SessionDto;
  */
 @Service("groupsService")
 @Path("V01/groups")
-@Consumes("application/json")
-@Produces("application/json")
+@Consumes({ MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_JSON })
 public class GroupsService implements IGroupsService {
+
 	@Autowired
 	private Mapper mapper;
 
