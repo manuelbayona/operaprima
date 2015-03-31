@@ -14,32 +14,32 @@ import com.operaprima.services.business.dtos.PersonsIntDto;
 public class PersonsDaoMock implements IPersonsDao {
 
 	@Override
-	public PersonIntDto addPerson(PersonIntDto person) {
+	public PersonIntDto addPerson(final PersonIntDto person) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public PersonsIntDto listPersons() {
-		PersonIntDto person = new PersonIntDto();
+		final PersonIntDto person = new PersonIntDto();
 		person.setName("Pepelu");
-		
-		List<PersonIntDto> persons = new ArrayList<>();
+
+		final List<PersonIntDto> persons = new ArrayList<>();
 		persons.add(person);
-		
-		PersonsIntDto personsDto = new PersonsIntDto();
+
+		final PersonsIntDto personsDto = new PersonsIntDto();
 		personsDto.setPersons(persons);
 		return personsDto;
 	}
 
 	@Override
-	public PersonIntDto getPerson(String id) {
+	public PersonIntDto getPerson(final String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public PersonIntDto updatePerson(PersonIntDto person) {
+	public PersonIntDto updatePerson(final PersonIntDto person) {
 		// TODO Auto-generated method stub
 		return null;
 	}
