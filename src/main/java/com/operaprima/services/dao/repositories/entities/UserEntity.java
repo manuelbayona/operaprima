@@ -1,5 +1,6 @@
 package com.operaprima.services.dao.repositories.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -11,11 +12,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author Adesis
- * 
+ *
  */
 @Document(collection = "users")
-public class UserEntity {
+public class UserEntity implements Serializable {
 
+	private static final long serialVersionUID = -1391107291222308916L;
 	@Id
 	private ObjectId id;
 	private String username;
@@ -24,19 +26,6 @@ public class UserEntity {
 
 	@DBRef
 	private List<PersonEntity> profiles;
-
-	public UserEntity(final String username, final String publicPassword, final String email) {
-		super();
-		this.username = username;
-		this.publicPassword = publicPassword;
-		this.email = email;
-	}
-
-	public UserEntity(final String username, final String publicPassword) {
-		super();
-		this.username = username;
-		this.publicPassword = publicPassword;
-	}
 
 	/**
 	 * @return the id

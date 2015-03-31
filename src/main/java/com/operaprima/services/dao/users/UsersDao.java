@@ -1,7 +1,6 @@
 package com.operaprima.services.dao.users;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +8,12 @@ import org.springframework.stereotype.Repository;
 
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
+import com.operaprima.services.dao.repositories.IUsersRepository;
+import com.operaprima.services.dao.repositories.entities.UserEntity;
 
 /**
  * @author Adesis
- * 
+ *
  */
 @Repository
 public class UsersDao implements IUsersDao {
@@ -20,20 +21,30 @@ public class UsersDao implements IUsersDao {
 	@Autowired
 	private Mapper mapper;
 
+	@Autowired
+	private IUsersRepository userRepository;
+
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.IUsersDao#addUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
 	@Override
 	public UserIntDto addUser(final UserIntDto user) {
-		user.setId(UUID.randomUUID().toString());
+		// Mapeo userDto a entity
+		UserEntity entity = mapper.map(user, UserEntity.class);
+
+		// Salvar en BD
+		entity = userRepository.save(entity);
+
+		// seteamos el id en la respuesta
+		user.setId(entity.getId().toString());
 		return user;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.IUsersDao#listUsers()
 	 */
 	@Override
@@ -47,7 +58,7 @@ public class UsersDao implements IUsersDao {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.IUsersDao#getUser(java.lang.String)
 	 */
 	@Override
@@ -59,7 +70,7 @@ public class UsersDao implements IUsersDao {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.IUsersDao#updateUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
 	@Override

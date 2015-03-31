@@ -1,0 +1,46 @@
+package com.operaprima.services.dao.users.integration;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.operaprima.commons.service.business.dtos.EmailIntDto;
+import com.operaprima.services.business.dtos.UserIntDto;
+import com.operaprima.services.dao.users.IUsersDao;
+
+/**
+ * @author Javier Lacalle
+ *
+ */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml" })
+public class UserDaoIntegrationTest {
+
+	@Autowired
+	private IUsersDao userDao;
+
+	@Test
+	public void addUserTest() {
+
+		// Given
+		final EmailIntDto email = new EmailIntDto();
+		email.setAddress("integracion@test.com");
+
+		final UserIntDto user = new UserIntDto();
+		user.setEmail(email);
+		user.setPublicPassword("publicPassword");
+
+		user.setUserName("Javi");
+
+		// When
+		final UserIntDto nuevoUsuario = userDao.addUser(user);
+
+		// Then
+		Assert.assertNotNull(nuevoUsuario);
+		Assert.assertNotNull(nuevoUsuario.getId());
+	}
+
+}

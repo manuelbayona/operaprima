@@ -16,5 +16,9 @@
     <context:component-scan base-package="com.operaprima.services.dao" /> 
 	<context:property-placeholder location="classpath:database.properties" />
 	
+	
+	<!-- DOZER MAPPER BEAN -->
+	<bean id="mapper" class="org.dozer.DozerBeanMapper" />
+	
  
 </beans>

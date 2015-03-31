@@ -25,7 +25,10 @@ public class UserRepositoryTest {
 
 	@Test
 	public void prueba() {
-		final UserEntity entity = new UserEntity("diegonjino", "124587", "diuegonjin@gmailñ.com");
+		final UserEntity entity = new UserEntity();
+		entity.setUsername("diegonjino");
+		entity.setPublicPassword("124587");
+		entity.setEmail("diuegonjin@gmailï¿½.com");
 		final List<PersonEntity> profiles = new ArrayList<>();
 		PersonEntity personEntity = new PersonEntity();
 		personEntity.setName("Diegop");
@@ -38,6 +41,7 @@ public class UserRepositoryTest {
 		personEntity.setPhones(phones);
 		profiles.add(personEntity);
 		entity.setProfiles(profiles);
+
 		userRepository.save(entity);
 	}
 }
