@@ -1,7 +1,5 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
-
 import org.joda.time.DateTime;
 
 import com.operaprima.commons.service.business.dtos.AmountIntDto;
@@ -10,9 +8,7 @@ import com.operaprima.commons.service.business.dtos.AmountIntDto;
  * @author Adesis
  *
  */
-public class BillIntDto implements Serializable {
-
-	private static final long serialVersionUID = -1173756596149776348L;
+public class BillIntDto {
 
 	private String id;
 	private AmountIntDto amount;

@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "attendances")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class AttendancesDto implements Serializable {
+public class AttendanceDto implements Serializable {
 
 	private static final long serialVersionUID = 5306949025171703942L;
 
@@ -25,6 +25,12 @@ public class AttendancesDto implements Serializable {
 
 	@XmlElement(name = "note")
 	private String note;
+
+	@XmlElement(name = "student")
+	private PersonDto student;
+
+	@XmlElement(name = "session")
+	private SessionDto session;
 
 	/**
 	 * @return the id
@@ -69,6 +75,21 @@ public class AttendancesDto implements Serializable {
 	 */
 	public void setNote(final String note) {
 		this.note = note;
+	}
+
+	/**
+	 * @return the session
+	 */
+	public SessionDto getSession() {
+		return session;
+	}
+
+	/**
+	 * @param session
+	 *            the session to set
+	 */
+	public void setSession(final SessionDto session) {
+		this.session = session;
 	}
 
 }

@@ -6,6 +6,7 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
 import com.operaprima.services.dao.repositories.IUsersRepository;
@@ -76,6 +77,17 @@ public class UsersDao implements IUsersDao {
 	@Override
 	public UserIntDto updateUser(final UserIntDto user) {
 		return user;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.operaprima.services.dao.users.IUsersDao#listPersonsByUser(java.lang.String)
+	 */
+	@Override
+	public PersonsIntDto listPersonsByUser(final String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -1,15 +1,12 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * @author Adesis
  *
  */
-public class BoardIntDto implements Serializable {
-
-	private static final long serialVersionUID = 2161288867940235988L;
+public class BoardIntDto {
 
 	private String id;
 	private List<MessageIntDto> messages;

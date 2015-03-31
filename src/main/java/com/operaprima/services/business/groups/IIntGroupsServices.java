@@ -32,4 +32,10 @@ public interface IIntGroupsServices {
 	 */
 	GroupIntDto updateGroups(final GroupIntDto group);
 
+	/**
+	 * @param String
+	 * @return GroupDto
+	 */
+	GroupIntDto listSessionsByGroup(String id);
+
 }

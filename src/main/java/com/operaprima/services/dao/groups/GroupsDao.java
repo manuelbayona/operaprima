@@ -65,4 +65,15 @@ public class GroupsDao implements IGroupsDao {
 		return null;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.operaprima.services.dao.groups.IGroupsDao#listSessionsByGroup(java.lang.String)
+	 */
+	@Override
+	public GroupIntDto listSessionsByGroup(final String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

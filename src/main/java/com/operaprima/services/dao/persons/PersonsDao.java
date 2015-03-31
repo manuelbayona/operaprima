@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.dao.repositories.IPersonsRepository;
@@ -75,6 +76,12 @@ public class PersonsDao implements IPersonsDao {
 		personsRepository.save(entity);
 		return person;
 
+	}
+
+	@Override
+	public GroupsIntDto listGroupsByPerson(final String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

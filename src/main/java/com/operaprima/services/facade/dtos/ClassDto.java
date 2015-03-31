@@ -32,6 +32,12 @@ public class ClassDto implements Serializable {
 	@XmlElement(name = "price")
 	private PriceDto price;
 
+	@XmlElement(name = "active")
+	private Boolean active;
+
+	@XmlElement(name = "subject")
+	private SubjectDto subject;
+
 	/**
 	 * @return the id
 	 */
@@ -90,6 +96,35 @@ public class ClassDto implements Serializable {
 	 */
 	public void setPrice(final PriceDto price) {
 		this.price = price;
+	}
+
+	/**
+	 * @return the active
+	 */
+	public Boolean getActive() {
+		return active;
+	}
+
+	/**
+	 * @param active
+	 *            the active to set
+	 */
+	public void setActive(final Boolean active) {
+		this.active = active;
+	}
+
+	/**
+	 * @return the subject
+	 */
+	public SubjectDto getSubject() {
+		return subject;
+	}
+
+	/**
+	 * @param subject the subject to set
+	 */
+	public void setSubject(SubjectDto subject) {
+		this.subject = subject;
 	}
 
 }

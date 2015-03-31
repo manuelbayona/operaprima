@@ -13,9 +13,11 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
 import com.operaprima.services.business.users.IIntUsersService;
+import com.operaprima.services.facade.dtos.PersonsDto;
 import com.operaprima.services.facade.dtos.UserDto;
 import com.operaprima.services.facade.dtos.UsersDto;
 
@@ -37,9 +39,10 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.users.IUsersService#addUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
+	@Override
 	@POST
 	@Path("/")
 	public UserDto addUser(final UserDto user) {
@@ -50,9 +53,10 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.users.IUsersService#listUsers()
 	 */
+	@Override
 	@GET
 	@Path("/")
 	public UsersDto listUsers() {
@@ -62,9 +66,10 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.users.IUsersService#getUser(java.lang.String)
 	 */
+	@Override
 	@GET
 	@Path("/{id}")
 	public UserDto getUser(@PathParam("id") final String id) {
@@ -74,15 +79,29 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.users.IUsersService#updateUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
+	@Override
 	@PUT
 	@Path("/")
 	public UserDto updateUser(final UserDto user) {
 		final UserIntDto map = mapper.map(user, UserIntDto.class);
 		final UserIntDto updateUser = iIntUsersService.updateUser(map);
 		return mapper.map(updateUser, UserDto.class);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.operaprima.services.facade.users.IUsersService#listPersonsByUser(java.lang.String)
+	 */
+	@Override
+	@GET
+	@Path("/{id}/persons")
+	public PersonsDto listPersonsByUser(@PathParam("id") final String id) {
+		final PersonsIntDto listPersonsByUser = iIntUsersService.listPersonsByUser(id);
+		return mapper.map(listPersonsByUser, PersonsDto.class);
 	}
 
 }
