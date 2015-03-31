@@ -1,5 +1,6 @@
 package com.operaprima.services.facade.users;
 
+import com.operaprima.services.facade.dtos.PersonsDto;
 import com.operaprima.services.facade.dtos.UserDto;
 import com.operaprima.services.facade.dtos.UsersDto;
 
@@ -35,8 +36,16 @@ public interface IUsersService {
 	/**
 	 * Servicio de negocio que actualiza un usuario
 	 *
-	 * @return String
+	 * @return UserDto
 	 */
 	UserDto updateUser(UserDto user);
+
+	/**
+	 * Servicio de negocio que devuelve las personas a las que pertenece un usuario
+	 *
+	 * @param String
+	 * @return PersonsDto
+	 */
+	PersonsDto listPersonsByUser(final String id);
 
 }

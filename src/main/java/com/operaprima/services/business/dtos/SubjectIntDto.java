@@ -1,19 +1,17 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * @author Adesis
  *
  */
-public class SubjectIntDto implements Serializable {
-
-	private static final long serialVersionUID = -4648193946790819031L;
+public class SubjectIntDto {
 
 	private String id;
 	private String description;
 	private List<ClassIntDto> classes;
+	private Boolean active;
 
 	/**
 	 * @return the id
@@ -58,6 +56,21 @@ public class SubjectIntDto implements Serializable {
 	 */
 	public void setClasses(final List<ClassIntDto> classes) {
 		this.classes = classes;
+	}
+
+	/**
+	 * @return the active
+	 */
+	public Boolean getActive() {
+		return active;
+	}
+
+	/**
+	 * @param active
+	 *            the active to set
+	 */
+	public void setActive(final Boolean active) {
+		this.active = active;
 	}
 
 }

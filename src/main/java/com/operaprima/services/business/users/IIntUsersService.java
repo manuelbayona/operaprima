@@ -1,5 +1,6 @@
 package com.operaprima.services.business.users;
 
+import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
 
@@ -30,5 +31,11 @@ public interface IIntUsersService {
 	 * @return String
 	 */
 	UserIntDto updateUser(UserIntDto user);
+
+	/**
+	 * @param String
+	 * @return PersonsIntDto
+	 */
+	PersonsIntDto listPersonsByUser(String id);
 
 }

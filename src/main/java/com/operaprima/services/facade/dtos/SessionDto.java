@@ -32,6 +32,9 @@ public class SessionDto implements Serializable {
 	@XmlElement(name = "note")
 	private String note;
 
+	@XmlElement(name = "group")
+	private GroupDto group;
+
 	/**
 	 * @return the id
 	 */
@@ -75,6 +78,20 @@ public class SessionDto implements Serializable {
 	 */
 	public void setNote(final String note) {
 		this.note = note;
+	}
+
+	/**
+	 * @return the group
+	 */
+	public GroupDto getGroup() {
+		return group;
+	}
+
+	/**
+	 * @param group the group to set
+	 */
+	public void setGroup(GroupDto group) {
+		this.group = group;
 	}
 
 }

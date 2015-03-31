@@ -1,20 +1,19 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
-
 import org.joda.time.DateTime;
+
+import com.operaprima.services.facade.dtos.GroupDto;
 
 /**
  * @author Adesis
  *
  */
-public class SessionIntDto implements Serializable {
-
-	private static final long serialVersionUID = -6417158778873489011L;
+public class SessionIntDto {
 
 	private String id;
 	private DateTime date;
 	private String note;
+	private GroupDto group;
 
 	/**
 	 * @return the id
@@ -59,6 +58,21 @@ public class SessionIntDto implements Serializable {
 	 */
 	public void setNote(final String note) {
 		this.note = note;
+	}
+
+	/**
+	 * @return the group
+	 */
+	public GroupDto getGroup() {
+		return group;
+	}
+
+	/**
+	 * @param group
+	 *            the group to set
+	 */
+	public void setGroup(final GroupDto group) {
+		this.group = group;
 	}
 
 }

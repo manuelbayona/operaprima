@@ -1,6 +1,5 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
 import java.util.List;
 
 import com.operaprima.commons.service.business.dtos.PriceIntDto;
@@ -9,14 +8,14 @@ import com.operaprima.commons.service.business.dtos.PriceIntDto;
  * @author Adesis
  *
  */
-public class ClassIntDto implements Serializable {
-
-	private static final long serialVersionUID = 5535803118011605983L;
+public class ClassIntDto {
 
 	private String id;
 	private String note;
 	private List<GroupIntDto> groups;
 	private PriceIntDto price;
+	private Boolean active;
+	private SubjectIntDto subject;
 
 	/**
 	 * @return the id
@@ -76,6 +75,36 @@ public class ClassIntDto implements Serializable {
 	 */
 	public void setPrice(final PriceIntDto price) {
 		this.price = price;
+	}
+
+	/**
+	 * @return the active
+	 */
+	public Boolean getActive() {
+		return active;
+	}
+
+	/**
+	 * @param active
+	 *            the active to set
+	 */
+	public void setActive(final Boolean active) {
+		this.active = active;
+	}
+
+	/**
+	 * @return the subject
+	 */
+	public SubjectIntDto getSubject() {
+		return subject;
+	}
+
+	/**
+	 * @param subject
+	 *            the subject to set
+	 */
+	public void setSubject(final SubjectIntDto subject) {
+		this.subject = subject;
 	}
 
 }

@@ -1,7 +1,7 @@
 package com.operaprima.services.dao.users;
 
 import org.springframework.stereotype.Repository;
-
+import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
 
@@ -33,5 +33,11 @@ public interface IUsersDao {
 	 * @return String
 	 */
 	UserIntDto updateUser(UserIntDto user);
+
+	/**
+	 * @param String
+	 * @return PersonsIntDto
+	 */
+	PersonsIntDto listPersonsByUser(String id);
 
 }

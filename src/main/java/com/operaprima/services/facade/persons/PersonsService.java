@@ -13,9 +13,11 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.persons.IIntPersonsService;
+import com.operaprima.services.facade.dtos.GroupsDto;
 import com.operaprima.services.facade.dtos.PersonDto;
 import com.operaprima.services.facade.dtos.PersonsDto;
 
@@ -37,9 +39,10 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.persons.IPersonService#addPerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
+	@Override
 	@POST
 	@Path("/")
 	public PersonDto addPerson(final PersonDto person) {
@@ -50,9 +53,10 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.persons.IPersonService#listPersons()
 	 */
+	@Override
 	@GET
 	@Path("/")
 	public PersonsDto listPersons() {
@@ -62,9 +66,10 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.persons.IPersonService#getPerson(java.lang.String)
 	 */
+	@Override
 	@GET
 	@Path("/{id}")
 	public PersonDto getPerson(@PathParam("id") final String id) {
@@ -74,15 +79,29 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.persons.IPersonService#updatePerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
+	@Override
 	@PUT
 	@Path("/")
 	public PersonDto updatePerson(final PersonDto person) {
 		final PersonIntDto map = mapper.map(person, PersonIntDto.class);
 		final PersonIntDto updatePerson = iIntPersonsService.updatePerson(map);
 		return mapper.map(updatePerson, PersonDto.class);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.operaprima.services.facade.persons.IPersonsService#listGroupsByPerson(java.lang.String)
+	 */
+	@Override
+	@GET
+	@Path("/{id}/groups")
+	public GroupsDto listGroupsByPerson(final String id) {
+		final GroupsIntDto listGroupsByPerson = iIntPersonsService.listGroupsByPerson(id);
+		return mapper.map(listGroupsByPerson, GroupsDto.class);
 	}
 
 }
