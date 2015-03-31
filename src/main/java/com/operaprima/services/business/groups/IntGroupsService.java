@@ -14,7 +14,7 @@ import com.operaprima.services.dao.groups.IGroupsDao;
  */
 @Service
 @Mockeable
-public class IntGroupService implements IIntGroupsService {
+public class IntGroupsService implements IIntGroupsService {
 
 	@Autowired
 	private IGroupsDao iGroupsDao;

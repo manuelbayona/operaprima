@@ -21,6 +21,7 @@
             <ref bean="personsService"/>
             <ref bean="subjectsService"/>
             <ref bean="sessionsService"/>
+            <ref bean="billsService"/>
             <ref bean="attendancesServices"/>
             <ref bean="boardsService"/>
         </jaxrs:serviceBeans>

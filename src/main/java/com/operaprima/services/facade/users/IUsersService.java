@@ -31,14 +31,14 @@ public interface IUsersService {
 	 * @param id
 	 * @return UserDto
 	 */
-	UserDto getUser(String id);
+	UserDto getUser(final String id);
 
 	/**
 	 * Servicio de negocio que actualiza un usuario
 	 *
 	 * @return UserDto
 	 */
-	UserDto updateUser(UserDto user);
+	UserDto updateUser(final UserDto user);
 
 	/**
 	 * Servicio de negocio que devuelve las personas a las que pertenece un usuario
