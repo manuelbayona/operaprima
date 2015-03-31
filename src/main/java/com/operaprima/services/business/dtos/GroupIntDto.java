@@ -1,6 +1,5 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -12,9 +11,7 @@ import com.operaprima.commons.service.business.dtos.ScheduleIntDto;
  * @author Adesis
  *
  */
-public class GroupIntDto implements Serializable {
-
-	private static final long serialVersionUID = 5896641952472603087L;
+public class GroupIntDto {
 
 	private String id;
 	private String name;
@@ -27,6 +24,8 @@ public class GroupIntDto implements Serializable {
 	private DateTime unusualDates;
 	private PriceIntDto price;
 	private String equipments;
+	private Boolean active;
+	private ClassIntDto sClass;
 
 	/**
 	 * @return the id
@@ -191,6 +190,36 @@ public class GroupIntDto implements Serializable {
 	 */
 	public void setEquipments(final String equipments) {
 		this.equipments = equipments;
+	}
+
+	/**
+	 * @return the active
+	 */
+	public Boolean getActive() {
+		return active;
+	}
+
+	/**
+	 * @param active
+	 *            the active to set
+	 */
+	public void setActive(final Boolean active) {
+		this.active = active;
+	}
+
+	/**
+	 * @return the sClass
+	 */
+	public ClassIntDto getsClass() {
+		return sClass;
+	}
+
+	/**
+	 * @param sClass
+	 *            the sClass to set
+	 */
+	public void setsClass(final ClassIntDto sClass) {
+		this.sClass = sClass;
 	}
 
 }

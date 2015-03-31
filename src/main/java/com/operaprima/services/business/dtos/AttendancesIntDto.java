@@ -1,18 +1,17 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
 
 /**
  * @author Adesis
  *
  */
-public class AttendancesIntDto implements Serializable {
-
-	private static final long serialVersionUID = 5306949025171703942L;
+public class AttendancesIntDto {
 
 	private String id;
 	private Boolean attend;
 	private String note;
+	private PersonIntDto student;
+	private SessionIntDto session;
 
 	/**
 	 * @return the id
@@ -57,6 +56,36 @@ public class AttendancesIntDto implements Serializable {
 	 */
 	public void setNote(final String note) {
 		this.note = note;
+	}
+
+	/**
+	 * @return the student
+	 */
+	public PersonIntDto getStudent() {
+		return student;
+	}
+
+	/**
+	 * @param student
+	 *            the student to set
+	 */
+	public void setStudent(final PersonIntDto student) {
+		this.student = student;
+	}
+
+	/**
+	 * @return the session
+	 */
+	public SessionIntDto getSession() {
+		return session;
+	}
+
+	/**
+	 * @param session
+	 *            the session to set
+	 */
+	public void setSession(final SessionIntDto session) {
+		this.session = session;
 	}
 
 }

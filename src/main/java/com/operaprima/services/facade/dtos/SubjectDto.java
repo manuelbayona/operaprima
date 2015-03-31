@@ -27,6 +27,9 @@ public class SubjectDto implements Serializable {
 	@XmlElement(name = "classes")
 	private List<ClassDto> classes;
 
+	@XmlElement(name = "active")
+	private Boolean active;
+
 	/**
 	 * @return the id
 	 */
@@ -70,6 +73,20 @@ public class SubjectDto implements Serializable {
 	 */
 	public void setClasses(final List<ClassDto> classes) {
 		this.classes = classes;
+	}
+
+	/**
+	 * @return the active
+	 */
+	public Boolean getActive() {
+		return active;
+	}
+
+	/**
+	 * @param active the active to set
+	 */
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 
 }

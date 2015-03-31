@@ -1,6 +1,5 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
 import java.util.List;
 
 import com.operaprima.commons.service.business.dtos.EmailIntDto;
@@ -9,9 +8,7 @@ import com.operaprima.commons.service.business.dtos.EmailIntDto;
  * @author Adesis
  *
  */
-public class UserIntDto implements Serializable {
-
-	private static final long serialVersionUID = 1122507404235396620L;
+public class UserIntDto {
 
 	private String id;
 	private String userName;

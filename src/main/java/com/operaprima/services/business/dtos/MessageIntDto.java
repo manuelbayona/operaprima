@@ -1,16 +1,12 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
-
 import org.joda.time.DateTime;
 
 /**
  * @author Adesis
  *
  */
-public class MessageIntDto implements Serializable {
-
-	private static final long serialVersionUID = -2633515094459912891L;
+public class MessageIntDto {
 
 	private String id;
 	private PersonIntDto author;

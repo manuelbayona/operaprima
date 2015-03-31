@@ -54,7 +54,13 @@ public class PersonDto implements Serializable {
 	private UserStateEnum state;
 
 	@XmlElement(name = "group")
-	private List<SubjectDto> group;
+	private List<GroupDto> groups;
+
+	@XmlElement(name = "dni")
+	private String dni;
+
+	@XmlElement(name = "user")
+	private UserDto user;
 
 	/**
 	 * @return the id
@@ -179,16 +185,45 @@ public class PersonDto implements Serializable {
 	/**
 	 * @return the group
 	 */
-	public List<SubjectDto> getGroup() {
-		return group;
+	public List<GroupDto> getGroups() {
+		return groups;
 	}
 
 	/**
 	 * @param group
 	 *            the group to set
 	 */
-	public void setGroup(final List<SubjectDto> group) {
-		this.group = group;
+	public void setGroups(final List<GroupDto> groups) {
+		this.groups = groups;
+	}
+
+	/**
+	 * @return the dni
+	 */
+	public String getDni() {
+		return dni;
+	}
+
+	/**
+	 * @param dni
+	 *            the dni to set
+	 */
+	public void setDni(final String dni) {
+		this.dni = dni;
+	}
+
+	/**
+	 * @return the user
+	 */
+	public UserDto getUser() {
+		return user;
+	}
+
+	/**
+	 * @param user the user to set
+	 */
+	public void setUser(UserDto user) {
+		this.user = user;
 	}
 
 }

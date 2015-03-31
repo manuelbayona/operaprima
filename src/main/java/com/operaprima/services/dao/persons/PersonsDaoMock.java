@@ -2,6 +2,7 @@ package com.operaprima.services.dao.persons;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
@@ -20,18 +21,18 @@ public class PersonsDaoMock implements IPersonsDao {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#addPerson(com.operaprima.services.business.dtos.PersonIntDto)
 	 */
 	@Override
 	public PersonIntDto addPerson(final PersonIntDto person) {
-		// TODO Auto-generated method stub
-		return null;
+		person.setId(UUID.randomUUID().toString());
+		return person;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#listPersons()
 	 */
 	@Override
@@ -49,24 +50,22 @@ public class PersonsDaoMock implements IPersonsDao {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#getPerson(java.lang.String)
 	 */
 	@Override
 	public PersonIntDto getPerson(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return new PersonIntDto();
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#updatePerson(com.operaprima.services.business.dtos.PersonIntDto)
 	 */
 	@Override
 	public PersonIntDto updatePerson(final PersonIntDto person) {
-		// TODO Auto-generated method stub
-		return null;
+		return person;
 	}
 
 	@Override
