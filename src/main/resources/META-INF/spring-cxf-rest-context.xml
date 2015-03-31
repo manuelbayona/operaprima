@@ -19,6 +19,7 @@
             <ref bean="groupsService"/>
             <ref bean="classesService"/>
             <ref bean="personsService"/>
+            <ref bean="sessionsService"/>
         </jaxrs:serviceBeans>
         <jaxrs:extensionMappings>
             <entry key="json" value="application/json"/>
