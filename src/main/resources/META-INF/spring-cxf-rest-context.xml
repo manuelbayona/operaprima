@@ -22,6 +22,7 @@
             <ref bean="subjectsService"/>
             <ref bean="sessionsService"/>
             <ref bean="attendancesServices"/>
+            <ref bean="boardsService"/>
         </jaxrs:serviceBeans>
         <jaxrs:extensionMappings>
             <entry key="json" value="application/json"/>
