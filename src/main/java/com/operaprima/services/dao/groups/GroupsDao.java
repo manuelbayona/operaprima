@@ -67,7 +67,7 @@ public class GroupsDao implements IGroupsDao {
 		}
 
 		final GroupsIntDto groupsIntDto = new GroupsIntDto();
-		groupsIntDto.setGroups((List<GroupIntDto>) dozerUtils.parseList(listDB, GroupIntDto.class));
+		groupsIntDto.setGroups((List<GroupIntDto>) dozerUtils.listMapper(listDB, GroupIntDto.class));
 		return groupsIntDto;
 	}
 

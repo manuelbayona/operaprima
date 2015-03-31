@@ -61,7 +61,7 @@ public class ClassesDao implements IClassesDao {
 		}
 
 		final ClassesIntDto classesIntDto = new ClassesIntDto();
-		classesIntDto.setClasses((List<ClassIntDto>) dozerUtils.parseList(listDB, ClassIntDto.class));
+		classesIntDto.setClasses((List<ClassIntDto>) dozerUtils.listMapper(listDB, ClassIntDto.class));
 		return classesIntDto;
 	}
 

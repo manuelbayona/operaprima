@@ -60,7 +60,7 @@ public class PersonsDao implements IPersonsDao {
 		}
 
 		final PersonsIntDto personsIntDto = new PersonsIntDto();
-		personsIntDto.setPersons((List<PersonIntDto>) dozerUtils.parseList(listDB, PersonIntDto.class));
+		personsIntDto.setPersons((List<PersonIntDto>) dozerUtils.listMapper(listDB, PersonIntDto.class));
 		return personsIntDto;
 	}
 

@@ -63,7 +63,7 @@ public class SessionsDao implements ISessionsDao {
 		}
 
 		final SessionsIntDto sessionsIntDto = new SessionsIntDto();
-		sessionsIntDto.setSessions((List<SessionIntDto>) dozerUtils.parseList(listDB, SessionIntDto.class));
+		sessionsIntDto.setSessions((List<SessionIntDto>) dozerUtils.listMapper(listDB, SessionIntDto.class));
 		return sessionsIntDto;
 	}
 }
