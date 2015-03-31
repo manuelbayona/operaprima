@@ -12,7 +12,7 @@ public interface IIntUsersService {
 
 	/**
 	 * @param UserIntDto
-	 * @return String
+	 * @return UserIntDto
 	 */
 	UserIntDto addUser(final UserIntDto user);
 
@@ -22,18 +22,18 @@ public interface IIntUsersService {
 	UsersIntDto listUsers();
 
 	/**
-	 * @param String
-	 * @return UserDto
+	 * @param id
+	 * @return UserIntDto
 	 */
 	UserIntDto getUser(String id);
 
 	/**
-	 * @return String
+	 * @return UserIntDto
 	 */
 	UserIntDto updateUser(UserIntDto user);
 
 	/**
-	 * @param String
+	 * @param id
 	 * @return PersonsIntDto
 	 */
 	PersonsIntDto listPersonsByUser(String id);
