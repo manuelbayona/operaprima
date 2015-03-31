@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.mock.Mock;
+import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 
@@ -64,6 +65,12 @@ public class PersonsDaoMock implements IPersonsDao {
 	 */
 	@Override
 	public PersonIntDto updatePerson(final PersonIntDto person) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public GroupsIntDto listGroupsByPerson(final String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
