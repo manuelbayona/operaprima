@@ -14,11 +14,6 @@ public interface IAttendancesDao {
 	AttendanceIntDto addAttendance(AttendanceIntDto attendance);
 
 	/**
-	 * @return
-	 */
-	AttendanceIntDto listAttendances();
-
-	/**
 	 * @param id
 	 * @return
 	 */

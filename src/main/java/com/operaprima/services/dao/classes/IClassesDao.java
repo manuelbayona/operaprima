@@ -5,7 +5,7 @@ import com.operaprima.services.business.dtos.ClassesIntDto;
 
 /**
  * @author Adesis
- *
+ * 
  */
 public interface IClassesDao {
 
@@ -14,11 +14,6 @@ public interface IClassesDao {
 	 * @return ClassIntDto
 	 */
 	ClassIntDto addClass(final ClassIntDto classdto);
-
-	/**
-	 * @return ClassesIntDto
-	 */
-	ClassesIntDto listClasses();
 
 	/**
 	 * @param String
@@ -32,4 +27,8 @@ public interface IClassesDao {
 	 */
 	ClassIntDto updateClass(ClassIntDto classdto);
 
+	/**
+	 * @return
+	 */
+	ClassesIntDto listClasses();
 }

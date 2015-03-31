@@ -28,8 +28,7 @@ public class BillsDao implements IBillsDao {
 	}
 
 	@Override
-	public BillIntDto listBill() {
-		// TODO Auto-generated method stub
+	public BillIntDto listBills() {
 		return null;
 	}
 

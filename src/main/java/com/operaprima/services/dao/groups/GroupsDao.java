@@ -1,12 +1,18 @@
 package com.operaprima.services.dao.groups;
 
+import java.util.List;
+
+import org.bson.types.ObjectId;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 import com.operaprima.services.dao.repositories.IGroupsRepository;
+import com.operaprima.services.dao.repositories.entities.GroupEntity;
 
 /**
  * @author Adesis
@@ -21,48 +27,48 @@ public class GroupsDao implements IGroupsDao {
 	@Autowired
 	private Mapper mapper;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#addGroups(com.operaprima.services.business.dtos.GroupIntDto)
-	 */
+	@Autowired
+	private IDozerUtils dozerUtils;
+
 	@Override
-	public GroupIntDto addGroups(final GroupIntDto groupDto) {
-		// TODO Auto-generated method stub
-		return null;
+	public GroupIntDto addGroup(final GroupIntDto group) {
+		GroupEntity entity = mapper.map(group, GroupEntity.class);
+		entity = groupsRepository.save(entity);
+		group.setId(entity.getId().toString());
+		return group;
 	}
 
-	/*
-	 * (non-Javadoc)
+	@Override
+	public GroupIntDto getGroup(final String id) {
+		final GroupEntity groupEntity = groupsRepository.findOne(new ObjectId(id));
+		final GroupIntDto group = mapper.map(groupEntity, GroupIntDto.class);
+		return group;
+	}
+
+	@Override
+	public GroupIntDto updateGroup(final GroupIntDto group) {
+		final GroupEntity entity = mapper.map(group, GroupEntity.class);
+		groupsRepository.save(entity);
+		return group;
+	}
+
+	/**
 	 * 
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#listGroups()
+	 * {@inheritDoc}
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public GroupsIntDto listGroups() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#getGroups(java.lang.String)
-	 */
-	@Override
-	public GroupIntDto getGroups(final String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		final List<GroupEntity> listDB = (List<GroupEntity>) groupsRepository.findAll();
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#updateGroups(com.operaprima.services.business.dtos.GroupIntDto)
-	 */
-	@Override
-	public GroupIntDto updateGroups(final GroupIntDto group) {
-		// TODO Auto-generated method stub
-		return null;
+		if (listDB == null) {
+			return null;
+		}
+
+		final GroupsIntDto groupsIntDto = new GroupsIntDto();
+		groupsIntDto.setGroups((List<GroupIntDto>) dozerUtils.parseList(listDB, GroupIntDto.class));
+		return groupsIntDto;
 	}
 
 	/*
@@ -71,7 +77,7 @@ public class GroupsDao implements IGroupsDao {
 	 * @see com.operaprima.services.dao.groups.IGroupsDao#listSessionsByGroup(java.lang.String)
 	 */
 	@Override
-	public GroupIntDto listSessionsByGroup(final String id) {
+	public SessionsIntDto listSessionsByGroup(final String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -16,7 +16,7 @@ public interface IBillsDao {
 	/**
 	 * @return
 	 */
-	BillIntDto listBill();
+	BillIntDto listBills();
 
 	/**
 	 * @param id

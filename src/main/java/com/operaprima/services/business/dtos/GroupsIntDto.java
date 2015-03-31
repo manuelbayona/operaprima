@@ -2,20 +2,18 @@ package com.operaprima.services.business.dtos;
 
 import java.util.List;
 
-import com.operaprima.services.facade.dtos.GroupDto;
-
 /**
  * @author Adesis
- *
+ * 
  */
 public class GroupsIntDto {
 
-	private List<GroupDto> groups;
+	private List<GroupIntDto> groups;
 
 	/**
 	 * @return the groups
 	 */
-	public List<GroupDto> getGroups() {
+	public List<GroupIntDto> getGroups() {
 		return groups;
 	}
 
@@ -23,7 +21,7 @@ public class GroupsIntDto {
 	 * @param groups
 	 *            the groups to set
 	 */
-	public void setGroups(final List<GroupDto> groups) {
+	public void setGroups(final List<GroupIntDto> groups) {
 		this.groups = groups;
 	}
 

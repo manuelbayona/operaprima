@@ -1,7 +1,5 @@
 package com.operaprima.services.facade.groups;
 
-import java.util.List;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,14 +15,15 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 import com.operaprima.services.business.groups.IIntGroupsServices;
 import com.operaprima.services.facade.dtos.GroupDto;
 import com.operaprima.services.facade.dtos.GroupsDto;
-import com.operaprima.services.facade.dtos.SessionDto;
+import com.operaprima.services.facade.dtos.SessionsDto;
 
 /**
  * @author Adesis
- *
+ * 
  */
 @Service("groupsService")
 @Path("V01/groups")
@@ -94,16 +93,16 @@ public class GroupsServices implements IGroupsServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listSessionsByGroup(java.lang.String)
 	 */
 	@Override
 	@GET
 	@Path("/{id}/sessions")
-	public List<SessionDto> listSessionsByGroup(final String id) {
-		final GroupIntDto listSessionsByGroup = iIntGroupServices.listSessionsByGroup(id);
-		final GroupDto listSessionsByGroupReturn = mapper.map(listSessionsByGroup, GroupDto.class);
-		return listSessionsByGroupReturn.getSessions();
+	public SessionsDto listSessionsByGroup(final String id) {
+		final SessionsIntDto listSessionsByGroup = iIntGroupServices.listSessionsByGroup(id);
+		final SessionsDto listSessionsByGroupReturn = mapper.map(listSessionsByGroup, SessionsDto.class);
+		return listSessionsByGroupReturn;
 	}
 
 }

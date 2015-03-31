@@ -1,14 +1,12 @@
 package com.operaprima.services.facade.groups;
 
-import java.util.List;
-
 import com.operaprima.services.facade.dtos.GroupDto;
 import com.operaprima.services.facade.dtos.GroupsDto;
-import com.operaprima.services.facade.dtos.SessionDto;
+import com.operaprima.services.facade.dtos.SessionsDto;
 
 /**
  * @author Adesis
- *
+ * 
  */
 public interface IGroupsServices {
 
@@ -37,8 +35,8 @@ public interface IGroupsServices {
 
 	/**
 	 * @param String
-	 * @return List<SessionDto>
+	 * @return SessionsDto
 	 */
-	List<SessionDto> listSessionsByGroup(final String id);
+	SessionsDto listSessionsByGroup(final String id);
 
 }

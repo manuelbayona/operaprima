@@ -2,10 +2,11 @@ package com.operaprima.services.dao.groups;
 
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
  * @author Adesis
- *
+ * 
  */
 public interface IGroupsDao {
 
@@ -13,29 +14,28 @@ public interface IGroupsDao {
 	 * @param GroupDto
 	 * @return String
 	 */
-	GroupIntDto addGroups(final GroupIntDto groupDto);
-
-	/**
-	 * @return GroupsDto
-	 */
-	GroupsIntDto listGroups();
+	GroupIntDto addGroup(final GroupIntDto groupDto);
 
 	/**
 	 * @param String
 	 * @return GroupDto
 	 */
-	GroupIntDto getGroups(final String id);
+	GroupIntDto getGroup(final String id);
 
 	/**
 	 * @param GroupDto
 	 * @return String
 	 */
-	GroupIntDto updateGroups(final GroupIntDto group);
+	GroupIntDto updateGroup(final GroupIntDto group);
 
 	/**
 	 * @param String
 	 * @return GroupDto
 	 */
-	GroupIntDto listSessionsByGroup(String id);
+	SessionsIntDto listSessionsByGroup(String id);
 
+	/**
+	 * @return
+	 */
+	GroupsIntDto listGroups();
 }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
@@ -28,6 +29,9 @@ public class PersonsDao implements IPersonsDao {
 	@Autowired
 	private IPersonsRepository personsRepository;
 
+	@Autowired
+	private IDozerUtils dozerUtils;
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -47,10 +51,17 @@ public class PersonsDao implements IPersonsDao {
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#listPersons()
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public PersonsIntDto listPersons() {
-		final List<PersonEntity> entities = (List<PersonEntity>) personsRepository.findAll();
+		final List<PersonEntity> listDB = (List<PersonEntity>) personsRepository.findAll();
 
-		return null;
+		if (listDB == null) {
+			return null;
+		}
+
+		final PersonsIntDto personsIntDto = new PersonsIntDto();
+		personsIntDto.setPersons((List<PersonIntDto>) dozerUtils.parseList(listDB, PersonIntDto.class));
+		return personsIntDto;
 	}
 
 	/*

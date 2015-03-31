@@ -2,10 +2,11 @@ package com.operaprima.services.business.groups;
 
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
  * @author Adesis
- *
+ * 
  */
 public interface IIntGroupsServices {
 
@@ -36,6 +37,6 @@ public interface IIntGroupsServices {
 	 * @param String
 	 * @return GroupDto
 	 */
-	GroupIntDto listSessionsByGroup(String id);
+	SessionsIntDto listSessionsByGroup(String id);
 
 }

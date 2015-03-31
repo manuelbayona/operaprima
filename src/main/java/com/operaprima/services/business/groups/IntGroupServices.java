@@ -5,11 +5,12 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 import com.operaprima.services.dao.groups.IGroupsDao;
 
 /**
  * @author Adesis
- *
+ * 
  */
 @Service
 public class IntGroupServices implements IIntGroupsServices {
@@ -24,7 +25,7 @@ public class IntGroupServices implements IIntGroupsServices {
 	 */
 	@Override
 	public GroupIntDto addGroups(final GroupIntDto groupDto) {
-		return iGroupsDao.addGroups(groupDto);
+		return iGroupsDao.addGroup(groupDto);
 	}
 
 	/*
@@ -44,7 +45,7 @@ public class IntGroupServices implements IIntGroupsServices {
 	 */
 	@Override
 	public GroupIntDto getGroups(final String id) {
-		return iGroupsDao.getGroups(id);
+		return iGroupsDao.getGroup(id);
 	}
 
 	/*
@@ -54,7 +55,7 @@ public class IntGroupServices implements IIntGroupsServices {
 	 */
 	@Override
 	public GroupIntDto updateGroups(final GroupIntDto group) {
-		return iGroupsDao.updateGroups(group);
+		return iGroupsDao.updateGroup(group);
 	}
 
 	/*
@@ -63,7 +64,7 @@ public class IntGroupServices implements IIntGroupsServices {
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#listSessionsByGroup(java.lang.String)
 	 */
 	@Override
-	public GroupIntDto listSessionsByGroup(final String id) {
+	public SessionsIntDto listSessionsByGroup(final String id) {
 		return iGroupsDao.listSessionsByGroup(id);
 	}
 

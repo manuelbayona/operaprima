@@ -14,11 +14,6 @@ public interface IBoardsDao {
 	BoardIntDto addBoard(BoardIntDto board);
 
 	/**
-	 * @return
-	 */
-	BoardIntDto listBoards();
-
-	/**
 	 * @param id
 	 * @return
 	 */
