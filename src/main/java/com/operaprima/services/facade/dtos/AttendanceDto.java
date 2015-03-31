@@ -26,6 +26,12 @@ public class AttendanceDto implements Serializable {
 	@XmlElement(name = "note")
 	private String note;
 
+	@XmlElement(name = "student")
+	private PersonDto student;
+
+	@XmlElement(name = "session")
+	private SessionDto session;
+
 	/**
 	 * @return the id
 	 */
@@ -69,6 +75,21 @@ public class AttendanceDto implements Serializable {
 	 */
 	public void setNote(final String note) {
 		this.note = note;
+	}
+
+	/**
+	 * @return the session
+	 */
+	public SessionDto getSession() {
+		return session;
+	}
+
+	/**
+	 * @param session
+	 *            the session to set
+	 */
+	public void setSession(final SessionDto session) {
+		this.session = session;
 	}
 
 }

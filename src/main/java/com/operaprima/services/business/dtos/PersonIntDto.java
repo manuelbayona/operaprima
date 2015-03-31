@@ -1,6 +1,5 @@
 package com.operaprima.services.business.dtos;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -13,9 +12,7 @@ import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
  * @author Adesis
  *
  */
-public class PersonIntDto implements Serializable {
-
-	private static final long serialVersionUID = -7277315609468397094L;
+public class PersonIntDto {
 
 	private String id;
 	private String name;
@@ -25,7 +22,9 @@ public class PersonIntDto implements Serializable {
 	private UserTypeEnum type;
 	private List<PhoneIntDto> phones;
 	private UserStateEnum state;
-	private List<SubjectIntDto> group;
+	private List<GroupIntDto> groups;
+	private String dni;
+	private UserIntDto user;
 
 	/**
 	 * @return the id
@@ -150,16 +149,46 @@ public class PersonIntDto implements Serializable {
 	/**
 	 * @return the group
 	 */
-	public List<SubjectIntDto> getGroup() {
-		return group;
+	public List<GroupIntDto> getGroups() {
+		return groups;
 	}
 
 	/**
 	 * @param group
 	 *            the group to set
 	 */
-	public void setGroup(final List<SubjectIntDto> group) {
-		this.group = group;
+	public void setGroup(final List<GroupIntDto> groups) {
+		this.groups = groups;
+	}
+
+	/**
+	 * @return the dni
+	 */
+	public String getDni() {
+		return dni;
+	}
+
+	/**
+	 * @param dni
+	 *            the dni to set
+	 */
+	public void setDni(final String dni) {
+		this.dni = dni;
+	}
+
+	/**
+	 * @return the user
+	 */
+	public UserIntDto getUser() {
+		return user;
+	}
+
+	/**
+	 * @param user
+	 *            the user to set
+	 */
+	public void setUser(final UserIntDto user) {
+		this.user = user;
 	}
 
 }

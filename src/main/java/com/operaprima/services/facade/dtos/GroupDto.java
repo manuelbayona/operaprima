@@ -59,6 +59,12 @@ public class GroupDto implements Serializable {
 	@XmlElement(name = "equipments")
 	private String equipments;
 
+	@XmlElement(name = "active")
+	private Boolean active;
+
+	@XmlElement(name = "sClass")
+	private ClassDto sclass;
+
 	/**
 	 * @return the id
 	 */
@@ -222,6 +228,35 @@ public class GroupDto implements Serializable {
 	 */
 	public void setEquipments(final String equipments) {
 		this.equipments = equipments;
+	}
+
+	/**
+	 * @return the active
+	 */
+	public Boolean getActive() {
+		return active;
+	}
+
+	/**
+	 * @param active
+	 *            the active to set
+	 */
+	public void setActive(final Boolean active) {
+		this.active = active;
+	}
+
+	/**
+	 * @return the sclass
+	 */
+	public ClassDto getSclass() {
+		return sclass;
+	}
+
+	/**
+	 * @param sclass the sclass to set
+	 */
+	public void setSclass(ClassDto sclass) {
+		this.sclass = sclass;
 	}
 
 }
