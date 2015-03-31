@@ -28,7 +28,7 @@ public class UserRepositoryTest {
 		final UserEntity entity = new UserEntity();
 		entity.setUsername("diegonjino");
 		entity.setPublicPassword("124587");
-		entity.setEmail("diuegonjin@gmail�.com");
+		// entity.setEmail("diuegonjin@gmail�.com");
 		final List<PersonEntity> profiles = new ArrayList<>();
 		PersonEntity personEntity = new PersonEntity();
 		personEntity.setName("Diegop");

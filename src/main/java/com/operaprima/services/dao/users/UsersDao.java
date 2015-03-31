@@ -1,11 +1,13 @@
 package com.operaprima.services.dao.users;
 
-import java.util.ArrayList;
+import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
 import com.operaprima.services.dao.repositories.IUsersRepository;
@@ -24,10 +26,12 @@ public class UsersDao implements IUsersDao {
 	@Autowired
 	private IUsersRepository userRepository;
 
-	/*
-	 * (non-Javadoc)
+	@Autowired
+	private IDozerUtils dozerUtils;
+
+	/**
 	 *
-	 * @see com.operaprima.services.dao.IUsersDao#addUser(com.operaprima.services.business.dtos.UserIntDto)
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UserIntDto addUser(final UserIntDto user) {
@@ -42,40 +46,43 @@ public class UsersDao implements IUsersDao {
 		return user;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
 	 *
-	 * @see com.operaprima.services.dao.IUsersDao#listUsers()
+	 * {@inheritDoc}
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public UsersIntDto listUsers() {
+
+		final List<UserEntity> listDB = (List<UserEntity>) userRepository.findAll();
+
+		if (listDB == null) {
+			return null;
+		}
+
 		final UsersIntDto usersIntDto = new UsersIntDto();
-		usersIntDto.setUsers(new ArrayList<UserIntDto>());
-		usersIntDto.getUsers().add(new UserIntDto());
-		usersIntDto.getUsers().add(new UserIntDto());
+		usersIntDto.setUsers((List<UserIntDto>) dozerUtils.parseList(listDB, UserIntDto.class));
 		return usersIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.IUsersDao#getUser(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UserIntDto getUser(final String id) {
-		final UserIntDto userIntDto = new UserIntDto();
-		userIntDto.setId(id);
-		return userIntDto;
+		final UserEntity userEntity = userRepository.findOne(new ObjectId(id));
+		return mapper.map(userEntity, UserIntDto.class);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.IUsersDao#updateUser(com.operaprima.services.business.dtos.UserIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UserIntDto updateUser(final UserIntDto user) {
-		return user;
+		UserEntity entity = mapper.map(user, UserEntity.class);
+		entity = userRepository.save(entity);
+
+		return mapper.map(entity, UserIntDto.class);
 	}
 
 }

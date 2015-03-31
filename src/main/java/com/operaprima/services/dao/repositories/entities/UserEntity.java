@@ -22,7 +22,7 @@ public class UserEntity implements Serializable {
 	private ObjectId id;
 	private String username;
 	private String publicPassword;
-	private String email;
+	private EmailEntity email;
 
 	@DBRef
 	private List<PersonEntity> profiles;
@@ -32,6 +32,14 @@ public class UserEntity implements Serializable {
 	 */
 	public ObjectId getId() {
 		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(final ObjectId id) {
+		this.id = id;
 	}
 
 	/**
@@ -82,7 +90,7 @@ public class UserEntity implements Serializable {
 	/**
 	 * @return the email
 	 */
-	public String getEmail() {
+	public EmailEntity getEmail() {
 		return email;
 	}
 
@@ -90,7 +98,7 @@ public class UserEntity implements Serializable {
 	 * @param email
 	 *            the email to set
 	 */
-	public void setEmail(final String email) {
+	public void setEmail(final EmailEntity email) {
 		this.email = email;
 	}
 

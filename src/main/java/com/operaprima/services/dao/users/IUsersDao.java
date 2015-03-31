@@ -1,5 +1,7 @@
 package com.operaprima.services.dao.users;
 
+import org.springframework.stereotype.Repository;
+
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
 
@@ -7,6 +9,7 @@ import com.operaprima.services.business.dtos.UsersIntDto;
  * @author Adesis
  *
  */
+@Repository
 public interface IUsersDao {
 
 	/**
