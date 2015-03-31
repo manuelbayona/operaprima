@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.service.business.dtos.PhoneIntDto;
+import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.facade.dtos.enums.UserStateEnum;
@@ -25,9 +26,10 @@ public class PersonsDao implements IPersonsDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#addPerson(com.operaprima.services.business.dtos.PersonIntDto)
 	 */
+	@Override
 	public PersonIntDto addPerson(final PersonIntDto person) {
 		person.setId(UUID.randomUUID().toString());
 		return person;
@@ -35,9 +37,10 @@ public class PersonsDao implements IPersonsDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#listPersons()
 	 */
+	@Override
 	public PersonsIntDto listPersons() {
 		final PersonsIntDto personsIntDto = new PersonsIntDto();
 		personsIntDto.setPersons(new ArrayList<PersonIntDto>());
@@ -51,9 +54,10 @@ public class PersonsDao implements IPersonsDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#getPerson(java.lang.String)
 	 */
+	@Override
 	public PersonIntDto getPerson(final String id) {
 		final PhoneIntDto tfno1 = new PhoneIntDto();
 		tfno1.setNumber("123456789");
@@ -81,11 +85,18 @@ public class PersonsDao implements IPersonsDao {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.dao.persons.IPersonsDao#updatePerson(com.operaprima.services.business.dtos.PersonIntDto)
 	 */
+	@Override
 	public PersonIntDto updatePerson(final PersonIntDto person) {
 		return person;
+	}
+
+	@Override
+	public GroupsIntDto listGroupsByPerson(final String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

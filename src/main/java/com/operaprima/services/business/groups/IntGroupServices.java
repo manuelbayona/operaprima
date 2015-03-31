@@ -22,6 +22,7 @@ public class IntGroupServices implements IIntGroupsServices {
 	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#addGroups(com.operaprima.services.business.dtos.GroupIntDto)
 	 */
+	@Override
 	public GroupIntDto addGroups(final GroupIntDto groupDto) {
 		return iGroupsDao.addGroups(groupDto);
 	}
@@ -31,6 +32,7 @@ public class IntGroupServices implements IIntGroupsServices {
 	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#listGroups()
 	 */
+	@Override
 	public GroupsIntDto listGroups() {
 		return iGroupsDao.listGroups();
 	}
@@ -40,6 +42,7 @@ public class IntGroupServices implements IIntGroupsServices {
 	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#getGroups(java.lang.String)
 	 */
+	@Override
 	public GroupIntDto getGroups(final String id) {
 		return iGroupsDao.getGroups(id);
 	}
@@ -49,8 +52,19 @@ public class IntGroupServices implements IIntGroupsServices {
 	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#updateGroups(com.operaprima.services.business.dtos.GroupIntDto)
 	 */
+	@Override
 	public GroupIntDto updateGroups(final GroupIntDto group) {
 		return iGroupsDao.updateGroups(group);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.operaprima.services.business.groups.IIntGroupsServices#listSessionsByGroup(java.lang.String)
+	 */
+	@Override
+	public GroupIntDto listSessionsByGroup(final String id) {
+		return iGroupsDao.listSessionsByGroup(id);
 	}
 
 }

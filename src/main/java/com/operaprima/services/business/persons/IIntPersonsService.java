@@ -1,5 +1,6 @@
 package com.operaprima.services.business.persons;
 
+import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 
@@ -31,5 +32,11 @@ public interface IIntPersonsService {
 	 * @return String
 	 */
 	PersonIntDto updatePerson(PersonIntDto person);
+
+	/**
+	 * @param GroupsIntDto
+	 * @return String
+	 */
+	GroupsIntDto listGroupsByPerson(String id);
 
 }

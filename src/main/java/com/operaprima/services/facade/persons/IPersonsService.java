@@ -1,5 +1,6 @@
 package com.operaprima.services.facade.persons;
 
+import com.operaprima.services.facade.dtos.GroupsDto;
 import com.operaprima.services.facade.dtos.PersonDto;
 import com.operaprima.services.facade.dtos.PersonsDto;
 
@@ -35,9 +36,17 @@ public interface IPersonsService {
 	/**
 	 * Servicio de negocio que actualiza una persona
 	 *
-	 * @param PersonDto
-	 * @return String
+	 * @param String
+	 * @return PersonDto
 	 */
 	PersonDto updatePerson(final PersonDto person);
+
+	/**
+	 * Servicio de negocio que devuelve los grupos a los que pertenece una persona
+	 *
+	 * @param String
+	 * @return GroupsDto
+	 */
+	GroupsDto listGroupsByPerson(final String id);
 
 }
