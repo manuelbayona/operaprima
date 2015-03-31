@@ -20,11 +20,10 @@ public class UserEntity {
 	private ObjectId id;
 	private String username;
 	private String publicPassword;
+	private String email;
 
 	@DBRef
-	// @CascadeSave
 	private List<PersonEntity> profiles;
-	private String email;
 
 	public UserEntity(final String username, final String publicPassword, final String email) {
 		super();
@@ -44,14 +43,6 @@ public class UserEntity {
 	 */
 	public ObjectId getId() {
 		return id;
-	}
-
-	/**
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(final ObjectId id) {
-		this.id = id;
 	}
 
 	/**

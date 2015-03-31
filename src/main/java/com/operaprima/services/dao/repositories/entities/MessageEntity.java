@@ -3,21 +3,15 @@ package com.operaprima.services.dao.repositories.entities;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
-import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author Adesis
- *
+ * 
  */
-@Document(collection = "message")
 public class MessageEntity {
 
-	@Id
-	private ObjectId id;
 	private String content;
 	private DateTime date;
 
@@ -55,38 +49,38 @@ public class MessageEntity {
 	}
 
 	/**
-	 * @return the id
+	 * @return the author
 	 */
-	public ObjectId getId() {
-		return id;
+	public PersonEntity getAuthor() {
+		return author;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @param author
+	 *            the author to set
 	 */
-	@Override
-	public String toString() {
-		return new ToStringBuilder(this).append("id", id).append("content", content).append("date", date).toString();
+	public void setAuthor(final PersonEntity author) {
+		this.author = author;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public boolean equals(final Object other) {
 		if (!(other instanceof MessageEntity)) {
 			return false;
 		}
 		final MessageEntity castOther = (MessageEntity) other;
-		return new EqualsBuilder().append(id, castOther.id).append(content, castOther.content).append(date, castOther.date).isEquals();
+		return new EqualsBuilder().append(content, castOther.content).append(date, castOther.date).append(author, castOther.author)
+				.isEquals();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder().append(id).append(content).append(date).toHashCode();
+		return new HashCodeBuilder().append(content).append(date).append(author).toHashCode();
+	}
+
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).append("content", content).append("date", date).append("author", author).toString();
 	}
 
 }

@@ -3,13 +3,11 @@ package com.operaprima.services.dao.repositories.entities;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author Adesis
- *
+ * 
  */
-@Document
 public class PriceEntity {
 
 	private AmountEntity amount;

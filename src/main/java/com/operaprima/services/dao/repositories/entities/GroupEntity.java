@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.operaprima.services.facade.dtos.PersonDto;
 
-@Document(collection = "group")
+@Document(collection = "groups")
 public class GroupEntity {
 	@Id
 	private ObjectId id;
@@ -33,7 +33,6 @@ public class GroupEntity {
 	@DBRef
 	private List<SessionEntity> sessions;
 
-	@DBRef
 	private List<ScheduleEntity> schedules;
 
 	@DBRef
@@ -44,14 +43,6 @@ public class GroupEntity {
 	 */
 	public ObjectId getId() {
 		return id;
-	}
-
-	/**
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(final ObjectId id) {
-		this.id = id;
 	}
 
 	/**

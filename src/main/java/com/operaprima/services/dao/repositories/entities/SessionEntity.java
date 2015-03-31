@@ -10,9 +10,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author ExpertoJava
- *
+ * 
  */
-@Document(collection = "session")
+@Document(collection = "sessions")
 public class SessionEntity {
 
 	@Id

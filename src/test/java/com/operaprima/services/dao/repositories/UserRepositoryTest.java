@@ -21,7 +21,7 @@ public class UserRepositoryTest {
 	IUsersRepository userRepository;
 
 	@Autowired
-	IPersonRepository personRepository;
+	IPersonsRepository personRepository;
 
 	@Test
 	public void prueba() {

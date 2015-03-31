@@ -12,9 +12,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author ExpertoJava
- *
+ * 
  */
-@Document(collection = "class")
+@Document(collection = "classes")
 public class ClassEntity {
 
 	@Id
@@ -24,6 +24,16 @@ public class ClassEntity {
 
 	@DBRef
 	private List<GroupEntity> groups;
+
+	@DBRef
+	private SubjectEntity subject;
+
+	/**
+	 * @return the id
+	 */
+	public ObjectId getId() {
+		return id;
+	}
 
 	/**
 	 * @return the note
@@ -56,38 +66,54 @@ public class ClassEntity {
 	}
 
 	/**
-	 * @return the id
+	 * @return the groups
 	 */
-	public ObjectId getId() {
-		return id;
+	public List<GroupEntity> getGroups() {
+		return groups;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @param groups
+	 *            the groups to set
 	 */
-	@Override
-	public String toString() {
-		return new ToStringBuilder(this).append("id", id).append("note", note).append("price", price).toString();
+	public void setGroups(final List<GroupEntity> groups) {
+		this.groups = groups;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @return the subject
 	 */
+	public SubjectEntity getSubject() {
+		return subject;
+	}
+
+	/**
+	 * @param subject
+	 *            the subject to set
+	 */
+	public void setSubject(final SubjectEntity subject) {
+		this.subject = subject;
+	}
+
 	@Override
 	public boolean equals(final Object other) {
 		if (!(other instanceof ClassEntity)) {
 			return false;
 		}
 		final ClassEntity castOther = (ClassEntity) other;
-		return new EqualsBuilder().append(id, castOther.id).append(note, castOther.note).append(price, castOther.price).isEquals();
+		return new EqualsBuilder().append(id, castOther.id).append(note, castOther.note).append(price, castOther.price)
+				.append(groups, castOther.groups).append(subject, castOther.subject).isEquals();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder().append(id).append(note).append(price).toHashCode();
+		return new HashCodeBuilder().append(id).append(note).append(price).append(groups).append(subject).toHashCode();
+	}
+
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).append("id", id).append("note", note).append("price", price).append("groups", groups)
+				.append("subject", subject).toString();
 	}
 
 }

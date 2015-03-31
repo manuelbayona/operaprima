@@ -7,20 +7,18 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * @author Adesis
- *
+ * 
  */
-@Document(collection = "board")
+@Document(collection = "boards")
 public class BoardEntity {
 
 	@Id
 	private ObjectId id;
 
-	@DBRef
 	private List<MessageEntity> messages;
 
 	/**
