@@ -14,7 +14,7 @@ import com.operaprima.services.dao.classes.IClassDao;
  */
 @Service
 @Mockeable
-public class IntClassService implements IIntClassService {
+public class IntClassesService implements IIntClassesService {
 
 	@Autowired
 	private IClassDao iClassDao;

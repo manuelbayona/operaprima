@@ -13,7 +13,7 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.operaprima.services.business.classes.IIntClassService;
+import com.operaprima.services.business.classes.IIntClassesService;
 import com.operaprima.services.business.dtos.ClassIntDto;
 import com.operaprima.services.business.dtos.ClassesIntDto;
 import com.operaprima.services.facade.dtos.ClassDto;
@@ -32,7 +32,7 @@ public class ClassesService implements IClassesService {
 	private Mapper mapper;
 
 	@Autowired
-	private IIntClassService iIntClassService;
+	private IIntClassesService iIntClassService;
 
 	/*
 	 * (non-Javadoc)
