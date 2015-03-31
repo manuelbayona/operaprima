@@ -8,5 +8,7 @@ import java.util.List;
  */
 public interface IDozerUtils {
 
-	List<?> parseList(List<?> list, Class<?> typeToConvert);
+	List<?> listMapper(List<?> list, Class<?> typeToConvert);
+
+	Object classMapper(Object classToConvert, Class<?> typeToConvert);
 }

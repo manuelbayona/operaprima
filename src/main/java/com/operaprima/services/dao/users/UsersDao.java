@@ -3,12 +3,10 @@ package com.operaprima.services.dao.users;
 import java.util.List;
 
 import org.bson.types.ObjectId;
-import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
-
 import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
@@ -23,9 +21,6 @@ import com.operaprima.services.dao.repositories.entities.UserEntity;
 public class UsersDao implements IUsersDao {
 
 	@Autowired
-	private Mapper mapper;
-
-	@Autowired
 	private IUsersRepository userRepository;
 
 	@Autowired
@@ -38,10 +33,14 @@ public class UsersDao implements IUsersDao {
 	@Override
 	public UserIntDto addUser(final UserIntDto user) {
 		// Mapeo userDto a entity
-		UserEntity entity = mapper.map(user, UserEntity.class);
+		UserEntity entity = (UserEntity) dozerUtils.classMapper(user, UserEntity.class);
 
 		// Salvar en BD
 		entity = userRepository.save(entity);
+
+		if (entity.getId() == null) {
+			return null;
+		}
 
 		// seteamos el id en la respuesta
 		user.setId(entity.getId().toString());
@@ -63,7 +62,7 @@ public class UsersDao implements IUsersDao {
 		}
 
 		final UsersIntDto usersIntDto = new UsersIntDto();
-		usersIntDto.setUsers((List<UserIntDto>) dozerUtils.parseList(listDB, UserIntDto.class));
+		usersIntDto.setUsers((List<UserIntDto>) dozerUtils.classMapper(listDB, UserIntDto.class));
 		return usersIntDto;
 	}
 
@@ -73,7 +72,7 @@ public class UsersDao implements IUsersDao {
 	@Override
 	public UserIntDto getUser(final String id) {
 		final UserEntity userEntity = userRepository.findOne(new ObjectId(id));
-		return mapper.map(userEntity, UserIntDto.class);
+		return (UserIntDto) dozerUtils.classMapper(userEntity, UserIntDto.class);
 	}
 
 	/**
@@ -81,10 +80,10 @@ public class UsersDao implements IUsersDao {
 	 */
 	@Override
 	public UserIntDto updateUser(final UserIntDto user) {
-		UserEntity entity = mapper.map(user, UserEntity.class);
+		UserEntity entity = (UserEntity) dozerUtils.classMapper(user, UserEntity.class);
 		entity = userRepository.save(entity);
 
-		return mapper.map(entity, UserIntDto.class);
+		return (UserIntDto) dozerUtils.classMapper(entity, UserIntDto.class);
 	}
 
 	/*
