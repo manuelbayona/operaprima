@@ -25,7 +25,7 @@ import com.operaprima.services.facade.dtos.UsersDto;
  * @author Adesis
  *
  */
-@Service("userService")
+@Service("usersService")
 @Path("V01/users")
 @Consumes({ MediaType.APPLICATION_JSON })
 @Produces({ MediaType.APPLICATION_JSON })
@@ -39,7 +39,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#addUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
 	@Override
@@ -53,7 +53,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#listUsers()
 	 */
 	@Override
@@ -66,7 +66,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#getUser(java.lang.String)
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#updateUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.users.IUsersService#listPersonsByUser(java.lang.String)
 	 */
 	@Override

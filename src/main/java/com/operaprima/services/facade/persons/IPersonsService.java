@@ -13,8 +13,8 @@ public interface IPersonsService {
 	/**
 	 * Servicio de negocio encargado de dar de alta una nueva persona
 	 *
-	 * @param PersonDto
-	 * @return String
+	 * @param person
+	 * @return PersonDto
 	 */
 	PersonDto addPerson(final PersonDto person);
 
@@ -28,7 +28,7 @@ public interface IPersonsService {
 	/**
 	 * Servicio de negocio que consulta una persona
 	 *
-	 * @param String
+	 * @param id
 	 * @return PersonDto
 	 */
 	PersonDto getPerson(final String id);
@@ -36,7 +36,7 @@ public interface IPersonsService {
 	/**
 	 * Servicio de negocio que actualiza una persona
 	 *
-	 * @param String
+	 * @param id
 	 * @return PersonDto
 	 */
 	PersonDto updatePerson(final PersonDto person);
@@ -44,7 +44,7 @@ public interface IPersonsService {
 	/**
 	 * Servicio de negocio que devuelve los grupos a los que pertenece una persona
 	 *
-	 * @param String
+	 * @param id
 	 * @return GroupsDto
 	 */
 	GroupsDto listGroupsByPerson(final String id);

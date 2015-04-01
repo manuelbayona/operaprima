@@ -1,27 +1,39 @@
 package com.operaprima.services.dao.boards;
 
 import com.operaprima.services.business.dtos.BoardIntDto;
+import com.operaprima.services.business.dtos.BoardsIntDto;
 
 /**
- * @author diego.asensio
- * 
+ * @author Adesis
+ *
  */
 public interface IBoardsDao {
-	/**
-	 * @param board
-	 * @return
-	 */
-	BoardIntDto addBoard(BoardIntDto board);
 
 	/**
-	 * @param id
-	 * @return
+	 *
+	 * @param BoardDto
+	 * @return BoardDto
 	 */
-	BoardIntDto getBoard(String id);
+	BoardIntDto addBoard(final BoardIntDto board);
 
 	/**
-	 * @param board
-	 * @return
+	 *
+	 * @return BoardsDto
 	 */
-	BoardIntDto updateBoard(BoardIntDto board);
+	BoardsIntDto listBoards();
+
+	/**
+	 *
+	 * @param String
+	 * @return BoardDto
+	 */
+	BoardIntDto getBoard(final String id);
+
+	/**
+	 *
+	 * @param BoardDto
+	 * @return BoardDto
+	 */
+	BoardIntDto updateBoard(final BoardIntDto boardDto);
+
 }

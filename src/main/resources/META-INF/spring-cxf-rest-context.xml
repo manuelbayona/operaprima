@@ -18,10 +18,15 @@
  
     <jaxrs:server id="cxfServer" address="/">
         <jaxrs:serviceBeans>
-            <ref bean="userService"/>
+            <ref bean="usersService"/>
             <ref bean="groupsService"/>
             <ref bean="classesService"/>
             <ref bean="personsService"/>
+            <ref bean="subjectsService"/>
+            <ref bean="sessionsService"/>
+            <ref bean="billsService"/>
+            <ref bean="attendancesServices"/>
+            <ref bean="boardsService"/>
         </jaxrs:serviceBeans>
         <jaxrs:extensionMappings>
             <entry key="json" value="application/json"/>

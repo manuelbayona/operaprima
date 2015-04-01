@@ -5,8 +5,8 @@ import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author Adesis
- * 
+ * @author Dartboard
+ *
  */
 public interface IGroupsDao {
 
@@ -35,7 +35,7 @@ public interface IGroupsDao {
 	SessionsIntDto listSessionsByGroup(String id);
 
 	/**
-	 * @return
+	 * @return GroupsIntDto
 	 */
 	GroupsIntDto listGroups();
 }

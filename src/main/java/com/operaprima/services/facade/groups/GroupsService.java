@@ -1,5 +1,7 @@
 package com.operaprima.services.facade.groups;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -15,94 +17,93 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
-import com.operaprima.services.business.dtos.SessionsIntDto;
 import com.operaprima.services.business.groups.IIntGroupsServices;
 import com.operaprima.services.facade.dtos.GroupDto;
 import com.operaprima.services.facade.dtos.GroupsDto;
-import com.operaprima.services.facade.dtos.SessionsDto;
+import com.operaprima.services.facade.dtos.SessionDto;
 
 /**
  * @author Adesis
- * 
+ *
  */
 @Service("groupsService")
 @Path("V01/groups")
 @Consumes({ MediaType.APPLICATION_JSON })
 @Produces({ MediaType.APPLICATION_JSON })
-public class GroupsServices implements IGroupsServices {
+public class GroupsService implements IGroupsService {
 
 	@Autowired
 	private Mapper mapper;
 
 	@Autowired
-	private IIntGroupsServices iIntGroupServices;
+	private IIntGroupsServices iIntGroupService;
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#addGroups(com.operaprima.services.facade.dtos.GroupDto)
 	 */
 	@Override
 	@POST
 	@Path("/")
-	public GroupDto addGroups(final GroupDto groupDto) {
+	public GroupDto addGroup(final GroupDto groupDto) {
 		final GroupIntDto map = mapper.map(groupDto, GroupIntDto.class);
-		final GroupIntDto addGroups = iIntGroupServices.addGroups(map);
+		final GroupIntDto addGroups = iIntGroupService.addGroups(map);
 		return mapper.map(addGroups, GroupDto.class);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listGroups()
 	 */
 	@Override
 	@GET
 	@Path("/")
 	public GroupsDto listGroups() {
-		final GroupsIntDto listGroups = iIntGroupServices.listGroups();
+		final GroupsIntDto listGroups = iIntGroupService.listGroups();
 		return mapper.map(listGroups, GroupsDto.class);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#getGroups(java.lang.String)
 	 */
 	@Override
 	@GET
 	@Path("/{id}")
-	public GroupDto getGroups(@PathParam("id") final String id) {
-		final GroupIntDto getGroups = iIntGroupServices.getGroups(id);
+	public GroupDto getGroup(@PathParam("id") final String id) {
+		final GroupIntDto getGroups = iIntGroupService.getGroups(id);
 		return mapper.map(getGroups, GroupDto.class);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#updateGroups(com.operaprima.services.facade.dtos.GroupDto)
 	 */
 	@Override
 	@PUT
 	@Path("/")
-	public GroupDto updateGroups(final GroupDto group) {
+	public GroupDto updateGroup(final GroupDto group) {
 		final GroupIntDto map = mapper.map(group, GroupIntDto.class);
-		final GroupIntDto updateGroups = iIntGroupServices.updateGroups(map);
+		final GroupIntDto updateGroups = iIntGroupService.updateGroups(map);
 		return mapper.map(updateGroups, GroupDto.class);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listSessionsByGroup(java.lang.String)
 	 */
 	@Override
 	@GET
 	@Path("/{id}/sessions")
-	public SessionsDto listSessionsByGroup(final String id) {
-		final SessionsIntDto listSessionsByGroup = iIntGroupServices.listSessionsByGroup(id);
-		final SessionsDto listSessionsByGroupReturn = mapper.map(listSessionsByGroup, SessionsDto.class);
-		return listSessionsByGroupReturn;
+	public List<SessionDto> listSessionsByGroup(@PathParam("id") final String id) {
+		final GroupIntDto listSessionsByGroup = iIntGroupService.listSessionsByGroup(id);
+		final GroupDto listSessionsByGroupReturn = mapper.map(listSessionsByGroup, GroupDto.class);
+		return listSessionsByGroupReturn.getSessions();
 	}
 
 }

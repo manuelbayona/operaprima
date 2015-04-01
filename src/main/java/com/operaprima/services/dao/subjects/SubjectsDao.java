@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.SubjectIntDto;
@@ -15,6 +17,8 @@ import com.operaprima.services.dao.repositories.entities.SubjectEntity;
  * @author Adesis
  *
  */
+@Repository
+@Primary
 public class SubjectsDao implements ISubjectsDao {
 
 	@Autowired
@@ -46,9 +50,13 @@ public class SubjectsDao implements ISubjectsDao {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<SubjectsIntDto> listSubjects() {
+	public SubjectsIntDto listSubjects() {
 		final List<SubjectEntity> listDB = (List<SubjectEntity>) subjectsRepository.findAll();
-		return (List<SubjectsIntDto>) dozerUtils.listMapper(listDB, SubjectIntDto.class);
+
+		final SubjectsIntDto subjectsIntDto = new SubjectsIntDto();
+		subjectsIntDto.setSubjects((List<SubjectIntDto>) dozerUtils.listMapper(listDB, SubjectIntDto.class));
+
+		return subjectsIntDto;
 	}
 
 	@Override

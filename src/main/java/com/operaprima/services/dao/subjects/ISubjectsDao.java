@@ -1,22 +1,35 @@
 package com.operaprima.services.dao.subjects;
 
-import java.util.List;
-
 import com.operaprima.services.business.dtos.SubjectIntDto;
 import com.operaprima.services.business.dtos.SubjectsIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 public interface ISubjectsDao {
 
-	SubjectIntDto addSubject(SubjectIntDto subjectIntDto);
+	/**
+	 * @param subject
+	 * @return
+	 */
+	SubjectIntDto addSubject(final SubjectIntDto subject);
 
-	SubjectIntDto updateSubject(SubjectIntDto subjectIntDto);
+	/**
+	 * @return
+	 */
+	SubjectsIntDto listSubjects();
 
-	List<SubjectsIntDto> listSubjects();
-
+	/**
+	 * @param id
+	 * @return
+	 */
 	SubjectIntDto getSubject(String id);
+
+	/**
+	 * @param subject
+	 * @return
+	 */
+	SubjectIntDto updateSubject(final SubjectIntDto subject);
 
 }

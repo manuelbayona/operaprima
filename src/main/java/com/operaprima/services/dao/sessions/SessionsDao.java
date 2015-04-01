@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.SessionIntDto;
@@ -12,9 +14,11 @@ import com.operaprima.services.dao.repositories.ISessionsRepository;
 import com.operaprima.services.dao.repositories.entities.SessionEntity;
 
 /**
- * @author diego.asensio
+ * @author Dartboard
  *
  */
+@Repository
+@Primary
 public class SessionsDao implements ISessionsDao {
 	@Autowired
 	private ISessionsRepository sessionsRepository;
@@ -62,4 +66,5 @@ public class SessionsDao implements ISessionsDao {
 		sessionsIntDto.setSessions((List<SessionIntDto>) dozerUtils.listMapper(listDB, SessionIntDto.class));
 		return sessionsIntDto;
 	}
+
 }

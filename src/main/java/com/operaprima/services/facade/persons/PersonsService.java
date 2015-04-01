@@ -39,7 +39,7 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonService#addPerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
 	@Override
@@ -53,7 +53,7 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonService#listPersons()
 	 */
 	@Override
@@ -66,7 +66,7 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonService#getPerson(java.lang.String)
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonService#updatePerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
 	@Override
@@ -93,13 +93,13 @@ public class PersonsService implements IPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.persons.IPersonsService#listGroupsByPerson(java.lang.String)
 	 */
 	@Override
 	@GET
 	@Path("/{id}/groups")
-	public GroupsDto listGroupsByPerson(final String id) {
+	public GroupsDto listGroupsByPerson(@PathParam("id") final String id) {
 		final GroupsIntDto listGroupsByPerson = iIntPersonsService.listGroupsByPerson(id);
 		return mapper.map(listGroupsByPerson, GroupsDto.class);
 	}

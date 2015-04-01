@@ -2,11 +2,16 @@ package com.operaprima.services.business.dtos;
 
 import java.util.List;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
- * @author Adesis
+ * @author adesis
  *
  */
-public class SubjectsIntDto {
+public class SubjectsIntDto implements Serializable {
+
+	private static final long serialVersionUID = 9013758775815336809L;
 
 	private List<SubjectIntDto> subjects;
 

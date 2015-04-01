@@ -4,18 +4,19 @@ import com.operaprima.services.business.dtos.SessionIntDto;
 import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author diego.asensio
- * 
+ * @author Dartboard
+ *
  */
 public interface ISessionsDao {
-	/**
-	 * @param session
-	 * @return
-	 */
-	SessionIntDto addSession(SessionIntDto session);
 
 	/**
-	 * @return
+	 * @param SessionDto
+	 * @return SessionDto
+	 */
+	SessionIntDto addSession(final SessionIntDto session);
+
+	/**
+	 * @return SessionsDto
 	 */
 	SessionsIntDto listSessions();
 
@@ -26,9 +27,8 @@ public interface ISessionsDao {
 	SessionIntDto getSession(String id);
 
 	/**
-	 * @param session
-	 * @return
+	 * @param SessionDto
+	 * @return SessionDto
 	 */
-	SessionIntDto updateSession(SessionIntDto session);
-
+	SessionIntDto updateSession(final SessionIntDto session);
 }

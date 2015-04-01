@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
@@ -18,6 +19,7 @@ import com.operaprima.services.dao.repositories.entities.UserEntity;
  *
  */
 @Repository
+@Primary
 public class UsersDao implements IUsersDao {
 
 	@Autowired
@@ -86,10 +88,9 @@ public class UsersDao implements IUsersDao {
 		return (UserIntDto) dozerUtils.classMapper(entity, UserIntDto.class);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.users.IUsersDao#listPersonsByUser(java.lang.String)
+	/**
+	 * @param id
+	 * @return
 	 */
 	@Override
 	public PersonsIntDto listPersonsByUser(final String id) {

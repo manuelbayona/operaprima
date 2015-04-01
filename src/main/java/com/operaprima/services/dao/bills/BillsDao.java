@@ -2,9 +2,12 @@ package com.operaprima.services.dao.bills;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.BillIntDto;
+import com.operaprima.services.business.dtos.BillsIntDto;
 import com.operaprima.services.dao.repositories.IBillsRepository;
 import com.operaprima.services.dao.repositories.entities.BillEntity;
 
@@ -12,6 +15,8 @@ import com.operaprima.services.dao.repositories.entities.BillEntity;
  * @author Adesis
  *
  */
+@Repository
+@Primary
 public class BillsDao implements IBillsDao {
 	@Autowired
 	private IBillsRepository billsRepository;
@@ -28,7 +33,8 @@ public class BillsDao implements IBillsDao {
 	}
 
 	@Override
-	public BillIntDto listBills() {
+	public BillsIntDto listBills() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

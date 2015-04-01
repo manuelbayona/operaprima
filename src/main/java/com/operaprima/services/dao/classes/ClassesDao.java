@@ -13,7 +13,7 @@ import com.operaprima.services.dao.repositories.IClassesRepository;
 import com.operaprima.services.dao.repositories.entities.ClassEntity;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository

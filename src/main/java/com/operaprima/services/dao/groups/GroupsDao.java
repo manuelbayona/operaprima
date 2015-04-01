@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
@@ -18,6 +19,7 @@ import com.operaprima.services.dao.repositories.entities.GroupEntity;
  *
  */
 @Repository
+@Primary
 public class GroupsDao implements IGroupsDao {
 
 	@Autowired
@@ -34,6 +36,9 @@ public class GroupsDao implements IGroupsDao {
 		return group;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public GroupIntDto getGroup(final String id) {
 		final GroupEntity groupEntity = groupsRepository.findOne(new ObjectId(id));
@@ -41,11 +46,13 @@ public class GroupsDao implements IGroupsDao {
 		return group;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
-	public GroupIntDto updateGroup(final GroupIntDto group) {
-		final GroupEntity entity = (GroupEntity) dozerUtils.classMapper(group, GroupEntity.class);
-		groupsRepository.save(entity);
-		return group;
+	public SessionsIntDto listSessionsByGroup(final String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/**
@@ -67,15 +74,14 @@ public class GroupsDao implements IGroupsDao {
 		return groupsIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#listSessionsByGroup(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
-	public SessionsIntDto listSessionsByGroup(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public GroupIntDto updateGroup(final GroupIntDto group) {
+		final GroupEntity entity = (GroupEntity) dozerUtils.classMapper(group, GroupEntity.class);
+		groupsRepository.save(entity);
+		return group;
 	}
 
 }

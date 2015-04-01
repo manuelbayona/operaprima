@@ -1,10 +1,11 @@
 package com.operaprima.services.dao.bills;
 
 import com.operaprima.services.business.dtos.BillIntDto;
+import com.operaprima.services.business.dtos.BillsIntDto;
 
 /**
- * @author diego.asensio
- * 
+ * @author Adesis
+ *
  */
 public interface IBillsDao {
 	/**
@@ -16,7 +17,7 @@ public interface IBillsDao {
 	/**
 	 * @return
 	 */
-	BillIntDto listBills();
+	BillsIntDto listBills();
 
 	/**
 	 * @param id

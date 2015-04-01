@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author diego.asensio
- * 
+ *
  */
 @XmlRootElement(name = "sessions")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -21,6 +21,9 @@ public class SessionsDto implements Serializable {
 	@XmlElement(name = "sessions")
 	private List<SessionDto> sessions;
 
+	/**
+	 * @return the sessions
+	 */
 	public List<SessionDto> getSessions() {
 		return sessions;
 	}

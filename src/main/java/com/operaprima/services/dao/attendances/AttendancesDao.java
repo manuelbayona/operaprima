@@ -2,9 +2,12 @@ package com.operaprima.services.dao.attendances;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.AttendanceIntDto;
+import com.operaprima.services.business.dtos.AttendancesIntDto;
 import com.operaprima.services.dao.repositories.IAttendancesRepository;
 import com.operaprima.services.dao.repositories.entities.AttendanceEntity;
 
@@ -12,6 +15,8 @@ import com.operaprima.services.dao.repositories.entities.AttendanceEntity;
  * @author Adesis
  *
  */
+@Repository
+@Primary
 public class AttendancesDao implements IAttendancesDao {
 
 	@Autowired
@@ -41,4 +46,11 @@ public class AttendancesDao implements IAttendancesDao {
 		attendancesRepository.save(entity);
 		return attendance;
 	}
+
+	@Override
+	public AttendancesIntDto listAttendances() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

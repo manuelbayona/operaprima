@@ -2,16 +2,17 @@ package com.operaprima.services.dao.boards;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.BoardIntDto;
+import com.operaprima.services.business.dtos.BoardsIntDto;
 import com.operaprima.services.dao.repositories.IBoardsRepository;
 import com.operaprima.services.dao.repositories.entities.BoardEntity;
 
-/**
- * @author Adesis
- *
- */
+@Repository
+@Primary
 public class BoardsDao implements IBoardsDao {
 	@Autowired
 	private IBoardsRepository boardsRepository;
@@ -41,4 +42,9 @@ public class BoardsDao implements IBoardsDao {
 		return board;
 	}
 
+	@Override
+	public BoardsIntDto listBoards() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
