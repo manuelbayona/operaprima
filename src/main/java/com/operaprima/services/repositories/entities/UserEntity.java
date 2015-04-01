@@ -1,6 +1,5 @@
 package com.operaprima.services.repositories.entities;
 
-import java.io.Serializable;
 import java.util.List;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
@@ -15,12 +14,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  */
 @Document(collection = "users")
-public class UserEntity implements Serializable {
+public class UserEntity {
 
-	private static final long serialVersionUID = -1391107291222308916L;
 	@Id
 	private ObjectId id;
-	private String username;
+	private String userName;
 	private String publicPassword;
 	private EmailEntity email;
 
@@ -43,18 +41,18 @@ public class UserEntity implements Serializable {
 	}
 
 	/**
-	 * @return the username
+	 * @return the userName
 	 */
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
 	/**
-	 * @param username
-	 *            the username to set
+	 * @param userName
+	 *            the userName to set
 	 */
-	public void setUsername(final String username) {
-		this.username = username;
+	public void setUserName(final String userName) {
+		this.userName = userName;
 	}
 
 	/**
@@ -108,14 +106,14 @@ public class UserEntity implements Serializable {
 			return false;
 		}
 		final UserEntity castOther = (UserEntity) other;
-		return new EqualsBuilder().append(id, castOther.id).append(username, castOther.username)
+		return new EqualsBuilder().append(id, castOther.id).append(userName, castOther.userName)
 				.append(publicPassword, castOther.publicPassword).append(profiles, castOther.profiles).append(email, castOther.email)
 				.isEquals();
 	}
 
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder().append(id).append(username).append(publicPassword).append(profiles).append(email).toHashCode();
+		return new HashCodeBuilder().append(id).append(userName).append(publicPassword).append(profiles).append(email).toHashCode();
 	}
 
 }

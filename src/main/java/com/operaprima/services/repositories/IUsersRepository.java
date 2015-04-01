@@ -11,6 +11,5 @@ import com.operaprima.services.repositories.entities.UserEntity;
  */
 public interface IUsersRepository extends CrudRepository<UserEntity, ObjectId> {
 
-	UserEntity getByUsername(String username);
-
+	UserEntity getByUserName(String username);
 }
