@@ -39,6 +39,14 @@ public class PersonEntity {
 	}
 
 	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(final ObjectId id) {
+		this.id = id;
+	}
+
+	/**
 	 * @return the name
 	 */
 	public String getName() {
