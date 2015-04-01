@@ -20,7 +20,7 @@ import com.operaprima.services.facade.dtos.SessionDto;
 import com.operaprima.services.facade.dtos.SessionsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("sessionsService")
@@ -37,7 +37,7 @@ public class SessionsService implements ISessionsService {
 
 	/*
 	 * Servicio de negocio encargado de dar de alta una nueva sesión (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.sessions.ISessionsService#addSessions(com.operaprima.services.facade.dtos.SessionDto)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class SessionsService implements ISessionsService {
 
 	/*
 	 * Servicio de negocio que consulta todas las sesiones (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.sessions.ISessionsService#listSessions()
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class SessionsService implements ISessionsService {
 
 	/*
 	 * Servicio de negocio que consulta una sesión (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.sessions.ISessionsService#getSessions(java.lang.String)
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class SessionsService implements ISessionsService {
 
 	/*
 	 * Servicio de negocio que actualiza una sesión (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.sessions.ISessionsService#updateSessions(com.operaprima.services.facade.dtos.SessionDto)
 	 */
 	@Override

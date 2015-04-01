@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class MockPostProcessor implements BeanPostProcessor, ApplicationContextAware {
@@ -19,7 +19,7 @@ public class MockPostProcessor implements BeanPostProcessor, ApplicationContextA
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.springframework.context.ApplicationContextAware#setApplicationContext(org.springframework.context.ApplicationContext)
 	 */
 	@Override
@@ -29,7 +29,7 @@ public class MockPostProcessor implements BeanPostProcessor, ApplicationContextA
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.springframework.beans.factory.config.BeanPostProcessor#postProcessAfterInitialization(java.lang.Object, java.lang.String)
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class MockPostProcessor implements BeanPostProcessor, ApplicationContextA
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.springframework.beans.factory.config.BeanPostProcessor#postProcessBeforeInitialization(java.lang.Object, java.lang.String)
 	 */
 	@Override

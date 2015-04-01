@@ -5,7 +5,7 @@ import java.io.Serializable;
 import com.operaprima.commons.utils.enums.ErrorEnum;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class ErrorDto implements Serializable {

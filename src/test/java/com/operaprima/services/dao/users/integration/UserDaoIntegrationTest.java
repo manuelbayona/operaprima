@@ -13,7 +13,7 @@ import com.operaprima.services.business.dtos.UsersIntDto;
 import com.operaprima.services.dao.users.IUsersDao;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)

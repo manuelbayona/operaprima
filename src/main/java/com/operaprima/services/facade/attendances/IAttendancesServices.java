@@ -4,7 +4,7 @@ import com.operaprima.services.facade.dtos.AttendanceDto;
 import com.operaprima.services.facade.dtos.AttendancesDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IAttendancesServices {

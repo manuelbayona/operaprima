@@ -20,7 +20,7 @@ import com.operaprima.services.facade.dtos.BoardDto;
 import com.operaprima.services.facade.dtos.BoardsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("boardsService")
@@ -37,7 +37,7 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.boards.IBoardsService#addBoard(com.operaprima.services.facade.dtos.BoardDto)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.boards.IBoardsService#listBoards()
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.boards.IBoardsService#getBoard(java.lang.String)
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.boards.IBoardsService#updateBoard(com.operaprima.services.facade.dtos.BoardDto)
 	 */
 	@Override

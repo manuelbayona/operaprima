@@ -3,7 +3,7 @@ package com.operaprima.services.business.dtos;
 import java.util.List;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class AttendancesIntDto {
@@ -18,9 +18,10 @@ public class AttendancesIntDto {
 	}
 
 	/**
-	 * @param attendances the attendances to set
+	 * @param attendances
+	 *            the attendances to set
 	 */
-	public void setAttendances(List<AttendanceIntDto> attendances) {
+	public void setAttendances(final List<AttendanceIntDto> attendances) {
 		this.attendances = attendances;
 	}
 

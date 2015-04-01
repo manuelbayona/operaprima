@@ -4,7 +4,7 @@ import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IIntGroupsServices {

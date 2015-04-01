@@ -4,7 +4,7 @@ import com.operaprima.services.business.dtos.ClassIntDto;
 import com.operaprima.services.business.dtos.ClassesIntDto;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 public interface IClassesDao {

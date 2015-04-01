@@ -4,7 +4,7 @@ import com.operaprima.services.facade.dtos.SubjectDto;
 import com.operaprima.services.facade.dtos.SubjectsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface ISubjectsService {

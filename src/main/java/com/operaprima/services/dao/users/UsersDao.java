@@ -15,7 +15,7 @@ import com.operaprima.services.repositories.IUsersRepository;
 import com.operaprima.services.repositories.entities.UserEntity;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 @Repository

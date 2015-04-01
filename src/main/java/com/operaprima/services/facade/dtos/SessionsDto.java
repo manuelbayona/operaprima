@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * @author diego.asensio
+ * @author Stormtroopers
  *
  */
 @XmlRootElement(name = "sessions")

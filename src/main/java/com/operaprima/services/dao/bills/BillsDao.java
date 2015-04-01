@@ -12,18 +12,22 @@ import com.operaprima.services.repositories.IBillsRepository;
 import com.operaprima.services.repositories.entities.BillEntity;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 @Repository
 @Primary
 public class BillsDao implements IBillsDao {
+
 	@Autowired
 	private IBillsRepository billsRepository;
 
 	@Autowired
 	private IDozerUtils dozerUtils;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BillIntDto addBill(final BillIntDto bill) {
 		BillEntity entity = (BillEntity) dozerUtils.classMapper(bill, BillEntity.class);
@@ -32,12 +36,18 @@ public class BillsDao implements IBillsDao {
 		return bill;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BillsIntDto listBills() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BillIntDto getBill(final String id) {
 		final BillEntity billEntity = billsRepository.findOne(new ObjectId(id));
@@ -45,6 +55,9 @@ public class BillsDao implements IBillsDao {
 		return bill;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BillIntDto updateBill(final BillIntDto bill) {
 		final BillEntity entity = (BillEntity) dozerUtils.classMapper(bill, BillEntity.class);

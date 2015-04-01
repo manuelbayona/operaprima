@@ -16,7 +16,7 @@ import com.operaprima.commons.service.facade.dtos.ScheduleDto;
 import com.operaprima.commons.utils.adapter.DateTimeAdapter;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @XmlRootElement(name = "group")
@@ -253,9 +253,10 @@ public class GroupDto implements Serializable {
 	}
 
 	/**
-	 * @param sclass the sclass to set
+	 * @param sclass
+	 *            the sclass to set
 	 */
-	public void setSclass(ClassDto sclass) {
+	public void setSclass(final ClassDto sclass) {
 		this.sclass = sclass;
 	}
 

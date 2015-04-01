@@ -9,7 +9,7 @@ import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.dao.groups.IGroupsDao;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service
@@ -21,7 +21,7 @@ public class IntGroupsService implements IIntGroupsServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#addGroups(com.operaprima.services.business.dtos.GroupIntDto)
 	 */
 	@Override
@@ -31,7 +31,7 @@ public class IntGroupsService implements IIntGroupsServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#listGroups()
 	 */
 	@Override
@@ -41,7 +41,7 @@ public class IntGroupsService implements IIntGroupsServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#getGroups(java.lang.String)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class IntGroupsService implements IIntGroupsServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#updateGroups(com.operaprima.services.business.dtos.GroupIntDto)
 	 */
 	@Override
@@ -70,7 +70,7 @@ public class IntGroupsService implements IIntGroupsServices {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#listSessionsByGroup(java.lang.String)
 	 */
 

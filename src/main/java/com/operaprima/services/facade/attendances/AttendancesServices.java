@@ -20,7 +20,7 @@ import com.operaprima.services.facade.dtos.AttendanceDto;
 import com.operaprima.services.facade.dtos.AttendancesDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("attendancesServices")
@@ -37,7 +37,7 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#addAttendance(com.operaprima.services.facade.dtos.AttendanceDto)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#listAttendances()
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#getAttendance(java.lang.String)
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.operaprima.services.facade.attendances.IAttendancesServices#updateAttendance(com.operaprima.services.facade.dtos.AttendanceDto)
 	 */

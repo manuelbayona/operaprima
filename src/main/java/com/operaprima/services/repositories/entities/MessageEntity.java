@@ -7,8 +7,8 @@ import org.joda.time.DateTime;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 /**
- * @author Adesis
- * 
+ * @author Stormtroopers
+ *
  */
 public class MessageEntity {
 

@@ -14,7 +14,7 @@ import com.operaprima.services.repositories.IClassesRepository;
 import com.operaprima.services.repositories.entities.ClassEntity;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 @Repository
@@ -27,6 +27,9 @@ public class ClassesDao implements IClassesDao {
 	@Autowired
 	private IDozerUtils dozerUtils;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public ClassIntDto addClass(final ClassIntDto sclass) {
 		ClassEntity entity = (ClassEntity) dozerUtils.classMapper(sclass, ClassEntity.class);
@@ -35,6 +38,9 @@ public class ClassesDao implements IClassesDao {
 		return sclass;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public ClassIntDto getClass(final String id) {
 		final ClassEntity classEntity = classesRepository.findOne(new ObjectId(id));
@@ -42,6 +48,9 @@ public class ClassesDao implements IClassesDao {
 		return sclass;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public ClassIntDto updateClass(final ClassIntDto sclass) {
 		final ClassEntity entity = (ClassEntity) dozerUtils.classMapper(sclass, ClassEntity.class);
@@ -49,6 +58,9 @@ public class ClassesDao implements IClassesDao {
 		return sclass;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public ClassesIntDto listClasses() {

@@ -10,7 +10,7 @@ import com.operaprima.services.business.dtos.BillIntDto;
 import com.operaprima.services.business.dtos.BillsIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Repository

@@ -5,8 +5,8 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 /**
- * @author Adesis
- * 
+ * @author Stormtroopers
+ *
  */
 public class PriceEntity {
 

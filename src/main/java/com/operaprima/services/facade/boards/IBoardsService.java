@@ -4,7 +4,7 @@ import com.operaprima.services.facade.dtos.BoardDto;
 import com.operaprima.services.facade.dtos.BoardsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IBoardsService {

@@ -11,6 +11,10 @@ import org.springframework.util.ReflectionUtils;
 
 import com.operaprima.commons.dao.config.SpringMongoConfig;
 
+/**
+ * @author Stormtroopers
+ *
+ */
 @SuppressWarnings("rawtypes")
 public class CascadingMongoEventListener extends AbstractMongoEventListener {
 

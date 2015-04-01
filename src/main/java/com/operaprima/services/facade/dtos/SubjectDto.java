@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @XmlRootElement(name = "subject")
@@ -83,9 +83,10 @@ public class SubjectDto implements Serializable {
 	}
 
 	/**
-	 * @param active the active to set
+	 * @param active
+	 *            the active to set
 	 */
-	public void setActive(Boolean active) {
+	public void setActive(final Boolean active) {
 		this.active = active;
 	}
 

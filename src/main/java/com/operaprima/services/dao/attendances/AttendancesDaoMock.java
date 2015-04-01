@@ -10,7 +10,7 @@ import com.operaprima.services.business.dtos.AttendanceIntDto;
 import com.operaprima.services.business.dtos.AttendancesIntDto;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 @Repository

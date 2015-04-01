@@ -7,11 +7,11 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.joda.time.LocalTime;
 
-import com.operaprima.commons.business.dtos.enums.DayOfWeekIntEnum;
+import com.operaprima.commons.service.business.dtos.enums.DayOfWeekIntEnum;
 
 /**
- * @author Adesis
- * 
+ * @author Stormtroopers
+ *
  */
 public class ScheduleEntity {
 	private DayOfWeekIntEnum day;
