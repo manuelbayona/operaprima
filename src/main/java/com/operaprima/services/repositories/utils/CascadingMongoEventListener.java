@@ -1,4 +1,4 @@
-package com.operaprima.services.dao.repositories.utils;
+package com.operaprima.services.repositories.utils;
 
 import java.lang.reflect.Field;
 

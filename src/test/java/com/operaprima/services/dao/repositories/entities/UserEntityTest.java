@@ -14,7 +14,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.operaprima.commons.dao.config.SpringMongoConfig;
-import com.operaprima.services.dao.repositories.IUsersRepository;
+import com.operaprima.services.repositories.IUsersRepository;
+import com.operaprima.services.repositories.entities.UserEntity;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml" })

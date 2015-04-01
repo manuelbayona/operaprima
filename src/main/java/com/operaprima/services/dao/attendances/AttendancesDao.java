@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.AttendanceIntDto;
 import com.operaprima.services.business.dtos.AttendancesIntDto;
-import com.operaprima.services.dao.repositories.IAttendancesRepository;
-import com.operaprima.services.dao.repositories.entities.AttendanceEntity;
+import com.operaprima.services.repositories.IAttendancesRepository;
+import com.operaprima.services.repositories.entities.AttendanceEntity;
 
 /**
  * @author Adesis

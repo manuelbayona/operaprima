@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.operaprima.services.dao.repositories.entities.PersonEntity;
-import com.operaprima.services.dao.repositories.entities.PhoneEntity;
-import com.operaprima.services.dao.repositories.entities.UserEntity;
+import com.operaprima.services.repositories.IPersonsRepository;
+import com.operaprima.services.repositories.IUsersRepository;
+import com.operaprima.services.repositories.entities.PersonEntity;
+import com.operaprima.services.repositories.entities.PhoneEntity;
+import com.operaprima.services.repositories.entities.UserEntity;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml" })

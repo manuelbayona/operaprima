@@ -11,8 +11,8 @@ import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
-import com.operaprima.services.dao.repositories.IPersonsRepository;
-import com.operaprima.services.dao.repositories.entities.PersonEntity;
+import com.operaprima.services.repositories.IPersonsRepository;
+import com.operaprima.services.repositories.entities.PersonEntity;
 
 /**
  * @author Adesis

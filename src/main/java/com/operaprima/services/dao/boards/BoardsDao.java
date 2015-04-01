@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.BoardIntDto;
 import com.operaprima.services.business.dtos.BoardsIntDto;
-import com.operaprima.services.dao.repositories.IBoardsRepository;
-import com.operaprima.services.dao.repositories.entities.BoardEntity;
+import com.operaprima.services.repositories.IBoardsRepository;
+import com.operaprima.services.repositories.entities.BoardEntity;
 
 @Repository
 @Primary

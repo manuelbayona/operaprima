@@ -1,4 +1,4 @@
-package com.operaprima.services.dao.repositories.entities;
+package com.operaprima.services.repositories.entities;
 
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;

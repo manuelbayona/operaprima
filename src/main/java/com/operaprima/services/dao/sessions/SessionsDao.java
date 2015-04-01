@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.SessionIntDto;
 import com.operaprima.services.business.dtos.SessionsIntDto;
-import com.operaprima.services.dao.repositories.ISessionsRepository;
-import com.operaprima.services.dao.repositories.entities.SessionEntity;
+import com.operaprima.services.repositories.ISessionsRepository;
+import com.operaprima.services.repositories.entities.SessionEntity;
 
 /**
  * @author Dartboard

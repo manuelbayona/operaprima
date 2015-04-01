@@ -1,4 +1,4 @@
-package com.operaprima.services.dao.repositories.entities;
+package com.operaprima.services.repositories.entities;
 
 import java.io.Serializable;
 import java.util.List;

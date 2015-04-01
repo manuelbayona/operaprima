@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.SubjectIntDto;
 import com.operaprima.services.business.dtos.SubjectsIntDto;
-import com.operaprima.services.dao.repositories.ISubjectsRepository;
-import com.operaprima.services.dao.repositories.entities.SubjectEntity;
+import com.operaprima.services.repositories.ISubjectsRepository;
+import com.operaprima.services.repositories.entities.SubjectEntity;
 
 /**
  * @author Adesis

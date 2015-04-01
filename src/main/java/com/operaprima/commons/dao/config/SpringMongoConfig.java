@@ -21,7 +21,7 @@ import com.mongodb.ServerAddress;
  *
  */
 @Configuration
-@EnableMongoRepositories("com.operaprima.services.dao.repositories")
+@EnableMongoRepositories("com.operaprima.services.repositories")
 public class SpringMongoConfig extends AbstractMongoConfiguration {
 
 	@Value("${mongo.db.name}")
