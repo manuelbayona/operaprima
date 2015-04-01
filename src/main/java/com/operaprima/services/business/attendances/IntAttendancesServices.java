@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.mock.Mockeable;
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
 import com.operaprima.services.dao.attendances.IAttendancesDao;
 
 /**
@@ -21,7 +20,7 @@ public class IntAttendancesServices implements IIntAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.operaprima.services.business.attendances.IIntAttendancesServices#addAttendance(com.operaprima.services.business.dtos.AttendanceIntDto
 	 * )
@@ -33,17 +32,7 @@ public class IntAttendancesServices implements IIntAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.business.attendances.IIntAttendancesServices#listAttendances()
-	 */
-	@Override
-	public AttendancesIntDto listAttendances() {
-		return iAttendancesDao.listAttendances();
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.attendances.IIntAttendancesServices#getAttendance(java.lang.String)
 	 */
 	@Override
@@ -53,7 +42,7 @@ public class IntAttendancesServices implements IIntAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.attendances.IIntAttendancesServices#updateAttendance(com.operaprima.services.business.dtos.
 	 * AttendanceIntDto)
 	 */

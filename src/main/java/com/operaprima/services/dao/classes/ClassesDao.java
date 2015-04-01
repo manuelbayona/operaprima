@@ -59,9 +59,8 @@ public class ClassesDao implements IClassesDao {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @return
 	 */
-	@Override
 	@SuppressWarnings("unchecked")
 	public ClassesIntDto listClasses() {
 		final List<ClassEntity> listDB = (List<ClassEntity>) classesRepository.findAll();

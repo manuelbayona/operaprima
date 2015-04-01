@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.BoardIntDto;
-import com.operaprima.services.business.dtos.BoardsIntDto;
 import com.operaprima.services.repositories.IBoardsRepository;
 import com.operaprima.services.repositories.entities.BoardEntity;
 
@@ -55,12 +54,4 @@ public class BoardsDao implements IBoardsDao {
 		return board;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public BoardsIntDto listBoards() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

@@ -15,9 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.boards.IIntBoardsService;
 import com.operaprima.services.business.dtos.BoardIntDto;
-import com.operaprima.services.business.dtos.BoardsIntDto;
 import com.operaprima.services.facade.dtos.BoardDto;
-import com.operaprima.services.facade.dtos.BoardsDto;
 
 /**
  * @author Stormtroopers
@@ -37,7 +35,7 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.boards.IBoardsService#addBoard(com.operaprima.services.facade.dtos.BoardDto)
 	 */
 	@Override
@@ -51,20 +49,7 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.facade.boards.IBoardsService#listBoards()
-	 */
-	@Override
-	@GET
-	@Path("/")
-	public BoardsDto listBoards() {
-		final BoardsIntDto listBoards = iIntBoardsService.listBoards();
-		return mapper.map(listBoards, BoardsDto.class);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.boards.IBoardsService#getBoard(java.lang.String)
 	 */
 	@Override
@@ -77,7 +62,7 @@ public class BoardsService implements IBoardsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.boards.IBoardsService#updateBoard(com.operaprima.services.facade.dtos.BoardDto)
 	 */
 	@Override

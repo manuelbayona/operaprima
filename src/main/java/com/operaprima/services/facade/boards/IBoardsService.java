@@ -1,7 +1,6 @@
 package com.operaprima.services.facade.boards;
 
 import com.operaprima.services.facade.dtos.BoardDto;
-import com.operaprima.services.facade.dtos.BoardsDto;
 
 /**
  * @author Stormtroopers
@@ -16,13 +15,6 @@ public interface IBoardsService {
 	 * @return BoardDto
 	 */
 	BoardDto addBoard(final BoardDto board);
-
-	/**
-	 * Servicio de negocio que consulta todos los tablones
-	 *
-	 * @return BoardsDto
-	 */
-	BoardsDto listBoards();
 
 	/**
 	 * Servicio de negocio que consulta un tablón

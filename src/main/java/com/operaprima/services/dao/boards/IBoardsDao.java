@@ -1,7 +1,6 @@
 package com.operaprima.services.dao.boards;
 
 import com.operaprima.services.business.dtos.BoardIntDto;
-import com.operaprima.services.business.dtos.BoardsIntDto;
 
 /**
  * @author Dartboard
@@ -15,12 +14,6 @@ public interface IBoardsDao {
 	 * @return BoardDto
 	 */
 	BoardIntDto addBoard(final BoardIntDto board);
-
-	/**
-	 *
-	 * @return BoardsDto
-	 */
-	BoardsIntDto listBoards();
 
 	/**
 	 *

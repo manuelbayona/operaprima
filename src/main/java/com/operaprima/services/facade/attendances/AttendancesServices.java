@@ -15,9 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.attendances.IIntAttendancesServices;
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
 import com.operaprima.services.facade.dtos.AttendanceDto;
-import com.operaprima.services.facade.dtos.AttendancesDto;
 
 /**
  * @author Stormtroopers
@@ -47,19 +45,6 @@ public class AttendancesServices implements IAttendancesServices {
 		final AttendanceIntDto map = mapper.map(attendanceDto, AttendanceIntDto.class);
 		final AttendanceIntDto addAttendance = intAttendancesServices.addAttendance(map);
 		return mapper.map(addAttendance, AttendanceDto.class);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#listAttendances()
-	 */
-	@Override
-	@GET
-	@Path("/")
-	public AttendancesDto listAttendances() {
-		final AttendancesIntDto listAttendances = intAttendancesServices.listAttendances();
-		return mapper.map(listAttendances, AttendancesDto.class);
 	}
 
 	/*

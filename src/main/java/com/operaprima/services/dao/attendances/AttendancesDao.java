@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
 import com.operaprima.services.repositories.IAttendancesRepository;
 import com.operaprima.services.repositories.entities.AttendanceEntity;
 
@@ -54,15 +53,6 @@ public class AttendancesDao implements IAttendancesDao {
 		final AttendanceEntity entity = (AttendanceEntity) dozerUtils.classMapper(attendance, AttendanceEntity.class);
 		attendancesRepository.save(entity);
 		return attendance;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public AttendancesIntDto listAttendances() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

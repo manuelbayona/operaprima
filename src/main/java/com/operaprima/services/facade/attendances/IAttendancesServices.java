@@ -1,7 +1,6 @@
 package com.operaprima.services.facade.attendances;
 
 import com.operaprima.services.facade.dtos.AttendanceDto;
-import com.operaprima.services.facade.dtos.AttendancesDto;
 
 /**
  * @author Stormtroopers
@@ -16,13 +15,6 @@ public interface IAttendancesServices {
 	 * @return AttendanceDto
 	 */
 	AttendanceDto addAttendance(final AttendanceDto attendanceDto);
-
-	/**
-	 * Servicio de negocio que consulta todas las asistencias
-	 *
-	 * @return AttendancesDto
-	 */
-	AttendancesDto listAttendances();
 
 	/**
 	 * Servicio de negocio que consulta una asistencia

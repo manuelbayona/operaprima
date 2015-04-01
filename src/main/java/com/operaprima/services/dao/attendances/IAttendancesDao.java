@@ -1,7 +1,6 @@
 package com.operaprima.services.dao.attendances;
 
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
 
 /**
  * @author Stormtroopers
@@ -25,10 +24,5 @@ public interface IAttendancesDao {
 	 * @return
 	 */
 	AttendanceIntDto updateAttendance(AttendanceIntDto attendance);
-
-	/**
-	 * @return
-	 */
-	AttendancesIntDto listAttendances();
 
 }

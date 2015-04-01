@@ -1,7 +1,6 @@
 package com.operaprima.services.business.boards;
 
 import com.operaprima.services.business.dtos.BoardIntDto;
-import com.operaprima.services.business.dtos.BoardsIntDto;
 
 /**
  * @author Stormtroopers
@@ -14,12 +13,6 @@ public interface IIntBoardsService {
 	 * @return BoardDto
 	 */
 	BoardIntDto addBoard(final BoardIntDto board);
-
-	/**
-	 *
-	 * @return BoardsDto
-	 */
-	BoardsIntDto listBoards();
 
 	/**
 	 *
