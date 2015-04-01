@@ -10,6 +10,5 @@
  
 	<!-- Aspect -->
 	<bean id="logAspect" class="com.operaprima.commons.utils.aspects.LoggingAspect" />
- 	<bean id="exceptionAspect" class="com.operaprima.commons.utils.aspects.ExceptionAspect" />
  
 </beans>

@@ -2,6 +2,7 @@ package com.operaprima.services.dao.users;
 
 import java.util.List;
 
+import org.apache.commons.lang.NotImplementedException;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -16,7 +17,7 @@ import com.operaprima.services.repositories.entities.UserEntity;
 
 /**
  * @author Dartboard
- *
+ * 
  */
 @Repository
 @Primary
@@ -29,7 +30,7 @@ public class UsersDao implements IUsersDao {
 	private IDozerUtils dozerUtils;
 
 	/**
-	 *
+	 * 
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -45,7 +46,7 @@ public class UsersDao implements IUsersDao {
 	}
 
 	/**
-	 *
+	 * 
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -90,7 +91,8 @@ public class UsersDao implements IUsersDao {
 	@Override
 	public PersonsIntDto listPersonsByUser(final String id) {
 		// TODO Auto-generated method stub
-		return null;
+		throw new NotImplementedException("no implementado");
+
 	}
 
 }
