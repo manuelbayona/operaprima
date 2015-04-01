@@ -10,17 +10,15 @@ import com.operaprima.services.business.dtos.AttendanceIntDto;
 import com.operaprima.services.business.dtos.AttendancesIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository
 @Mock
 public class AttendancesDaoMock implements IAttendancesDao {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.attendances.IAttendancesDao#addAttendance(com.operaprima.services.business.dtos.AttendanceIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public AttendanceIntDto addAttendance(final AttendanceIntDto attendanceIntDto) {
@@ -28,10 +26,8 @@ public class AttendancesDaoMock implements IAttendancesDao {
 		return attendanceIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.attendances.IAttendancesDao#listAttendances()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public AttendancesIntDto listAttendances() {
@@ -42,20 +38,16 @@ public class AttendancesDaoMock implements IAttendancesDao {
 		return attendancesIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.attendances.IAttendancesDao#getAttendance(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public AttendanceIntDto getAttendance(final String id) {
 		return new AttendanceIntDto();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.attendances.IAttendancesDao#updateAttendance(com.operaprima.services.business.dtos.AttendanceIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public AttendanceIntDto updateAttendance(final AttendanceIntDto attendanceIntDto) {

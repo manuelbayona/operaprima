@@ -10,17 +10,15 @@ import com.operaprima.services.business.dtos.SubjectIntDto;
 import com.operaprima.services.business.dtos.SubjectsIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository
 @Mock
 public class SubjectsDaoMock implements ISubjectsDao {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.subjects.ISubjectsDao#addSubject(com.operaprima.services.business.dtos.SubjectIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public SubjectIntDto addSubject(final SubjectIntDto subject) {
@@ -28,10 +26,8 @@ public class SubjectsDaoMock implements ISubjectsDao {
 		return subject;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.subjects.ISubjectsDao#listSubjects()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public SubjectsIntDto listSubjects() {
@@ -42,20 +38,16 @@ public class SubjectsDaoMock implements ISubjectsDao {
 		return subjectsIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.subjects.ISubjectsDao#getSubject(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public SubjectIntDto getSubject(final String id) {
 		return new SubjectIntDto();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.subjects.ISubjectsDao#updateSubject(com.operaprima.services.business.dtos.SubjectIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public SubjectIntDto updateSubject(final SubjectIntDto subject) {

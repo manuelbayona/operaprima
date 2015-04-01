@@ -26,6 +26,9 @@ public class SessionsDao implements ISessionsDao {
 	@Autowired
 	private IDozerUtils dozerUtils;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SessionIntDto addSession(final SessionIntDto session) {
 		SessionEntity entity = (SessionEntity) dozerUtils.classMapper(session, SessionEntity.class);
@@ -34,6 +37,9 @@ public class SessionsDao implements ISessionsDao {
 		return session;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SessionIntDto getSession(final String id) {
 		final SessionEntity sessionEntity = sessionsRepository.findOne(new ObjectId(id));
@@ -41,6 +47,9 @@ public class SessionsDao implements ISessionsDao {
 		return session;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SessionIntDto updateSession(final SessionIntDto session) {
 		final SessionEntity entity = (SessionEntity) dozerUtils.classMapper(session, SessionEntity.class);

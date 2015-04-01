@@ -12,7 +12,7 @@ import com.operaprima.services.repositories.IAttendancesRepository;
 import com.operaprima.services.repositories.entities.AttendanceEntity;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository

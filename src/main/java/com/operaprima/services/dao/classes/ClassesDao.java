@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
@@ -17,6 +18,7 @@ import com.operaprima.services.repositories.entities.ClassEntity;
  *
  */
 @Repository
+@Primary
 public class ClassesDao implements IClassesDao {
 
 	@Autowired

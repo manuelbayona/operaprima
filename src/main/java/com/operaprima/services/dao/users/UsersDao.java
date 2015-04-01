@@ -15,7 +15,7 @@ import com.operaprima.services.repositories.IUsersRepository;
 import com.operaprima.services.repositories.entities.UserEntity;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository
@@ -34,17 +34,12 @@ public class UsersDao implements IUsersDao {
 	 */
 	@Override
 	public UserIntDto addUser(final UserIntDto user) {
-		// Mapeo userDto a entity
 		UserEntity entity = (UserEntity) dozerUtils.classMapper(user, UserEntity.class);
-
-		// Salvar en BD
 		entity = userRepository.save(entity);
 
 		if (entity.getId() == null) {
 			return null;
 		}
-
-		// seteamos el id en la respuesta
 		user.setId(entity.getId().toString());
 		return user;
 	}
@@ -64,7 +59,7 @@ public class UsersDao implements IUsersDao {
 		}
 
 		final UsersIntDto usersIntDto = new UsersIntDto();
-		usersIntDto.setUsers((List<UserIntDto>) dozerUtils.classMapper(listDB, UserIntDto.class));
+		usersIntDto.setUsers((List<UserIntDto>) dozerUtils.listMapper(listDB, UserIntDto.class));
 		return usersIntDto;
 	}
 
