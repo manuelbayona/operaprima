@@ -59,7 +59,7 @@ public class UsersDao implements IUsersDao {
 		}
 
 		final UsersIntDto usersIntDto = new UsersIntDto();
-		usersIntDto.setUsers((List<UserIntDto>) dozerUtils.classMapper(listDB, UserIntDto.class));
+		usersIntDto.setUsers((List<UserIntDto>) dozerUtils.listMapper(listDB, UserIntDto.class));
 		return usersIntDto;
 	}
 
