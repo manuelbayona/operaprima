@@ -4,7 +4,7 @@ import com.operaprima.services.business.dtos.AttendanceIntDto;
 import com.operaprima.services.business.dtos.AttendancesIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 public interface IAttendancesDao {

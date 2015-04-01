@@ -4,10 +4,11 @@ import com.operaprima.services.business.dtos.BillIntDto;
 import com.operaprima.services.business.dtos.BillsIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 public interface IBillsDao {
+
 	/**
 	 * @param bill
 	 * @return

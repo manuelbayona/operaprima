@@ -10,17 +10,15 @@ import com.operaprima.services.business.dtos.ClassIntDto;
 import com.operaprima.services.business.dtos.ClassesIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository
 @Mock
 public class ClassesDaoMock implements IClassesDao {
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.classes.IClassDao#addClass(com.operaprima.services.business.dtos.ClassIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public ClassIntDto addClass(final ClassIntDto classdto) {
@@ -28,10 +26,8 @@ public class ClassesDaoMock implements IClassesDao {
 		return classdto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.classes.IClassDao#listClasses()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public ClassesIntDto listClasses() {
@@ -42,20 +38,16 @@ public class ClassesDaoMock implements IClassesDao {
 		return classesIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.classes.IClassDao#getClass(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public ClassIntDto getClass(final String id) {
 		return new ClassIntDto();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.classes.IClassDao#updateClass(com.operaprima.services.business.dtos.ClassIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public ClassIntDto updateClass(final ClassIntDto classdto) {

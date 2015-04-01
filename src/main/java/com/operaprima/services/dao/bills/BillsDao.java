@@ -12,7 +12,7 @@ import com.operaprima.services.repositories.IBillsRepository;
 import com.operaprima.services.repositories.entities.BillEntity;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository

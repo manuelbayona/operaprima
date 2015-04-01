@@ -5,7 +5,7 @@ import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 public interface IPersonsDao {

@@ -12,17 +12,15 @@ import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository
 @Mock
 public class PersonsDaoMock implements IPersonsDao {
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#addPerson(com.operaprima.services.business.dtos.PersonIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto addPerson(final PersonIntDto person) {
@@ -30,10 +28,8 @@ public class PersonsDaoMock implements IPersonsDao {
 		return person;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#listPersons()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonsIntDto listPersons() {
@@ -48,26 +44,25 @@ public class PersonsDaoMock implements IPersonsDao {
 		return personsDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#getPerson(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto getPerson(final String id) {
 		return new PersonIntDto();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#updatePerson(com.operaprima.services.business.dtos.PersonIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto updatePerson(final PersonIntDto person) {
 		return person;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public GroupsIntDto listGroupsByPerson(final String id) {
 		// TODO Auto-generated method stub

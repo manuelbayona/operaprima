@@ -15,7 +15,7 @@ import com.operaprima.services.repositories.IGroupsRepository;
 import com.operaprima.services.repositories.entities.GroupEntity;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository

@@ -11,17 +11,15 @@ import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository
 @Mock
 public class UsersDaoMock implements IUsersDao {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.users.IUsersDao#addUser(com.operaprima.services.business.dtos.UserIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UserIntDto addUser(final UserIntDto user) {
@@ -29,10 +27,8 @@ public class UsersDaoMock implements IUsersDao {
 		return user;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.users.IUsersDao#listUsers()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UsersIntDto listUsers() {
@@ -43,30 +39,24 @@ public class UsersDaoMock implements IUsersDao {
 		return usersIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.users.IUsersDao#getUser(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UserIntDto getUser(final String id) {
 		return new UserIntDto();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.users.IUsersDao#updateUser(com.operaprima.services.business.dtos.UserIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UserIntDto updateUser(final UserIntDto user) {
 		return user;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.users.IUsersDao#listPersonsByUser(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonsIntDto listPersonsByUser(final String id) {

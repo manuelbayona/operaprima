@@ -14,7 +14,7 @@ import com.operaprima.services.repositories.ISubjectsRepository;
 import com.operaprima.services.repositories.entities.SubjectEntity;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository
@@ -27,6 +27,9 @@ public class SubjectsDao implements ISubjectsDao {
 	@Autowired
 	private IDozerUtils dozerUtils;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SubjectIntDto addSubject(final SubjectIntDto subjectIntDto) {
 
@@ -41,6 +44,9 @@ public class SubjectsDao implements ISubjectsDao {
 		return subjectIntDto;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SubjectIntDto updateSubject(final SubjectIntDto subjectIntDto) {
 		final SubjectEntity entity = (SubjectEntity) dozerUtils.classMapper(subjectIntDto, SubjectEntity.class);
@@ -48,6 +54,9 @@ public class SubjectsDao implements ISubjectsDao {
 		return subjectIntDto;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public SubjectsIntDto listSubjects() {
@@ -59,6 +68,9 @@ public class SubjectsDao implements ISubjectsDao {
 		return subjectsIntDto;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SubjectIntDto getSubject(final String id) {
 		final SubjectEntity entity = subjectsRepository.findOne(new ObjectId(id));

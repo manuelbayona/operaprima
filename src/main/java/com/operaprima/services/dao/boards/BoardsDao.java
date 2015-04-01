@@ -11,6 +11,10 @@ import com.operaprima.services.business.dtos.BoardsIntDto;
 import com.operaprima.services.repositories.IBoardsRepository;
 import com.operaprima.services.repositories.entities.BoardEntity;
 
+/**
+ * @author Dartboard
+ *
+ */
 @Repository
 @Primary
 public class BoardsDao implements IBoardsDao {

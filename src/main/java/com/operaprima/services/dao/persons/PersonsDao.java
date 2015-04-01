@@ -15,7 +15,7 @@ import com.operaprima.services.repositories.IPersonsRepository;
 import com.operaprima.services.repositories.entities.PersonEntity;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 @Repository
@@ -28,10 +28,8 @@ public class PersonsDao implements IPersonsDao {
 	@Autowired
 	private IDozerUtils dozerUtils;
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#addPerson(com.operaprima.services.business.dtos.PersonIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto addPerson(final PersonIntDto person) {
@@ -41,10 +39,8 @@ public class PersonsDao implements IPersonsDao {
 		return person;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#listPersons()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	@SuppressWarnings("unchecked")
@@ -60,10 +56,8 @@ public class PersonsDao implements IPersonsDao {
 		return personsIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#getPerson(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto getPerson(final String id) {
@@ -72,10 +66,8 @@ public class PersonsDao implements IPersonsDao {
 		return person;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#updatePerson(com.operaprima.services.business.dtos.PersonIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto updatePerson(final PersonIntDto person) {
@@ -85,6 +77,9 @@ public class PersonsDao implements IPersonsDao {
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public GroupsIntDto listGroupsByPerson(final String id) {
 		// TODO Auto-generated method stub

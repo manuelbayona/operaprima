@@ -4,7 +4,7 @@ import com.operaprima.services.business.dtos.BoardIntDto;
 import com.operaprima.services.business.dtos.BoardsIntDto;
 
 /**
- * @author Adesis
+ * @author Dartboard
  *
  */
 public interface IBoardsDao {
