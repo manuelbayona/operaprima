@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
 import org.springframework.util.ReflectionUtils;
 
-import com.operaprima.services.dao.config.SpringMongoConfig;
+import com.operaprima.commons.dao.config.SpringMongoConfig;
 
 @SuppressWarnings("rawtypes")
 public class CascadingMongoEventListener extends AbstractMongoEventListener {

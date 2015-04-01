@@ -1,4 +1,4 @@
-package com.operaprima.services.dao.config;
+package com.operaprima.commons.dao.config;
 
 import java.util.Arrays;
 

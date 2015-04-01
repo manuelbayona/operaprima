@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.operaprima.services.dao.config.SpringMongoConfig;
+import com.operaprima.commons.dao.config.SpringMongoConfig;
 import com.operaprima.services.dao.repositories.IUsersRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
