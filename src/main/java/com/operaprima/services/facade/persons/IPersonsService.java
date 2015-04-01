@@ -1,8 +1,11 @@
 package com.operaprima.services.facade.persons;
 
+import com.operaprima.services.facade.dtos.AttendancesDto;
+import com.operaprima.services.facade.dtos.BillsDto;
 import com.operaprima.services.facade.dtos.GroupsDto;
 import com.operaprima.services.facade.dtos.PersonDto;
 import com.operaprima.services.facade.dtos.PersonsDto;
+import com.operaprima.services.facade.dtos.SessionsDto;
 
 /**
  * @author Adesis
@@ -42,11 +45,35 @@ public interface IPersonsService {
 	PersonDto updatePerson(final PersonDto person);
 
 	/**
+	 * Servicio de negocio que obtiene las sesiones de una persona
+	 *
+	 * @param String
+	 * @return SessionsDto
+	 */
+	SessionsDto listSessionsByPerson(final String id);
+
+	/**
+	 * Servicio de negocio que obtiene los recibos de una persona
+	 *
+	 * @param id
+	 * @return
+	 */
+	BillsDto listBillsByPerson(final String id);
+
+	/**
 	 * Servicio de negocio que devuelve los grupos a los que pertenece una persona
 	 *
 	 * @param id
 	 * @return GroupsDto
 	 */
 	GroupsDto listGroupsByPerson(final String id);
+
+	/**
+	 * Servicio de negocio que obtiene las asistencias de una persona
+	 *
+	 * @param String
+	 * @return AttendancesDto
+	 */
+	AttendancesDto listAttendancesByPerson(final String id);
 
 }

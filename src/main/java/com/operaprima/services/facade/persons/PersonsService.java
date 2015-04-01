@@ -13,13 +13,19 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.operaprima.services.business.dtos.AttendancesIntDto;
+import com.operaprima.services.business.dtos.BillsIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 import com.operaprima.services.business.persons.IIntPersonsService;
+import com.operaprima.services.facade.dtos.AttendancesDto;
+import com.operaprima.services.facade.dtos.BillsDto;
 import com.operaprima.services.facade.dtos.GroupsDto;
 import com.operaprima.services.facade.dtos.PersonDto;
 import com.operaprima.services.facade.dtos.PersonsDto;
+import com.operaprima.services.facade.dtos.SessionsDto;
 
 /**
  * @author Adesis
@@ -102,6 +108,44 @@ public class PersonsService implements IPersonsService {
 	public GroupsDto listGroupsByPerson(@PathParam("id") final String id) {
 		final GroupsIntDto listGroupsByPerson = iIntPersonsService.listGroupsByPerson(id);
 		return mapper.map(listGroupsByPerson, GroupsDto.class);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.operaprima.services.facade.persons.IPersonsService#listSessionsByPerson(java.lang.String)
+	 */
+	@Override
+	@GET
+	@Path("/{id}/sessions")
+	public SessionsDto listSessionsByPerson(@PathParam("id") final String id) {
+		final SessionsIntDto listSessionsByPerson = iIntPersonsService.listSessionsByPerson(id);
+		return mapper.map(listSessionsByPerson, SessionsDto.class);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.operaprima.services.facade.persons.IPersonsService#listBillsByPerson(java.lang.String)
+	 */
+	@Override
+	@GET
+	@Path("/{id}/bills")
+	public BillsDto listBillsByPerson(@PathParam("id") final String id) {
+		final BillsIntDto listBillsByPerson = iIntPersonsService.listBillsByPerson(id);
+		return mapper.map(listBillsByPerson, BillsDto.class);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see com.operaprima.services.facade.persons.IPersonsService#listAttendancesByPerson(java.lang.String)
+	 */
+	@Override
+	@Path("/{id}/attendances")
+	public AttendancesDto listAttendancesByPerson(@PathParam("id") final String id) {
+		final AttendancesIntDto listAttendancesByPerson = iIntPersonsService.listAttendancesByPerson(id);
+		return mapper.map(listAttendancesByPerson, AttendancesDto.class);
 	}
 
 }
