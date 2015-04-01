@@ -7,9 +7,10 @@ import com.operaprima.services.repositories.entities.UserEntity;
 
 /**
  * @author Stormtroopers
- *
+ * 
  */
 public interface IUsersRepository extends CrudRepository<UserEntity, ObjectId> {
 
 	UserEntity getByUsername(String username);
+
 }

@@ -2,13 +2,13 @@ package com.operaprima.services.dao.users;
 
 import java.util.List;
 
-import org.apache.commons.lang.NotImplementedException;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
+import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
@@ -16,8 +16,8 @@ import com.operaprima.services.repositories.IUsersRepository;
 import com.operaprima.services.repositories.entities.UserEntity;
 
 /**
-* @author Stormtroopers
- *
+ * @author Stormtroopers
+ * 
  */
 @Repository
 @Primary
@@ -89,10 +89,15 @@ public class UsersDao implements IUsersDao {
 	 * @return
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public PersonsIntDto listPersonsByUser(final String id) {
-		// TODO Auto-generated method stub
-		throw new NotImplementedException("no implementado");
-
+		final UserEntity userEntity = userRepository.findOne(new ObjectId(id));
+		if (userEntity != null && userEntity.getProfiles() != null) {
+			final List<PersonIntDto> persons = (List<PersonIntDto>) dozerUtils.listMapper(userEntity.getProfiles(), PersonIntDto.class);
+			final PersonsIntDto personsIntDto = new PersonsIntDto();
+			personsIntDto.setPersons(persons);
+			return personsIntDto;
+		}
+		return null;
 	}
-
 }
