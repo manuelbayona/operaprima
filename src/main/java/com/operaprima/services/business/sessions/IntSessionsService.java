@@ -9,7 +9,7 @@ import com.operaprima.services.business.dtos.SessionsIntDto;
 import com.operaprima.services.dao.sessions.ISessionsDao;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service
@@ -21,7 +21,7 @@ public class IntSessionsService implements IIntSessionsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.sessions.IIntSessionsService#addSessions(com.operaprima.services.business.dtos.SessionIntDto)
 	 */
 	@Override
@@ -31,7 +31,7 @@ public class IntSessionsService implements IIntSessionsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.sessions.IIntSessionsService#listSessions()
 	 */
 	@Override
@@ -41,7 +41,7 @@ public class IntSessionsService implements IIntSessionsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.sessions.IIntSessionsService#getSessions(java.lang.String)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class IntSessionsService implements IIntSessionsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
 	 * com.operaprima.services.business.sessions.IIntSessionsService#updateSessions(com.operaprima.services.business.dtos.SessionIntDto)
 	 */

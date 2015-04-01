@@ -1,10 +1,9 @@
 package com.operaprima.services.business.attendances;
 
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IIntAttendancesServices {
@@ -15,12 +14,6 @@ public interface IIntAttendancesServices {
 	 * @return AttendanceIntDto
 	 */
 	AttendanceIntDto addAttendance(final AttendanceIntDto attendanceIntDto);
-
-	/**
-	 *
-	 * @return AttendancesIntDto
-	 */
-	AttendancesIntDto listAttendances();
 
 	/**
 	 *

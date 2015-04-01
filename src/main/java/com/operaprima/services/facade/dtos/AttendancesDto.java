@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class AttendancesDto implements Serializable {

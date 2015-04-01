@@ -1,7 +1,7 @@
 package com.operaprima.commons.utils.enums;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public enum ErrorEnum {

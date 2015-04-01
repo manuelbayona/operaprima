@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Target(ElementType.TYPE)

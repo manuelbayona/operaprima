@@ -15,7 +15,7 @@ import com.operaprima.services.repositories.IGroupsRepository;
 import com.operaprima.services.repositories.entities.GroupEntity;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 @Repository
@@ -28,6 +28,9 @@ public class GroupsDao implements IGroupsDao {
 	@Autowired
 	private IDozerUtils dozerUtils;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public GroupIntDto addGroup(final GroupIntDto group) {
 		GroupEntity entity = (GroupEntity) dozerUtils.classMapper(group, GroupEntity.class);

@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import org.joda.time.DateTime;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class DateTimeAdapter extends XmlAdapter<String, DateTime> {
@@ -17,7 +17,7 @@ public class DateTimeAdapter extends XmlAdapter<String, DateTime> {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see javax.xml.bind.annotation.adapters.XmlAdapter#marshal(java.lang.Object)
 	 */
 	@Override
@@ -27,7 +27,7 @@ public class DateTimeAdapter extends XmlAdapter<String, DateTime> {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see javax.xml.bind.annotation.adapters.XmlAdapter#unmarshal(java.lang.Object)
 	 */
 	@Override

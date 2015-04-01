@@ -10,7 +10,7 @@ import com.operaprima.services.business.dtos.UsersIntDto;
 import com.operaprima.services.dao.users.IUsersDao;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service
@@ -22,7 +22,7 @@ public class IntUsersService implements IIntUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.IIntUsersService#addUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
 	@Override
@@ -32,7 +32,7 @@ public class IntUsersService implements IIntUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.IIntUsersService#listUsers()
 	 */
 	@Override
@@ -42,7 +42,7 @@ public class IntUsersService implements IIntUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.IIntUsersService#getUser(java.lang.String)
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class IntUsersService implements IIntUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.IIntUsersService#updateUser(com.operaprima.services.business.dtos.UserIntDto)
 	 */
 	@Override
@@ -62,7 +62,7 @@ public class IntUsersService implements IIntUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.users.IIntUsersService#listPersonsByUser(java.lang.String)
 	 */
 	@Override

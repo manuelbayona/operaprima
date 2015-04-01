@@ -7,12 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.BoardIntDto;
-import com.operaprima.services.business.dtos.BoardsIntDto;
 import com.operaprima.services.repositories.IBoardsRepository;
 import com.operaprima.services.repositories.entities.BoardEntity;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 @Repository
@@ -24,6 +23,9 @@ public class BoardsDao implements IBoardsDao {
 	@Autowired
 	private IDozerUtils dozerUtils;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BoardIntDto addBoard(final BoardIntDto board) {
 		BoardEntity entity = (BoardEntity) dozerUtils.classMapper(board, BoardEntity.class);
@@ -32,6 +34,9 @@ public class BoardsDao implements IBoardsDao {
 		return board;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BoardIntDto getBoard(final String id) {
 		final BoardEntity boardEntity = boardsRepository.findOne(new ObjectId(id));
@@ -39,6 +44,9 @@ public class BoardsDao implements IBoardsDao {
 		return board;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BoardIntDto updateBoard(final BoardIntDto board) {
 		final BoardEntity entity = (BoardEntity) dozerUtils.classMapper(board, BoardEntity.class);
@@ -46,9 +54,4 @@ public class BoardsDao implements IBoardsDao {
 		return board;
 	}
 
-	@Override
-	public BoardsIntDto listBoards() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

@@ -15,7 +15,7 @@ import com.operaprima.services.repositories.IPersonsRepository;
 import com.operaprima.services.repositories.entities.PersonEntity;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 @Repository

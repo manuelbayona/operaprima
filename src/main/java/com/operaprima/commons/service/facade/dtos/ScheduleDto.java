@@ -15,7 +15,7 @@ import com.operaprima.commons.service.facade.dtos.enums.DayOfWeekEnum;
 import com.operaprima.commons.utils.adapter.DateTimeAdapter;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @XmlRootElement(name = "schedule")

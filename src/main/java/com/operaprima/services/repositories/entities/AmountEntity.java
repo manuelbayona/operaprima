@@ -7,8 +7,8 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 /**
- * @author Adesis
- * 
+ * @author Stormtroopers
+ *
  */
 public class AmountEntity {
 	BigDecimal amount;
@@ -66,7 +66,7 @@ public class AmountEntity {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override

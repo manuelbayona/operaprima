@@ -3,7 +3,7 @@ package com.operaprima.commons.utils.dozer;
 import java.util.List;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IDozerUtils {

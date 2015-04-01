@@ -15,12 +15,10 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.boards.IIntBoardsService;
 import com.operaprima.services.business.dtos.BoardIntDto;
-import com.operaprima.services.business.dtos.BoardsIntDto;
 import com.operaprima.services.facade.dtos.BoardDto;
-import com.operaprima.services.facade.dtos.BoardsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("boardsService")
@@ -47,19 +45,6 @@ public class BoardsService implements IBoardsService {
 		final BoardIntDto map = mapper.map(board, BoardIntDto.class);
 		final BoardIntDto addBoard = iIntBoardsService.addBoard(map);
 		return mapper.map(addBoard, BoardDto.class);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.facade.boards.IBoardsService#listBoards()
-	 */
-	@Override
-	@GET
-	@Path("/")
-	public BoardsDto listBoards() {
-		final BoardsIntDto listBoards = iIntBoardsService.listBoards();
-		return mapper.map(listBoards, BoardsDto.class);
 	}
 
 	/*

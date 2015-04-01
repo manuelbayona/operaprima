@@ -5,7 +5,7 @@ import org.joda.time.DateTime;
 import com.operaprima.commons.service.business.dtos.AmountIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class BillIntDto {

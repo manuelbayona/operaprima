@@ -1,10 +1,9 @@
 package com.operaprima.services.dao.attendances;
 
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 public interface IAttendancesDao {
@@ -25,10 +24,5 @@ public interface IAttendancesDao {
 	 * @return
 	 */
 	AttendanceIntDto updateAttendance(AttendanceIntDto attendance);
-
-	/**
-	 * @return
-	 */
-	AttendancesIntDto listAttendances();
 
 }

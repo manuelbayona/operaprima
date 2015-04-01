@@ -23,7 +23,7 @@ import com.operaprima.services.facade.dtos.GroupsDto;
 import com.operaprima.services.facade.dtos.SessionDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("groupsService")
@@ -40,7 +40,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#addGroups(com.operaprima.services.facade.dtos.GroupDto)
 	 */
 	@Override
@@ -54,7 +54,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listGroups()
 	 */
 	@Override
@@ -67,7 +67,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#getGroups(java.lang.String)
 	 */
 	@Override
@@ -80,7 +80,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#updateGroups(com.operaprima.services.facade.dtos.GroupDto)
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class GroupsService implements IGroupsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listSessionsByGroup(java.lang.String)
 	 */
 	@Override

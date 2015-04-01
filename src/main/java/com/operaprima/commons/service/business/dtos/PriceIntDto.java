@@ -1,8 +1,7 @@
 package com.operaprima.commons.service.business.dtos;
 
-
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class PriceIntDto {

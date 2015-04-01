@@ -5,7 +5,7 @@ import com.operaprima.services.facade.dtos.PersonDto;
 import com.operaprima.services.facade.dtos.PersonsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IPersonsService {

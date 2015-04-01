@@ -1,7 +1,7 @@
-package com.operaprima.commons.business.dtos.enums;
+package com.operaprima.commons.service.business.dtos.enums;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public enum DayOfWeekIntEnum {

@@ -1,12 +1,10 @@
 package com.operaprima.services.business.dtos;
 
-import java.util.List;
-
 import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author adesis
+ * @author Stormtroopers
  *
  */
 public class SubjectsIntDto implements Serializable {

@@ -1,7 +1,7 @@
 package com.operaprima.services.repositories.entities;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class EmailEntity {

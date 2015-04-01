@@ -9,7 +9,7 @@ import com.operaprima.services.business.dtos.SubjectsIntDto;
 import com.operaprima.services.dao.subjects.ISubjectsDao;
 
 /**
- * @author adesis
+ * @author Stormtroopers
  *
  */
 @Service
@@ -21,7 +21,7 @@ public class IntSubjectsService implements IIntSubjectsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.subjects.IIntSubjectsService#addSubject(com.operaprima.services.business.dtos.SubjectIntDto)
 	 */
 	@Override
@@ -31,7 +31,7 @@ public class IntSubjectsService implements IIntSubjectsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.subjects.IIntSubjectsService#listSubjects()
 	 */
 	@Override
@@ -41,7 +41,7 @@ public class IntSubjectsService implements IIntSubjectsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.subjects.IIntSubjectsService#getSubject(java.lang.String)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class IntSubjectsService implements IIntSubjectsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.subjects.IIntSubjectsService#updateSubject(com.operaprima.services.business.dtos.SubjectIntDto)
 	 */
 	@Override
