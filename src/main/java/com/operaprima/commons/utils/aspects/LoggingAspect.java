@@ -5,7 +5,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
 @Aspect
-public class LoggingAspects {
+public class LoggingAspect {
 
 	@Before("execution(* com.operaprima.services.dao..*(..))")
 	public void logBefore(final JoinPoint joinPoint) {

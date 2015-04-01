@@ -14,10 +14,10 @@ import com.operaprima.services.dao.users.IUsersDao;
 
 /**
  * @author Dartboard
- *
+ * 
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml" })
+@ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml", "classpath*:/META-INF/aspectj-context-test.xml" })
 public class UserDaoIntegrationTest {
 
 	@Autowired
