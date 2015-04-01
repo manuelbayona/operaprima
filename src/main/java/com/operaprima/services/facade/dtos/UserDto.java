@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.operaprima.commons.service.facade.dtos.EmailDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @XmlRootElement(name = "user")

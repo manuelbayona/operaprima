@@ -13,7 +13,7 @@ import org.joda.time.DateTime;
 import com.operaprima.commons.utils.adapter.DateTimeAdapter;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @XmlRootElement(name = "session")
@@ -88,9 +88,10 @@ public class SessionDto implements Serializable {
 	}
 
 	/**
-	 * @param group the group to set
+	 * @param group
+	 *            the group to set
 	 */
-	public void setGroup(GroupDto group) {
+	public void setGroup(final GroupDto group) {
 		this.group = group;
 	}
 

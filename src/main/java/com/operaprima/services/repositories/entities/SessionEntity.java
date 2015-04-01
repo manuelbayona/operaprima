@@ -9,8 +9,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author ExpertoJava
- * 
+ * @author Stormtroopers
+ *
  */
 @Document(collection = "sessions")
 public class SessionEntity {

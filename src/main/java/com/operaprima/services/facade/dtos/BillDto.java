@@ -14,7 +14,7 @@ import com.operaprima.commons.service.facade.dtos.AmountDto;
 import com.operaprima.commons.utils.adapter.DateTimeAdapter;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @XmlRootElement(name = "bill")

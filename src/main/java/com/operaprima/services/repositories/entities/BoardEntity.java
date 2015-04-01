@@ -10,8 +10,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author Adesis
- * 
+ * @author Stormtroopers
+ *
  */
 @Document(collection = "boards")
 public class BoardEntity {

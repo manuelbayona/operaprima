@@ -20,7 +20,7 @@ import com.operaprima.services.facade.dtos.BillDto;
 import com.operaprima.services.facade.dtos.BillsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("billsService")
@@ -37,7 +37,7 @@ public class BillsService implements IBillsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.bills.IBillsService#addBill(com.operaprima.services.facade.dtos.BillDto)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class BillsService implements IBillsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.bills.IBillsService#listBills()
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class BillsService implements IBillsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.bills.IBillsService#getBill(java.lang.String)
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class BillsService implements IBillsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.bills.IBillsService#updateBill(com.operaprima.services.facade.dtos.BillDto)
 	 */
 	@Override

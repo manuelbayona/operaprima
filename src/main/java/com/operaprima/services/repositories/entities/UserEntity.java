@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Document(collection = "users")

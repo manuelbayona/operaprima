@@ -9,7 +9,7 @@ import com.operaprima.services.business.dtos.ClassesIntDto;
 import com.operaprima.services.dao.classes.IClassesDao;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service
@@ -21,7 +21,7 @@ public class IntClassesService implements IIntClassesService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.classes.IIntClassService#addClass(com.operaprima.services.business.dtos.ClassIntDto)
 	 */
 	@Override
@@ -31,7 +31,7 @@ public class IntClassesService implements IIntClassesService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.classes.IIntClassService#listClasses()
 	 */
 	@Override
@@ -41,7 +41,7 @@ public class IntClassesService implements IIntClassesService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.classes.IIntClassService#getClass(java.lang.String)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class IntClassesService implements IIntClassesService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.business.classes.IIntClassService#updateClass(com.operaprima.services.business.dtos.ClassIntDto)
 	 */
 	@Override

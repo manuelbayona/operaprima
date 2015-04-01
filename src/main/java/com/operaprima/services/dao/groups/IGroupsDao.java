@@ -5,7 +5,7 @@ import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 public interface IGroupsDao {

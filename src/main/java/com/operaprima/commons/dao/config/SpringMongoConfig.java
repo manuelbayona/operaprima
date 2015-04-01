@@ -17,7 +17,7 @@ import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Configuration
@@ -36,14 +36,20 @@ public class SpringMongoConfig extends AbstractMongoConfiguration {
 	@Value("${mongo.host.name}")
 	private String hostUrl;
 
+	@Autowired
+	private ApplicationContext applicationContext;
+
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	protected String getDatabaseName() {
 		return dataBaseName;
 	}
 
-	@Autowired
-	private ApplicationContext applicationContext;
-
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Mongo mongo() throws Exception {
 		final MongoCredential mongoCredential = MongoCredential.createCredential(userDB, dataBaseName, passwordDB.toCharArray());
@@ -53,6 +59,9 @@ public class SpringMongoConfig extends AbstractMongoConfiguration {
 		return mongoClient;
 	}
 
+	/**
+	 * @return MongoOperations
+	 */
 	@Bean
 	public MongoOperations createMongoOperation() {
 		return (MongoOperations) applicationContext.getBean("mongoTemplate");

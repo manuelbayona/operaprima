@@ -3,8 +3,8 @@ package com.operaprima.services.business.dtos;
 import java.util.List;
 
 /**
- * @author Adesis
- * 
+ * @author Stormtroopers
+ *
  */
 public class GroupsIntDto {
 

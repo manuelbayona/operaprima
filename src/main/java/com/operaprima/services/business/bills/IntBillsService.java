@@ -9,7 +9,7 @@ import com.operaprima.services.business.dtos.BillsIntDto;
 import com.operaprima.services.dao.bills.IBillsDao;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service
@@ -21,7 +21,7 @@ public class IntBillsService implements IIntBillsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.bills.IIntBillsService#addBill(com.operaprima.services.business.dtos.BillIntDto)
 	 */
 	@Override
@@ -31,7 +31,7 @@ public class IntBillsService implements IIntBillsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.bills.IIntBillsService#listBills()
 	 */
 	@Override
@@ -41,7 +41,7 @@ public class IntBillsService implements IIntBillsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.bills.IIntBillsService#getBill(java.lang.String)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class IntBillsService implements IIntBillsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.bills.IIntBillsService#updateBill(com.operaprima.services.business.dtos.BillIntDto)
 	 */
 	@Override

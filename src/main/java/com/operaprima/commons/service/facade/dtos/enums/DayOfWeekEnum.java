@@ -1,7 +1,7 @@
 package com.operaprima.commons.service.facade.dtos.enums;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public enum DayOfWeekEnum {

@@ -11,8 +11,8 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * @author ExpertoJava
- * 
+ * @author Stormtroopers
+ *
  */
 @Document(collection = "classes")
 public class ClassEntity {

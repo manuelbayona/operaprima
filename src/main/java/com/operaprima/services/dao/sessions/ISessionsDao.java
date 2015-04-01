@@ -4,7 +4,7 @@ import com.operaprima.services.business.dtos.SessionIntDto;
 import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author Dartboard
+ * @author Stormtroopers
  *
  */
 public interface ISessionsDao {

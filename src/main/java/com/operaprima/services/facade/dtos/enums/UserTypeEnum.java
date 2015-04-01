@@ -1,7 +1,7 @@
 package com.operaprima.services.facade.dtos.enums;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public enum UserTypeEnum {
