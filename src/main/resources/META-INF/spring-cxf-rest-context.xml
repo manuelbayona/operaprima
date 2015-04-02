@@ -34,6 +34,7 @@
         </jaxrs:features>
         <jaxrs:providers>
             <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+            <!-- <bean class="com.operaprima.commons.utils.exceptions.OperaPrimaExceptionHandler" /> -->
         </jaxrs:providers>
     </jaxrs:server>
  

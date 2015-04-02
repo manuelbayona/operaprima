@@ -1,37 +1,39 @@
 package com.operaprima.commons.utils.exceptions;
 
+import com.operaprima.commons.utils.ErrorDto;
+import com.operaprima.commons.utils.enums.ErrorEnum;
+
 /**
- * @author diego.asensio
- * 
+ * @author Stormtroopers
+ *
  */
-public class OperaPrimaException extends Exception {
+public class OperaPrimaException extends RuntimeException {
 
 	private static final long serialVersionUID = -1031270007747289048L;
 
-	public OperaPrimaException() {
-		super();
-		// TODO Auto-generated constructor stub
+	private ErrorDto error;
+
+	public OperaPrimaException(final ErrorDto error) {
+		this.setError(error);
 	}
 
-	public OperaPrimaException(final String message, final Throwable cause, final boolean enableSuppression,
-			final boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-		// TODO Auto-generated constructor stub
+	public OperaPrimaException(final ErrorEnum cause, final Object... params) {
+		setError(new ErrorDto());
+		getError().setCause(cause);
 	}
 
-	public OperaPrimaException(final String message, final Throwable cause) {
-		super(message, cause);
-		// TODO Auto-generated constructor stub
+	/**
+	 * @return the error
+	 */
+	public ErrorDto getError() {
+		return error;
 	}
 
-	public OperaPrimaException(final String message) {
-		super(message);
-		// TODO Auto-generated constructor stub
+	/**
+	 * @param error
+	 *            the error to set
+	 */
+	public void setError(final ErrorDto error) {
+		this.error = error;
 	}
-
-	public OperaPrimaException(final Throwable cause) {
-		super(cause);
-		// TODO Auto-generated constructor stub
-	}
-
 }

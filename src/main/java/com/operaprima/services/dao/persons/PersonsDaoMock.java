@@ -7,13 +7,16 @@ import java.util.UUID;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.mock.Mock;
+import com.operaprima.services.business.dtos.AttendancesIntDto;
+import com.operaprima.services.business.dtos.BillsIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
  * @author Stormtroopers
- *
+ * 
  */
 @Repository
 @Mock
@@ -65,6 +68,24 @@ public class PersonsDaoMock implements IPersonsDao {
 	 */
 	@Override
 	public GroupsIntDto listGroupsByPerson(final String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SessionsIntDto listSessionsByPerson(final String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BillsIntDto listBillsByPerson(final String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AttendancesIntDto listAttendancesByPerson(final String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

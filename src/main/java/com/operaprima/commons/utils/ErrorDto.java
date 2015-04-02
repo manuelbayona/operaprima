@@ -1,6 +1,7 @@
 package com.operaprima.commons.utils;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import com.operaprima.commons.utils.enums.ErrorEnum;
 
@@ -15,6 +16,7 @@ public class ErrorDto implements Serializable {
 	private String trace;
 	private ErrorEnum cause;
 	private String message;
+	private Date date;
 
 	/**
 	 * @return the trace
@@ -66,6 +68,21 @@ public class ErrorDto implements Serializable {
 	 */
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	/**
+	 * @return the date
+	 */
+	public Date getDate() {
+		return date;
+	}
+
+	/**
+	 * @param date
+	 *            the date to set
+	 */
+	public void setDate(final Date date) {
+		this.date = date;
 	}
 
 }

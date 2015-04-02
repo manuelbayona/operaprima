@@ -1,12 +1,15 @@
 package com.operaprima.services.dao.persons;
 
+import com.operaprima.services.business.dtos.AttendancesIntDto;
+import com.operaprima.services.business.dtos.BillsIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
  * @author Stormtroopers
- *
+ * 
  */
 public interface IPersonsDao {
 
@@ -39,4 +42,21 @@ public interface IPersonsDao {
 	 */
 	GroupsIntDto listGroupsByPerson(String id);
 
+	/**
+	 * @param id
+	 * @return
+	 */
+	SessionsIntDto listSessionsByPerson(String id);
+
+	/**
+	 * @param id
+	 * @return
+	 */
+	BillsIntDto listBillsByPerson(String id);
+
+	/**
+	 * @param id
+	 * @return
+	 */
+	AttendancesIntDto listAttendancesByPerson(String id);
 }

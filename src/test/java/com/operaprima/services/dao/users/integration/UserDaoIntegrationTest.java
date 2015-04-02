@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.operaprima.commons.service.business.dtos.EmailIntDto;
+import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
@@ -19,8 +20,8 @@ import com.operaprima.services.dao.users.IUsersDao;
 
 /**
  * @author Stormtroopers
- *
-*/
+ * 
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml", "classpath*:/META-INF/aspectj-context-test.xml" })
 public class UserDaoIntegrationTest {
@@ -104,6 +105,17 @@ public class UserDaoIntegrationTest {
 		Assert.assertNotNull(userUpdate);
 		Assert.assertEquals(user.getId(), userUpdate.getId());
 		Assert.assertEquals(user.getPublicPassword(), userUpdate.getPublicPassword());
+
+	}
+
+	@Test
+	public void listPersonsByUser() {
+		// given
+		final String id = "551be033878ff21a30ce7c1e";
+		// when
+		final PersonsIntDto personsByUser = userDao.listPersonsByUser(id);
+		// then
+		Assert.assertNotNull(personsByUser);
 
 	}
 }

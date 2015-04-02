@@ -1,5 +1,6 @@
 package com.operaprima.services.dao.persons;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -8,15 +9,26 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.commons.utils.dozer.IDozerUtils;
+import com.operaprima.services.business.dtos.AttendanceIntDto;
+import com.operaprima.services.business.dtos.AttendancesIntDto;
+import com.operaprima.services.business.dtos.BillIntDto;
+import com.operaprima.services.business.dtos.BillsIntDto;
+import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
+import com.operaprima.services.business.dtos.SessionIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
+import com.operaprima.services.repositories.IAttendancesRepository;
+import com.operaprima.services.repositories.IBillsRepository;
 import com.operaprima.services.repositories.IPersonsRepository;
+import com.operaprima.services.repositories.entities.AttendanceEntity;
+import com.operaprima.services.repositories.entities.BillEntity;
 import com.operaprima.services.repositories.entities.PersonEntity;
 
 /**
  * @author Stormtroopers
- *
+ * 
  */
 @Repository
 @Primary
@@ -24,6 +36,12 @@ public class PersonsDao implements IPersonsDao {
 
 	@Autowired
 	private IPersonsRepository personsRepository;
+
+	@Autowired
+	private IBillsRepository billsRepository;
+
+	@Autowired
+	private IAttendancesRepository attendancesRepository;
 
 	@Autowired
 	private IDozerUtils dozerUtils;
@@ -82,8 +100,49 @@ public class PersonsDao implements IPersonsDao {
 	 */
 	@Override
 	public GroupsIntDto listGroupsByPerson(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		final PersonIntDto person = getPerson(id);
+		final GroupsIntDto groups = new GroupsIntDto();
+		groups.setGroups(person.getGroups());
+		return groups;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public SessionsIntDto listSessionsByPerson(final String id) {
+		final GroupsIntDto groupsIntDto = listGroupsByPerson(id);
+		final List<SessionIntDto> sessions = new ArrayList<>();
+		final SessionsIntDto sessionsIntDto = new SessionsIntDto();
+		for (final GroupIntDto group : groupsIntDto.getGroups()) {
+			sessions.addAll(group.getSessions());
+		}
+		sessionsIntDto.setSessions(sessions);
+		return sessionsIntDto;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public BillsIntDto listBillsByPerson(final String id) {
+		final PersonEntity personEntity = personsRepository.findOne(new ObjectId(id));
+		final List<BillEntity> listDB = (List<BillEntity>) billsRepository.findByOwner(personEntity);
+		final BillsIntDto billsIntDto = new BillsIntDto();
+		billsIntDto.setBills((List<BillIntDto>) dozerUtils.listMapper(listDB, BillIntDto.class));
+		return billsIntDto;
+
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public AttendancesIntDto listAttendancesByPerson(final String id) {
+		final PersonEntity personEntity = personsRepository.findOne(new ObjectId(id));
+		final List<AttendanceEntity> listDB = (List<AttendanceEntity>) attendancesRepository.findByStudent(personEntity);
+		final AttendancesIntDto attendancesIntDto = new AttendancesIntDto();
+		attendancesIntDto.setAttendances((List<AttendanceIntDto>) dozerUtils.listMapper(listDB, AttendanceIntDto.class));
+		return attendancesIntDto;
 	}
 
 }
