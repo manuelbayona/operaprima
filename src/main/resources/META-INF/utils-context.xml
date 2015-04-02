@@ -16,7 +16,9 @@
 	
 	<!-- DOZER MAPPER BEAN -->
 	<bean id="mapper" class="org.dozer.DozerBeanMapper" />
-
+	
+	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+	
 	<!-- JAXB CONFIGURATION -->
 
 	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">

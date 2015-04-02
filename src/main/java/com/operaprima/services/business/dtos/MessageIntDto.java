@@ -3,7 +3,7 @@ package com.operaprima.services.business.dtos;
 import org.joda.time.DateTime;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class MessageIntDto {

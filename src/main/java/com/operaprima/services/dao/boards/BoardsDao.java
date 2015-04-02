@@ -1,60 +1,57 @@
 package com.operaprima.services.dao.boards;
 
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.BoardIntDto;
-import com.operaprima.services.business.dtos.BoardsIntDto;
+import com.operaprima.services.repositories.IBoardsRepository;
+import com.operaprima.services.repositories.entities.BoardEntity;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Repository
 @Primary
-public class BoardsDao implements IBoardDao {
+public class BoardsDao implements IBoardsDao {
+	@Autowired
+	private IBoardsRepository boardsRepository;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.boards.IBoardDao#addBoard(com.operaprima.services.business.dtos.BoardIntDto)
+	@Autowired
+	private IDozerUtils dozerUtils;
+
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public BoardIntDto addBoard(final BoardIntDto board) {
-		// TODO Auto-generated method stub
-		return null;
+		BoardEntity entity = (BoardEntity) dozerUtils.classMapper(board, BoardEntity.class);
+		entity = boardsRepository.save(entity);
+		board.setId(entity.getId().toString());
+		return board;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.boards.IBoardDao#listBoards()
-	 */
-	@Override
-	public BoardsIntDto listBoards() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.boards.IBoardDao#getBoard(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public BoardIntDto getBoard(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		final BoardEntity boardEntity = boardsRepository.findOne(new ObjectId(id));
+		final BoardIntDto board = (BoardIntDto) dozerUtils.classMapper(boardEntity, BoardIntDto.class);
+		return board;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.boards.IBoardDao#updateBoard(com.operaprima.services.business.dtos.BoardIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
-	public BoardIntDto updateBoard(final BoardIntDto boardDto) {
-		// TODO Auto-generated method stub
-		return null;
+	public BoardIntDto updateBoard(final BoardIntDto board) {
+		final BoardEntity entity = (BoardEntity) dozerUtils.classMapper(board, BoardEntity.class);
+		boardsRepository.save(entity);
+		return board;
 	}
+
 }

@@ -4,7 +4,7 @@ import com.operaprima.services.facade.dtos.ClassDto;
 import com.operaprima.services.facade.dtos.ClassesDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IClassesService {

@@ -7,22 +7,23 @@ import java.util.UUID;
 import org.springframework.stereotype.Repository;
 
 import com.operaprima.mock.Mock;
+import com.operaprima.services.business.dtos.AttendancesIntDto;
+import com.operaprima.services.business.dtos.BillsIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author Adesis
- *
+ * @author Stormtroopers
+ * 
  */
 @Repository
 @Mock
 public class PersonsDaoMock implements IPersonsDao {
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#addPerson(com.operaprima.services.business.dtos.PersonIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto addPerson(final PersonIntDto person) {
@@ -30,10 +31,8 @@ public class PersonsDaoMock implements IPersonsDao {
 		return person;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#listPersons()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonsIntDto listPersons() {
@@ -48,28 +47,45 @@ public class PersonsDaoMock implements IPersonsDao {
 		return personsDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#getPerson(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto getPerson(final String id) {
 		return new PersonIntDto();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#updatePerson(com.operaprima.services.business.dtos.PersonIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto updatePerson(final PersonIntDto person) {
 		return person;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public GroupsIntDto listGroupsByPerson(final String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SessionsIntDto listSessionsByPerson(final String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BillsIntDto listBillsByPerson(final String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AttendancesIntDto listAttendancesByPerson(final String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

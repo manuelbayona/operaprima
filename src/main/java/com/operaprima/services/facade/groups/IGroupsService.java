@@ -7,7 +7,7 @@ import com.operaprima.services.facade.dtos.GroupsDto;
 import com.operaprima.services.facade.dtos.SessionDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IGroupsService {

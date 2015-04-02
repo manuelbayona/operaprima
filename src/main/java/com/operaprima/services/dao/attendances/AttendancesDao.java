@@ -1,61 +1,58 @@
 package com.operaprima.services.dao.attendances;
 
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
+import com.operaprima.services.repositories.IAttendancesRepository;
+import com.operaprima.services.repositories.entities.AttendanceEntity;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Repository
 @Primary
 public class AttendancesDao implements IAttendancesDao {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.attendances.IAttendancesDao#addAttendance(com.operaprima.services.business.dtos.AttendanceIntDto)
+	@Autowired
+	private IAttendancesRepository attendancesRepository;
+
+	@Autowired
+	private IDozerUtils dozerUtils;
+
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
-	public AttendanceIntDto addAttendance(final AttendanceIntDto attendanceIntDto) {
-		// TODO Auto-generated method stub
-		return null;
+	public AttendanceIntDto addAttendance(final AttendanceIntDto attendance) {
+		AttendanceEntity entity = (AttendanceEntity) dozerUtils.classMapper(attendance, AttendanceEntity.class);
+		entity = attendancesRepository.save(entity);
+		attendance.setId(entity.getId().toString());
+		return attendance;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.attendances.IAttendancesDao#listAttendances()
-	 */
-	@Override
-	public AttendancesIntDto listAttendances() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.attendances.IAttendancesDao#getAttendance(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public AttendanceIntDto getAttendance(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		final AttendanceEntity attendanceEntity = attendancesRepository.findOne(new ObjectId(id));
+		final AttendanceIntDto attendance = (AttendanceIntDto) dozerUtils.classMapper(attendanceEntity, AttendanceIntDto.class);
+		return attendance;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.attendances.IAttendancesDao#updateAttendance(com.operaprima.services.business.dtos.AttendanceIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
-	public AttendanceIntDto updateAttendance(final AttendanceIntDto attendanceIntDto) {
-		// TODO Auto-generated method stub
-		return null;
+	public AttendanceIntDto updateAttendance(final AttendanceIntDto attendance) {
+		final AttendanceEntity entity = (AttendanceEntity) dozerUtils.classMapper(attendance, AttendanceEntity.class);
+		attendancesRepository.save(entity);
+		return attendance;
 	}
 
 }

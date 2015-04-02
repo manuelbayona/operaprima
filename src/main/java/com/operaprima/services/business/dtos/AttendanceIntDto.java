@@ -1,8 +1,7 @@
 package com.operaprima.services.business.dtos;
 
-
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class AttendanceIntDto {

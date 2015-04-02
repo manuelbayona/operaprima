@@ -8,7 +8,7 @@ import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IIntPersonsService {

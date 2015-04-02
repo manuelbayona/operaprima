@@ -5,7 +5,7 @@ import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IIntUsersService {

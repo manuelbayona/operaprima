@@ -1,102 +1,148 @@
 package com.operaprima.services.dao.persons;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
-import org.joda.time.DateTime;
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
-import com.operaprima.commons.service.business.dtos.PhoneIntDto;
+import com.operaprima.commons.utils.dozer.IDozerUtils;
+import com.operaprima.services.business.dtos.AttendanceIntDto;
+import com.operaprima.services.business.dtos.AttendancesIntDto;
+import com.operaprima.services.business.dtos.BillIntDto;
+import com.operaprima.services.business.dtos.BillsIntDto;
+import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
-import com.operaprima.services.facade.dtos.enums.UserStateEnum;
-import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
+import com.operaprima.services.business.dtos.SessionIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
+import com.operaprima.services.repositories.IAttendancesRepository;
+import com.operaprima.services.repositories.IBillsRepository;
+import com.operaprima.services.repositories.IPersonsRepository;
+import com.operaprima.services.repositories.entities.AttendanceEntity;
+import com.operaprima.services.repositories.entities.BillEntity;
+import com.operaprima.services.repositories.entities.PersonEntity;
 
 /**
- * @author Adesis
- *
+ * @author Stormtroopers
+ * 
  */
 @Repository
 @Primary
 public class PersonsDao implements IPersonsDao {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#addPerson(com.operaprima.services.business.dtos.PersonIntDto)
+	@Autowired
+	private IPersonsRepository personsRepository;
+
+	@Autowired
+	private IBillsRepository billsRepository;
+
+	@Autowired
+	private IAttendancesRepository attendancesRepository;
+
+	@Autowired
+	private IDozerUtils dozerUtils;
+
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto addPerson(final PersonIntDto person) {
-		person.setId(UUID.randomUUID().toString());
+		PersonEntity entity = (PersonEntity) dozerUtils.classMapper(person, PersonEntity.class);
+		entity = personsRepository.save(entity);
+		person.setId(entity.getId().toString());
 		return person;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#listPersons()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public PersonsIntDto listPersons() {
-		final PersonsIntDto personsIntDto = new PersonsIntDto();
-		personsIntDto.setPersons(new ArrayList<PersonIntDto>());
-		personsIntDto.getPersons().add(getPerson(UUID.randomUUID().toString()));
-		personsIntDto.getPersons().add(getPerson(UUID.randomUUID().toString()));
-		personsIntDto.getPersons().add(getPerson(UUID.randomUUID().toString()));
-		personsIntDto.getPersons().add(getPerson(UUID.randomUUID().toString()));
+		final List<PersonEntity> listDB = (List<PersonEntity>) personsRepository.findAll();
 
+		if (listDB == null) {
+			return null;
+		}
+
+		final PersonsIntDto personsIntDto = new PersonsIntDto();
+		personsIntDto.setPersons((List<PersonIntDto>) dozerUtils.listMapper(listDB, PersonIntDto.class));
 		return personsIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#getPerson(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public PersonIntDto getPerson(final String id) {
-		final PhoneIntDto tfno1 = new PhoneIntDto();
-		tfno1.setNumber("123456789");
-
-		final PhoneIntDto tfno2 = new PhoneIntDto();
-		tfno2.setNumber("987654321");
-
-		final List<PhoneIntDto> lista = new ArrayList<PhoneIntDto>();
-		lista.add(tfno1);
-		lista.add(tfno2);
-
-		final PersonIntDto personaInterior = new PersonIntDto();
-		personaInterior.setId("1234");
-		personaInterior.setName("Manolo");
-		personaInterior.setLastName("Bayona");
-		final byte[] array = new byte[3];
-		Arrays.fill(array, (byte) 1);
-		personaInterior.setAvatar(array);
-		personaInterior.setBirthDate(new DateTime());
-		personaInterior.setType(UserTypeEnum.ADMIN);
-		personaInterior.setPhones(lista);
-		personaInterior.setState(UserStateEnum.ACTIVE);
-		return personaInterior;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.persons.IPersonsDao#updatePerson(com.operaprima.services.business.dtos.PersonIntDto)
-	 */
-	@Override
-	public PersonIntDto updatePerson(final PersonIntDto person) {
+		final PersonEntity personEntity = personsRepository.findOne(new ObjectId(id));
+		final PersonIntDto person = (PersonIntDto) dozerUtils.classMapper(personEntity, PersonIntDto.class);
 		return person;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public PersonIntDto updatePerson(final PersonIntDto person) {
+		final PersonEntity entity = (PersonEntity) dozerUtils.classMapper(person, PersonEntity.class);
+		personsRepository.save(entity);
+		return person;
+
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public GroupsIntDto listGroupsByPerson(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		final PersonIntDto person = getPerson(id);
+		final GroupsIntDto groups = new GroupsIntDto();
+		groups.setGroups(person.getGroups());
+		return groups;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public SessionsIntDto listSessionsByPerson(final String id) {
+		final GroupsIntDto groupsIntDto = listGroupsByPerson(id);
+		final List<SessionIntDto> sessions = new ArrayList<>();
+		final SessionsIntDto sessionsIntDto = new SessionsIntDto();
+		for (final GroupIntDto group : groupsIntDto.getGroups()) {
+			sessions.addAll(group.getSessions());
+		}
+		sessionsIntDto.setSessions(sessions);
+		return sessionsIntDto;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public BillsIntDto listBillsByPerson(final String id) {
+		final PersonEntity personEntity = personsRepository.findOne(new ObjectId(id));
+		final List<BillEntity> listDB = (List<BillEntity>) billsRepository.findByOwner(personEntity);
+		final BillsIntDto billsIntDto = new BillsIntDto();
+		billsIntDto.setBills((List<BillIntDto>) dozerUtils.listMapper(listDB, BillIntDto.class));
+		return billsIntDto;
+
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public AttendancesIntDto listAttendancesByPerson(final String id) {
+		final PersonEntity personEntity = personsRepository.findOne(new ObjectId(id));
+		final List<AttendanceEntity> listDB = (List<AttendanceEntity>) attendancesRepository.findByStudent(personEntity);
+		final AttendancesIntDto attendancesIntDto = new AttendancesIntDto();
+		attendancesIntDto.setAttendances((List<AttendanceIntDto>) dozerUtils.listMapper(listDB, AttendanceIntDto.class));
+		return attendancesIntDto;
 	}
 
 }

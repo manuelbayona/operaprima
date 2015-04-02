@@ -20,7 +20,7 @@ import com.operaprima.services.facade.dtos.ClassDto;
 import com.operaprima.services.facade.dtos.ClassesDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("classesService")
@@ -36,7 +36,7 @@ public class ClassesService implements IClassesService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.classes.IClassesServices#addClass(com.operaprima.services.facade.dtos.ClassDto)
 	 */
 	@Override
@@ -50,7 +50,7 @@ public class ClassesService implements IClassesService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.classes.IClassesServices#listClasses()
 	 */
 	@Override
@@ -63,7 +63,7 @@ public class ClassesService implements IClassesService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.classes.IClassesServices#getClass(java.lang.String)
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class ClassesService implements IClassesService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.classes.IClassesServices#updateClass(com.operaprima.services.facade.dtos.ClassDto)
 	 */
 	@Override

@@ -8,19 +8,18 @@ import org.springframework.stereotype.Repository;
 import com.operaprima.mock.Mock;
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Mock
 @Repository
 public class GroupsDaoMock implements IGroupsDao {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#addGroup(com.operaprima.services.business.dtos.GroupIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public GroupIntDto addGroup(final GroupIntDto groupDto) {
@@ -28,10 +27,8 @@ public class GroupsDaoMock implements IGroupsDao {
 		return groupDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#listGroups()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public GroupsIntDto listGroups() {
@@ -42,33 +39,24 @@ public class GroupsDaoMock implements IGroupsDao {
 		return groupsIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#getGroup(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public GroupIntDto getGroup(final String id) {
 		return new GroupIntDto();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#updateGroup(com.operaprima.services.business.dtos.GroupIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public GroupIntDto updateGroup(final GroupIntDto group) {
 		return group;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.groups.IGroupsDao#listSessionsByGroup(java.lang.String)
-	 */
 	@Override
-	public GroupIntDto listSessionsByGroup(final String id) {
+	public SessionsIntDto listSessionsByGroup(final String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

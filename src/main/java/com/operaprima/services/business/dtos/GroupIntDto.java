@@ -8,7 +8,7 @@ import com.operaprima.commons.service.business.dtos.PriceIntDto;
 import com.operaprima.commons.service.business.dtos.ScheduleIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class GroupIntDto {

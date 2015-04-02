@@ -3,7 +3,7 @@ package com.operaprima.services.business.dtos;
 import java.util.List;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class SessionsIntDto {
@@ -24,5 +24,4 @@ public class SessionsIntDto {
 	public void setSessions(final List<SessionIntDto> sessions) {
 		this.sessions = sessions;
 	}
-
 }

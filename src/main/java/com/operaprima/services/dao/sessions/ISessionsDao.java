@@ -4,7 +4,7 @@ import com.operaprima.services.business.dtos.SessionIntDto;
 import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface ISessionsDao {
@@ -21,10 +21,10 @@ public interface ISessionsDao {
 	SessionsIntDto listSessions();
 
 	/**
-	 * @param String
-	 * @return SessionDto
+	 * @param id
+	 * @return
 	 */
-	SessionIntDto getSession(final String id);
+	SessionIntDto getSession(String id);
 
 	/**
 	 * @param SessionDto

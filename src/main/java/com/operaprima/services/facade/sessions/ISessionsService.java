@@ -4,7 +4,7 @@ import com.operaprima.services.facade.dtos.SessionDto;
 import com.operaprima.services.facade.dtos.SessionsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface ISessionsService {

@@ -5,7 +5,7 @@ import org.joda.time.DateTime;
 import com.operaprima.services.facade.dtos.GroupDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class SessionIntDto {

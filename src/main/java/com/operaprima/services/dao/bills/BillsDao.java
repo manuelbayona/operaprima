@@ -1,41 +1,67 @@
 package com.operaprima.services.dao.bills;
 
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.BillIntDto;
 import com.operaprima.services.business.dtos.BillsIntDto;
+import com.operaprima.services.repositories.IBillsRepository;
+import com.operaprima.services.repositories.entities.BillEntity;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Repository
 @Primary
 public class BillsDao implements IBillsDao {
 
+	@Autowired
+	private IBillsRepository billsRepository;
+
+	@Autowired
+	private IDozerUtils dozerUtils;
+
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BillIntDto addBill(final BillIntDto bill) {
-		// TODO Auto-generated method stub
-		return null;
+		BillEntity entity = (BillEntity) dozerUtils.classMapper(bill, BillEntity.class);
+		entity = billsRepository.save(entity);
+		bill.setId(entity.getId().toString());
+		return bill;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BillsIntDto listBills() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BillIntDto getBill(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		final BillEntity billEntity = billsRepository.findOne(new ObjectId(id));
+		final BillIntDto bill = (BillIntDto) dozerUtils.classMapper(billEntity, BillIntDto.class);
+		return bill;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public BillIntDto updateBill(final BillIntDto bill) {
-		// TODO Auto-generated method stub
-		return null;
+		final BillEntity entity = (BillEntity) dozerUtils.classMapper(bill, BillEntity.class);
+		billsRepository.save(entity);
+		return bill;
 	}
-
 }

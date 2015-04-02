@@ -4,7 +4,7 @@ import com.operaprima.services.business.dtos.BillIntDto;
 import com.operaprima.services.business.dtos.BillsIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IBillsDao {
@@ -31,5 +31,4 @@ public interface IBillsDao {
 	 * @return
 	 */
 	BillIntDto updateBill(BillIntDto bill);
-
 }

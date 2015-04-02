@@ -1,79 +1,103 @@
 package com.operaprima.services.dao.users;
 
-import java.util.ArrayList;
-import java.util.UUID;
+import java.util.List;
 
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.commons.utils.dozer.IDozerUtils;
+import com.operaprima.services.business.dtos.PersonIntDto;
 import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
+import com.operaprima.services.repositories.IUsersRepository;
+import com.operaprima.services.repositories.entities.UserEntity;
 
 /**
- * @author Adesis
- *
+ * @author Stormtroopers
+ * 
  */
 @Repository
 @Primary
 public class UsersDao implements IUsersDao {
 
-	/*
-	 * (non-Javadoc)
+	@Autowired
+	private IUsersRepository userRepository;
+
+	@Autowired
+	private IDozerUtils dozerUtils;
+
+	/**
 	 * 
-	 * @see com.operaprima.services.dao.IUsersDao#addUser(com.operaprima.services.business.dtos.UserIntDto)
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UserIntDto addUser(final UserIntDto user) {
-		user.setId(UUID.randomUUID().toString());
+		UserEntity entity = (UserEntity) dozerUtils.classMapper(user, UserEntity.class);
+		entity = userRepository.save(entity);
+
+		if (entity.getId() == null) {
+			return null;
+		}
+		user.setId(entity.getId().toString());
 		return user;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
 	 * 
-	 * @see com.operaprima.services.dao.IUsersDao#listUsers()
+	 * {@inheritDoc}
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public UsersIntDto listUsers() {
+
+		final List<UserEntity> listDB = (List<UserEntity>) userRepository.findAll();
+
+		if (listDB == null) {
+			return null;
+		}
+
 		final UsersIntDto usersIntDto = new UsersIntDto();
-		usersIntDto.setUsers(new ArrayList<UserIntDto>());
-		usersIntDto.getUsers().add(new UserIntDto());
-		usersIntDto.getUsers().add(new UserIntDto());
+		usersIntDto.setUsers((List<UserIntDto>) dozerUtils.listMapper(listDB, UserIntDto.class));
 		return usersIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.IUsersDao#getUser(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UserIntDto getUser(final String id) {
-		final UserIntDto userIntDto = new UserIntDto();
-		userIntDto.setId(id);
-		return userIntDto;
+		final UserEntity userEntity = userRepository.findOne(new ObjectId(id));
+		return (UserIntDto) dozerUtils.classMapper(userEntity, UserIntDto.class);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.IUsersDao#updateUser(com.operaprima.services.business.dtos.UserIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public UserIntDto updateUser(final UserIntDto user) {
-		return user;
+		UserEntity entity = (UserEntity) dozerUtils.classMapper(user, UserEntity.class);
+		entity = userRepository.save(entity);
+
+		return (UserIntDto) dozerUtils.classMapper(entity, UserIntDto.class);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.dao.users.IUsersDao#listPersonsByUser(java.lang.String)
+	/**
+	 * @param id
+	 * @return
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public PersonsIntDto listPersonsByUser(final String id) {
-		// TODO Auto-generated method stub
+		final UserEntity userEntity = userRepository.findOne(new ObjectId(id));
+		if (userEntity != null && userEntity.getProfiles() != null) {
+			final List<PersonIntDto> persons = (List<PersonIntDto>) dozerUtils.listMapper(userEntity.getProfiles(), PersonIntDto.class);
+			final PersonsIntDto personsIntDto = new PersonsIntDto();
+			personsIntDto.setPersons(persons);
+			return personsIntDto;
+		}
 		return null;
 	}
-
 }

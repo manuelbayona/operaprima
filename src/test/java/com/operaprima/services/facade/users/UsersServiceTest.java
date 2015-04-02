@@ -20,7 +20,7 @@ import com.operaprima.services.facade.dtos.UserDto;
 import com.operaprima.services.facade.dtos.UsersDto;
 
 /**
- * @author adesis
+ * @author Stormtroopers
  *
  */
 @RunWith(MockitoJUnitRunner.class)

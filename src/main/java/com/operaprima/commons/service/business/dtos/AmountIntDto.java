@@ -1,18 +1,20 @@
 package com.operaprima.commons.service.business.dtos;
 
+import java.math.BigDecimal;
+
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class AmountIntDto {
 
-	private String amount;
+	private BigDecimal amount;
 	private String currency;
 
 	/**
 	 * @return the amount
 	 */
-	public String getAmount() {
+	public BigDecimal getAmount() {
 		return amount;
 	}
 
@@ -20,7 +22,7 @@ public class AmountIntDto {
 	 * @param amount
 	 *            the amount to set
 	 */
-	public void setAmount(final String amount) {
+	public void setAmount(final BigDecimal amount) {
 		this.amount = amount;
 	}
 

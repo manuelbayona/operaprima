@@ -1,41 +1,79 @@
 package com.operaprima.services.dao.sessions;
 
+import java.util.List;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
+import com.operaprima.commons.utils.dozer.IDozerUtils;
 import com.operaprima.services.business.dtos.SessionIntDto;
 import com.operaprima.services.business.dtos.SessionsIntDto;
+import com.operaprima.services.repositories.ISessionsRepository;
+import com.operaprima.services.repositories.entities.SessionEntity;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Repository
 @Primary
 public class SessionsDao implements ISessionsDao {
+	@Autowired
+	private ISessionsRepository sessionsRepository;
 
+	@Autowired
+	private IDozerUtils dozerUtils;
+
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SessionIntDto addSession(final SessionIntDto session) {
-		// TODO Auto-generated method stub
-		return null;
+		SessionEntity entity = (SessionEntity) dozerUtils.classMapper(session, SessionEntity.class);
+		entity = sessionsRepository.save(entity);
+		session.setId(entity.getId().toString());
+		return session;
 	}
 
-	@Override
-	public SessionsIntDto listSessions() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SessionIntDto getSession(final String id) {
-		// TODO Auto-generated method stub
-		return null;
+		final SessionEntity sessionEntity = sessionsRepository.findOne(new ObjectId(id));
+		final SessionIntDto session = (SessionIntDto) dozerUtils.classMapper(sessionEntity, SessionIntDto.class);
+		return session;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public SessionIntDto updateSession(final SessionIntDto session) {
-		// TODO Auto-generated method stub
-		return null;
+		final SessionEntity entity = (SessionEntity) dozerUtils.classMapper(session, SessionEntity.class);
+		sessionsRepository.save(entity);
+		return session;
+	}
+
+	/**
+	 *
+	 * {@inheritDoc}
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public SessionsIntDto listSessions() {
+
+		final List<SessionEntity> listDB = (List<SessionEntity>) sessionsRepository.findAll();
+
+		if (listDB == null) {
+			return null;
+		}
+
+		final SessionsIntDto sessionsIntDto = new SessionsIntDto();
+		sessionsIntDto.setSessions((List<SessionIntDto>) dozerUtils.listMapper(listDB, SessionIntDto.class));
+		return sessionsIntDto;
 	}
 
 }

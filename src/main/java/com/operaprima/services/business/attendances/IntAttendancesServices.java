@@ -5,11 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.mock.Mockeable;
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
 import com.operaprima.services.dao.attendances.IAttendancesDao;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service
@@ -29,16 +28,6 @@ public class IntAttendancesServices implements IIntAttendancesServices {
 	@Override
 	public AttendanceIntDto addAttendance(final AttendanceIntDto attendanceIntDto) {
 		return iAttendancesDao.addAttendance(attendanceIntDto);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see com.operaprima.services.business.attendances.IIntAttendancesServices#listAttendances()
-	 */
-	@Override
-	public AttendancesIntDto listAttendances() {
-		return iAttendancesDao.listAttendances();
 	}
 
 	/*

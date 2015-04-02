@@ -2,9 +2,10 @@ package com.operaprima.services.dao.groups;
 
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
+import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IGroupsDao {
@@ -14,11 +15,6 @@ public interface IGroupsDao {
 	 * @return String
 	 */
 	GroupIntDto addGroup(final GroupIntDto groupDto);
-
-	/**
-	 * @return GroupsDto
-	 */
-	GroupsIntDto listGroups();
 
 	/**
 	 * @param String
@@ -36,6 +32,10 @@ public interface IGroupsDao {
 	 * @param String
 	 * @return GroupDto
 	 */
-	GroupIntDto listSessionsByGroup(String id);
+	SessionsIntDto listSessionsByGroup(String id);
 
+	/**
+	 * @return GroupsIntDto
+	 */
+	GroupsIntDto listGroups();
 }

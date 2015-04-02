@@ -13,7 +13,7 @@ import com.operaprima.services.business.dtos.SessionsIntDto;
 import com.operaprima.services.dao.persons.IPersonsDao;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service
@@ -25,7 +25,7 @@ public class IntPersonsService implements IIntPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#addPerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
 	@Override
@@ -35,7 +35,7 @@ public class IntPersonsService implements IIntPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#listPersons()
 	 */
 	@Override
@@ -45,7 +45,7 @@ public class IntPersonsService implements IIntPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#getPerson(java.lang.String)
 	 */
 	@Override
@@ -55,7 +55,7 @@ public class IntPersonsService implements IIntPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.persons.IPersonsService#updatePerson(com.operaprima.services.facade.dtos.PersonDto)
 	 */
 	@Override
@@ -65,7 +65,7 @@ public class IntPersonsService implements IIntPersonsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.business.persons.IIntPersonsService#listGroupsByPerson(java.lang.String)
 	 */
 	@Override

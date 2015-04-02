@@ -8,7 +8,7 @@ import com.operaprima.services.facade.dtos.PersonsDto;
 import com.operaprima.services.facade.dtos.SessionsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IPersonsService {

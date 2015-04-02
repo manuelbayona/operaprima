@@ -15,12 +15,10 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.attendances.IIntAttendancesServices;
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
 import com.operaprima.services.facade.dtos.AttendanceDto;
-import com.operaprima.services.facade.dtos.AttendancesDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("attendancesServices")
@@ -37,7 +35,7 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#addAttendance(com.operaprima.services.facade.dtos.AttendanceDto)
 	 */
 	@Override
@@ -51,20 +49,7 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#listAttendances()
-	 */
-	@Override
-	@GET
-	@Path("/")
-	public AttendancesDto listAttendances() {
-		final AttendancesIntDto listAttendances = intAttendancesServices.listAttendances();
-		return mapper.map(listAttendances, AttendancesDto.class);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.attendances.IAttendancesServices#getAttendance(java.lang.String)
 	 */
 	@Override
@@ -77,7 +62,7 @@ public class AttendancesServices implements IAttendancesServices {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * com.operaprima.services.facade.attendances.IAttendancesServices#updateAttendance(com.operaprima.services.facade.dtos.AttendanceDto)
 	 */

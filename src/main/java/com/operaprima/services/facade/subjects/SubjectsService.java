@@ -20,7 +20,7 @@ import com.operaprima.services.facade.dtos.SubjectDto;
 import com.operaprima.services.facade.dtos.SubjectsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("subjectsService")
@@ -37,7 +37,7 @@ public class SubjectsService implements ISubjectsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.subjects.ISubjectsService#addSubject(com.operaprima.services.facade.dtos.SubjectDto)
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class SubjectsService implements ISubjectsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.subjects.ISubjectsService#listSubjects()
 	 */
 	@Override
@@ -64,7 +64,7 @@ public class SubjectsService implements ISubjectsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.subjects.ISubjectsService#getSubject(java.lang.String)
 	 */
 	@Override
@@ -77,7 +77,7 @@ public class SubjectsService implements ISubjectsService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.subjects.ISubjectsService#updateSubject(com.operaprima.services.facade.dtos.SubjectDto)
 	 */
 	@Override

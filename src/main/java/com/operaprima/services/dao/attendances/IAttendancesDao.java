@@ -1,39 +1,28 @@
 package com.operaprima.services.dao.attendances;
 
 import com.operaprima.services.business.dtos.AttendanceIntDto;
-import com.operaprima.services.business.dtos.AttendancesIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IAttendancesDao {
+	/**
+	 * @param attendance
+	 * @return
+	 */
+	AttendanceIntDto addAttendance(AttendanceIntDto attendance);
 
 	/**
-	 *
-	 * @param AttendanceIntDto
-	 * @return AttendanceIntDto
+	 * @param id
+	 * @return
 	 */
-	AttendanceIntDto addAttendance(final AttendanceIntDto attendanceIntDto);
+	AttendanceIntDto getAttendance(String id);
 
 	/**
-	 *
-	 * @return AttendancesIntDto
+	 * @param attendance
+	 * @return
 	 */
-	AttendancesIntDto listAttendances();
-
-	/**
-	 *
-	 * @param String
-	 * @return AttendanceIntDto
-	 */
-	AttendanceIntDto getAttendance(final String id);
-
-	/**
-	 *
-	 * @param AttendanceIntDto
-	 * @return AttendanceIntDto
-	 */
-	AttendanceIntDto updateAttendance(final AttendanceIntDto attendanceIntDto);
+	AttendanceIntDto updateAttendance(AttendanceIntDto attendance);
 
 }

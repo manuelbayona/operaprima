@@ -10,17 +10,15 @@ import com.operaprima.services.business.dtos.SessionIntDto;
 import com.operaprima.services.business.dtos.SessionsIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Repository
 @Mock
 public class SessionsDaoMock implements ISessionsDao {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.sessions.ISessionsDao#addSessions(com.operaprima.services.business.dtos.SessionIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public SessionIntDto addSession(final SessionIntDto session) {
@@ -28,10 +26,8 @@ public class SessionsDaoMock implements ISessionsDao {
 		return session;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.sessions.ISessionsDao#listSessions()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public SessionsIntDto listSessions() {
@@ -42,20 +38,16 @@ public class SessionsDaoMock implements ISessionsDao {
 		return sessionsIntDto;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.sessions.ISessionsDao#getSessions(java.lang.String)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public SessionIntDto getSession(final String id) {
 		return new SessionIntDto();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.dao.sessions.ISessionsDao#updateSessions(com.operaprima.services.business.dtos.SessionIntDto)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public SessionIntDto updateSession(final SessionIntDto session) {

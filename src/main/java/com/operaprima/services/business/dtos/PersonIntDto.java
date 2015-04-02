@@ -9,7 +9,7 @@ import com.operaprima.services.facade.dtos.enums.UserStateEnum;
 import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class PersonIntDto {

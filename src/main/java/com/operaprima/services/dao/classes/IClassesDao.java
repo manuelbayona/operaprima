@@ -4,21 +4,16 @@ import com.operaprima.services.business.dtos.ClassIntDto;
 import com.operaprima.services.business.dtos.ClassesIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
-public interface IClassDao {
+public interface IClassesDao {
 
 	/**
 	 * @param ClassIntDto
 	 * @return ClassIntDto
 	 */
 	ClassIntDto addClass(final ClassIntDto classdto);
-
-	/**
-	 * @return ClassesIntDto
-	 */
-	ClassesIntDto listClasses();
 
 	/**
 	 * @param String
@@ -32,4 +27,8 @@ public interface IClassDao {
 	 */
 	ClassIntDto updateClass(ClassIntDto classdto);
 
+	/**
+	 * @return
+	 */
+	ClassesIntDto listClasses();
 }

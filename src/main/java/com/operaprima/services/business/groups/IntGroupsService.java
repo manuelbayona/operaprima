@@ -9,12 +9,12 @@ import com.operaprima.services.business.dtos.GroupsIntDto;
 import com.operaprima.services.dao.groups.IGroupsDao;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service
 @Mockeable
-public class IntGroupsService implements IIntGroupsService {
+public class IntGroupsService implements IIntGroupsServices {
 
 	@Autowired
 	private IGroupsDao iGroupsDao;
@@ -25,7 +25,7 @@ public class IntGroupsService implements IIntGroupsService {
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#addGroups(com.operaprima.services.business.dtos.GroupIntDto)
 	 */
 	@Override
-	public GroupIntDto addGroup(final GroupIntDto groupDto) {
+	public GroupIntDto addGroups(final GroupIntDto groupDto) {
 		return iGroupsDao.addGroup(groupDto);
 	}
 
@@ -45,7 +45,7 @@ public class IntGroupsService implements IIntGroupsService {
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#getGroups(java.lang.String)
 	 */
 	@Override
-	public GroupIntDto getGroup(final String id) {
+	public GroupIntDto getGroups(final String id) {
 		return iGroupsDao.getGroup(id);
 	}
 
@@ -55,8 +55,17 @@ public class IntGroupsService implements IIntGroupsService {
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#updateGroups(com.operaprima.services.business.dtos.GroupIntDto)
 	 */
 	@Override
-	public GroupIntDto updateGroup(final GroupIntDto group) {
+	public GroupIntDto updateGroups(final GroupIntDto group) {
 		return iGroupsDao.updateGroup(group);
+	}
+
+	@Override
+	public GroupIntDto listSessionsByGroup(final String id) {
+		// TODO: revisar esto... que el dao devuelva ya el DTO
+		final GroupIntDto groupIntDto = new GroupIntDto();
+		groupIntDto.setId(id);
+		groupIntDto.setSessions(iGroupsDao.listSessionsByGroup(id).getSessions());
+		return groupIntDto;
 	}
 
 	/*
@@ -64,9 +73,5 @@ public class IntGroupsService implements IIntGroupsService {
 	 * 
 	 * @see com.operaprima.services.business.groups.IIntGroupsServices#listSessionsByGroup(java.lang.String)
 	 */
-	@Override
-	public GroupIntDto listSessionsByGroup(final String id) {
-		return iGroupsDao.listSessionsByGroup(id);
-	}
 
 }

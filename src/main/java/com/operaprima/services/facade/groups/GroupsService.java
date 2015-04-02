@@ -17,13 +17,13 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.services.business.dtos.GroupIntDto;
 import com.operaprima.services.business.dtos.GroupsIntDto;
-import com.operaprima.services.business.groups.IIntGroupsService;
+import com.operaprima.services.business.groups.IIntGroupsServices;
 import com.operaprima.services.facade.dtos.GroupDto;
 import com.operaprima.services.facade.dtos.GroupsDto;
 import com.operaprima.services.facade.dtos.SessionDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service("groupsService")
@@ -36,7 +36,7 @@ public class GroupsService implements IGroupsService {
 	private Mapper mapper;
 
 	@Autowired
-	private IIntGroupsService iIntGroupService;
+	private IIntGroupsServices iIntGroupService;
 
 	/*
 	 * (non-Javadoc)
@@ -48,7 +48,7 @@ public class GroupsService implements IGroupsService {
 	@Path("/")
 	public GroupDto addGroup(final GroupDto groupDto) {
 		final GroupIntDto map = mapper.map(groupDto, GroupIntDto.class);
-		final GroupIntDto addGroups = iIntGroupService.addGroup(map);
+		final GroupIntDto addGroups = iIntGroupService.addGroups(map);
 		return mapper.map(addGroups, GroupDto.class);
 	}
 
@@ -74,7 +74,7 @@ public class GroupsService implements IGroupsService {
 	@GET
 	@Path("/{id}")
 	public GroupDto getGroup(@PathParam("id") final String id) {
-		final GroupIntDto getGroups = iIntGroupService.getGroup(id);
+		final GroupIntDto getGroups = iIntGroupService.getGroups(id);
 		return mapper.map(getGroups, GroupDto.class);
 	}
 
@@ -88,13 +88,13 @@ public class GroupsService implements IGroupsService {
 	@Path("/")
 	public GroupDto updateGroup(final GroupDto group) {
 		final GroupIntDto map = mapper.map(group, GroupIntDto.class);
-		final GroupIntDto updateGroups = iIntGroupService.updateGroup(map);
+		final GroupIntDto updateGroups = iIntGroupService.updateGroups(map);
 		return mapper.map(updateGroups, GroupDto.class);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.groups.IGroupsServices#listSessionsByGroup(java.lang.String)
 	 */
 	@Override

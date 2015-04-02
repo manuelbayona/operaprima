@@ -5,11 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.operaprima.mock.Mockeable;
 import com.operaprima.services.business.dtos.BoardIntDto;
-import com.operaprima.services.business.dtos.BoardsIntDto;
-import com.operaprima.services.dao.boards.IBoardDao;
+import com.operaprima.services.dao.boards.IBoardsDao;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @Service
@@ -17,7 +16,7 @@ import com.operaprima.services.dao.boards.IBoardDao;
 public class IntBoardsService implements IIntBoardsService {
 
 	@Autowired
-	private IBoardDao boardDao;
+	private IBoardsDao boardsDao;
 
 	/*
 	 * (non-Javadoc)
@@ -26,17 +25,7 @@ public class IntBoardsService implements IIntBoardsService {
 	 */
 	@Override
 	public BoardIntDto addBoard(final BoardIntDto board) {
-		return boardDao.addBoard(board);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.operaprima.services.business.boards.IIntBoardsService#listBoards()
-	 */
-	@Override
-	public BoardsIntDto listBoards() {
-		return boardDao.listBoards();
+		return boardsDao.addBoard(board);
 	}
 
 	/*
@@ -46,7 +35,7 @@ public class IntBoardsService implements IIntBoardsService {
 	 */
 	@Override
 	public BoardIntDto getBoard(final String id) {
-		return boardDao.getBoard(id);
+		return boardsDao.getBoard(id);
 	}
 
 	/*
@@ -56,7 +45,7 @@ public class IntBoardsService implements IIntBoardsService {
 	 */
 	@Override
 	public BoardIntDto updateBoard(final BoardIntDto boardDto) {
-		return boardDao.updateBoard(boardDto);
+		return boardsDao.updateBoard(boardDto);
 	}
 
 }

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author adesis
+ * @author Stormtroopers
  *
  */
 public class SubjectsIntDto implements Serializable {

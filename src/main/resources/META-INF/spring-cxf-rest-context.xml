@@ -9,10 +9,11 @@
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
                         http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
                         http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
-  	
-  	<context:annotation-config />  
-    <context:component-scan base-package="com.operaprima.services" />
  
+  	<context:annotation-config />  
+    <context:component-scan base-package="com.operaprima" />
+ 	<context:property-placeholder location="classpath:database.properties" />
+ 	
     <jaxrs:server id="cxfServer" address="/">
         <jaxrs:serviceBeans>
             <ref bean="usersService"/>
@@ -33,6 +34,7 @@
         </jaxrs:features>
         <jaxrs:providers>
             <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+            <!-- <bean class="com.operaprima.commons.utils.exceptions.OperaPrimaExceptionHandler" /> -->
         </jaxrs:providers>
     </jaxrs:server>
  

@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.operaprima.commons.service.facade.dtos.PriceDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @XmlRootElement(name = "class")
@@ -121,9 +121,10 @@ public class ClassDto implements Serializable {
 	}
 
 	/**
-	 * @param subject the subject to set
+	 * @param subject
+	 *            the subject to set
 	 */
-	public void setSubject(SubjectDto subject) {
+	public void setSubject(final SubjectDto subject) {
 		this.subject = subject;
 	}
 

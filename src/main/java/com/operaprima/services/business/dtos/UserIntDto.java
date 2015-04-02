@@ -5,7 +5,7 @@ import java.util.List;
 import com.operaprima.commons.service.business.dtos.EmailIntDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class UserIntDto {

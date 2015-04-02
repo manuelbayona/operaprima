@@ -4,10 +4,10 @@ import java.math.BigDecimal;
 
 import org.joda.time.DateTime;
 
-import com.operaprima.commons.business.dtos.enums.DayOfWeekIntEnum;
+import com.operaprima.commons.service.business.dtos.enums.DayOfWeekIntEnum;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public class ScheduleIntDto {

@@ -4,7 +4,7 @@ import com.operaprima.services.facade.dtos.BillDto;
 import com.operaprima.services.facade.dtos.BillsDto;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 public interface IBillsService {

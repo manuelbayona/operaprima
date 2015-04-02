@@ -18,7 +18,7 @@ import com.operaprima.services.facade.dtos.enums.UserStateEnum;
 import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
 
 /**
- * @author Adesis
+ * @author Stormtroopers
  *
  */
 @XmlRootElement(name = "person")
@@ -220,9 +220,10 @@ public class PersonDto implements Serializable {
 	}
 
 	/**
-	 * @param user the user to set
+	 * @param user
+	 *            the user to set
 	 */
-	public void setUser(UserDto user) {
+	public void setUser(final UserDto user) {
 		this.user = user;
 	}
 

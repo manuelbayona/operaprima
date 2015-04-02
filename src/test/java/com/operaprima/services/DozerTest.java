@@ -7,6 +7,7 @@ import java.util.List;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.joda.time.DateTime;
+import org.junit.Assert;
 
 import com.operaprima.commons.service.business.dtos.PhoneIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
@@ -14,6 +15,10 @@ import com.operaprima.services.facade.dtos.PersonDto;
 import com.operaprima.services.facade.dtos.enums.UserStateEnum;
 import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
 
+/**
+ * @author Stormtroopers
+ *
+ */
 public class DozerTest {
 
 	public static void main(final String[] args) {
@@ -43,7 +48,7 @@ public class DozerTest {
 		final Mapper mapper = new DozerBeanMapper();
 
 		final PersonDto personaExterior = mapper.map(personaInterior, PersonDto.class);
-		System.out.println("Wiii!");
+		Assert.assertNotNull(personaExterior);
 
 	}
 
