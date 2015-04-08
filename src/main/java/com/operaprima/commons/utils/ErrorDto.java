@@ -1,19 +1,27 @@
 package com.operaprima.commons.utils;
 
 import java.io.Serializable;
-import java.util.Date;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author Stormtroopers
  *
  */
+@XmlRootElement(name = "error")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ErrorDto implements Serializable {
 
 	private static final long serialVersionUID = 6051089386377936740L;
 
+	@XmlElement(name = "trace")
 	private String trace;
+
+	@XmlElement(name = "message")
 	private String message;
-	private Date date;
 
 	/**
 	 * @return the trace
@@ -43,28 +51,6 @@ public class ErrorDto implements Serializable {
 	 */
 	public void setMessage(final String message) {
 		this.message = message;
-	}
-
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	/**
-	 * @return the date
-	 */
-	public Date getDate() {
-		return date;
-	}
-
-	/**
-	 * @param date
-	 *            the date to set
-	 */
-	public void setDate(final Date date) {
-		this.date = date;
 	}
 
 }
