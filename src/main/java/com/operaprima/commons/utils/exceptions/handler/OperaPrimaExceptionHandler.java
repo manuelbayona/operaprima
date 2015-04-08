@@ -24,6 +24,6 @@ public class OperaPrimaExceptionHandler implements ExceptionMapper<Exception> {
 		final ErrorDto error = new ErrorDto();
 		error.setTrace(arg0.getStackTrace().toString());
 		error.setMessage(arg0.getMessage());
-		return Response.status(Status.BAD_REQUEST).entity(error).build();
+		return Response.status(Status.INTERNAL_SERVER_ERROR).entity(error).build();
 	}
 }
