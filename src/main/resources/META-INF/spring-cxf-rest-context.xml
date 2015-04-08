@@ -1,41 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
-       xmlns:cxf="http://cxf.apache.org/core"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:cxf="http://cxf.apache.org/core"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
                         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
                         http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
                         http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
- 
-  	<context:annotation-config />  
-    <context:component-scan base-package="com.operaprima" />
- 	<context:property-placeholder location="classpath:database.properties" />
- 	
-    <jaxrs:server id="cxfServer" address="/">
-        <jaxrs:serviceBeans>
-            <ref bean="usersService"/>
-            <ref bean="groupsService"/>
-            <ref bean="classesService"/>
-            <ref bean="personsService"/>
-            <ref bean="subjectsService"/>
-            <ref bean="sessionsService"/>
-            <ref bean="billsService"/>
-            <ref bean="attendancesServices"/>
-            <ref bean="boardsService"/>
-        </jaxrs:serviceBeans>
-        <jaxrs:extensionMappings>
-            <entry key="json" value="application/json"/>
-        </jaxrs:extensionMappings>
-        <jaxrs:features>
-            <cxf:logging/>
-        </jaxrs:features>
-        <jaxrs:providers>
-            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
-            <!-- <bean class="com.operaprima.commons.utils.exceptions.OperaPrimaExceptionHandler" /> -->
-        </jaxrs:providers>
-    </jaxrs:server>
- 
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.operaprima" />
+	<context:property-placeholder location="classpath:database.properties" />
+
+	<jaxrs:server id="cxfServer" address="/">
+		<jaxrs:inInterceptors>
+			<ref bean="validationInInterceptor" />
+		</jaxrs:inInterceptors>
+		<jaxrs:serviceBeans>
+			<ref bean="usersService" />
+			<ref bean="groupsService" />
+			<ref bean="classesService" />
+			<ref bean="personsService" />
+			<ref bean="subjectsService" />
+			<ref bean="sessionsService" />
+			<ref bean="billsService" />
+			<ref bean="attendancesServices" />
+			<ref bean="boardsService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:extensionMappings>
+			<entry key="json" value="application/json" />
+		</jaxrs:extensionMappings>
+		<jaxrs:features>
+			<cxf:logging />
+		</jaxrs:features>
+		<jaxrs:providers>
+		    <ref bean="jsonSerializerProvider"/>
+			<!-- <bean class="com.operaprima.commons.utils.exceptions.OperaPrimaExceptionHandler" -->
+		</jaxrs:providers>
+	</jaxrs:server>
+	
+	<bean id="jsonSerializerProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
+	<bean id="validationProvider" class="org.apache.cxf.validation.BeanValidationProvider" />
+
+	<bean id="validationInInterceptor" class="org.apache.cxf.jaxrs.validation.JAXRSBeanValidationInInterceptor">
+		<property name="provider" ref="validationProvider" />
+	</bean>
+
 </beans>

@@ -21,7 +21,7 @@
 	
 	<!-- JAXB CONFIGURATION -->
 
-	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+	<!-- <bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
 		<property name="packagesToScan">
 			<list>
 				<value>com.operaprima.commons.business.dtos.*</value>
@@ -35,7 +35,7 @@
 				</list>
 			</property>
 	</bean>
-	
+	 -->
 	<!-- BeanPostProcessors -->
     <bean class="com.operaprima.mock.MockPostProcessor"/>
 
