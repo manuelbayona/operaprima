@@ -40,12 +40,13 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.users.IUsersService#addUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
 	@Override
 	@POST
 	@Path("/")
+	@Valid
 	public UserDto addUser(@Valid final UserDto user) {
 		final UserIntDto map = mapper.map(user, UserIntDto.class);
 		final UserIntDto addUser = iIntUsersService.addUser(map);
@@ -54,7 +55,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.users.IUsersService#listUsers()
 	 */
 	@Override
@@ -67,7 +68,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.users.IUsersService#getUser(java.lang.String)
 	 */
 	@Override
@@ -80,7 +81,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.operaprima.services.facade.users.IUsersService#updateUser(com.operaprima.services.facade.dtos.UserDto)
 	 */
 	@Override
@@ -94,7 +95,7 @@ public class UsersService implements IUsersService {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see com.operaprima.services.facade.users.IUsersService#listPersonsByUser(java.lang.String)
 	 */
 	@Override

@@ -36,13 +36,13 @@
 		</jaxrs:features>
 		<jaxrs:providers>
 		    <ref bean="jsonSerializerProvider"/>
-			<!-- <bean class="com.operaprima.commons.utils.exceptions.OperaPrimaExceptionHandler" -->
+		    <ref bean="operaPrimaExceptionHandler"/>
 		</jaxrs:providers>
 	</jaxrs:server>
 	
+	<bean id ="operaPrimaExceptionHandler" class="com.operaprima.commons.utils.exceptions.OperaPrimaExceptionHandler"/>
 	<bean id="jsonSerializerProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
 	<bean id="validationProvider" class="org.apache.cxf.validation.BeanValidationProvider" />
-
 	<bean id="validationInInterceptor" class="org.apache.cxf.jaxrs.validation.JAXRSBeanValidationInInterceptor">
 		<property name="provider" ref="validationProvider" />
 	</bean>

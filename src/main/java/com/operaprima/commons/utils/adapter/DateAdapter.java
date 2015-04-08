@@ -16,7 +16,7 @@ public class DateAdapter extends XmlAdapter<String, Date> {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see javax.xml.bind.annotation.adapters.XmlAdapter#marshal(java.lang.Object)
 	 */
 	@Override
@@ -26,7 +26,7 @@ public class DateAdapter extends XmlAdapter<String, Date> {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see javax.xml.bind.annotation.adapters.XmlAdapter#unmarshal(java.lang.Object)
 	 */
 	@Override

@@ -19,9 +19,9 @@ public class UserDto implements Serializable {
 	private static final long serialVersionUID = 1122507404235396620L;
 
 	@XmlElement(name = "id")
-	@NotNull
 	private String id;
 
+	@NotNull
 	@XmlElement(name = "userName")
 	private String userName;
 

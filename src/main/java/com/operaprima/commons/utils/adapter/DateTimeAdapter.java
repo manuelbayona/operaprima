@@ -22,7 +22,7 @@ public class DateTimeAdapter extends XmlAdapter<String, DateTime> {
 	 */
 	@Override
 	public String marshal(final DateTime v) throws Exception {
-		return dateFormat.format(v);
+		return v.toString(DATETIME_FORMAT);
 	}
 
 	/*

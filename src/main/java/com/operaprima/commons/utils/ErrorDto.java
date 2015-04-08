@@ -3,8 +3,6 @@ package com.operaprima.commons.utils;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.operaprima.commons.utils.enums.ErrorEnum;
-
 /**
  * @author Stormtroopers
  *
@@ -14,7 +12,6 @@ public class ErrorDto implements Serializable {
 	private static final long serialVersionUID = 6051089386377936740L;
 
 	private String trace;
-	private ErrorEnum cause;
 	private String message;
 	private Date date;
 
@@ -31,21 +28,6 @@ public class ErrorDto implements Serializable {
 	 */
 	public void setTrace(final String trace) {
 		this.trace = trace;
-	}
-
-	/**
-	 * @return the cause
-	 */
-	public ErrorEnum getCause() {
-		return cause;
-	}
-
-	/**
-	 * @param cause
-	 *            the cause to set
-	 */
-	public void setCause(final ErrorEnum cause) {
-		this.cause = cause;
 	}
 
 	/**

@@ -1,5 +1,7 @@
 package com.operaprima.services.facade.users;
 
+import javax.validation.Valid;
+
 import com.operaprima.services.facade.dtos.PersonsDto;
 import com.operaprima.services.facade.dtos.UserDto;
 import com.operaprima.services.facade.dtos.UsersDto;
@@ -16,7 +18,7 @@ public interface IUsersService {
 	 * @param user
 	 * @return UserDto
 	 */
-	UserDto addUser(final UserDto user);
+	UserDto addUser(@Valid final UserDto user);
 
 	/**
 	 * Servicio de negocio que consulta todos los usuarios
