@@ -3,11 +3,17 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.operaprima.commons.service.facade.dtos.EmailDto;
 
@@ -22,18 +28,33 @@ public class UserDto implements Serializable {
 	private static final long serialVersionUID = 1122507404235396620L;
 
 	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Size(min = 1, max = 30)
 	@XmlElement(name = "id")
 	private String id;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Size(min = 3, max = 30)
 	@XmlElement(name = "userName")
 	private String userName;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%-_]).{6,20})")
 	@XmlElement(name = "publicPassword")
 	private String publicPassword;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "profiles")
 	private List<PersonDto> profiles;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "email")
 	private EmailDto email;
 

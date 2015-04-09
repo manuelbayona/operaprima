@@ -3,12 +3,17 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.joda.time.DateTime;
 
 import com.operaprima.commons.service.facade.dtos.PriceDto;
@@ -25,34 +30,54 @@ public class GroupDto implements Serializable {
 
 	private static final long serialVersionUID = 5896641952472603087L;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Size(min = 1, max = 30)
 	@XmlElement(name = "id")
 	private String id;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Size(min = 1, max = 50)
 	@XmlElement(name = "name")
 	private String name;
 
+	@Size(min = 1, max = 140)
 	@XmlElement(name = "description")
 	private String description;
 
+	@Valid
 	@XmlElement(name = "teacher")
 	private PersonDto teacher;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "stud")
 	private List<PersonDto> students;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "board")
 	private BoardDto board;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "sessions")
 	private List<SessionDto> sessions;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "schedules")
 	private List<ScheduleDto> schedules;
 
+	@NotNull
 	@XmlJavaTypeAdapter(DateTimeAdapter.class)
 	@XmlElement(name = "unusualDate")
 	private DateTime unusualDates;
 
+	@Valid
 	@XmlElement(name = "price")
 	private PriceDto price;
 
@@ -62,6 +87,8 @@ public class GroupDto implements Serializable {
 	@XmlElement(name = "active")
 	private Boolean active;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "sClass")
 	private ClassDto sclass;
 

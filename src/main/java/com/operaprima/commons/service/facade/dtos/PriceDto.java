@@ -2,6 +2,8 @@ package com.operaprima.commons.service.facade.dtos;
 
 import java.io.Serializable;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -17,6 +19,8 @@ public class PriceDto implements Serializable {
 
 	private static final long serialVersionUID = 3773473366758876453L;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "amount")
 	private AmountDto amount;
 

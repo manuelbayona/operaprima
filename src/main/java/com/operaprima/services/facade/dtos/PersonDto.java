@@ -3,6 +3,11 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -10,6 +15,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.joda.time.DateTime;
 
 import com.operaprima.commons.service.facade.dtos.PhoneDto;
@@ -27,35 +34,65 @@ public class PersonDto implements Serializable {
 
 	private static final long serialVersionUID = -7277315609468397094L;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Size(min = 1, max = 30)
 	@XmlElement(name = "id")
 	private String id;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Size(min = 1, max = 20)
 	@XmlElement(name = "name")
 	private String name;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Size(min = 1, max = 50)
 	@XmlElement(name = "lastName")
 	private String lastName;
 
 	@XmlElement(name = "avatar")
 	private byte[] avatar;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Past
 	@XmlElement(name = "birthDate")
 	@XmlSchemaType(name = "dateTime")
 	@XmlJavaTypeAdapter(DateTimeAdapter.class)
 	private DateTime birthDate;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
 	@XmlElement(name = "type")
 	private UserTypeEnum type;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "phones")
 	private List<PhoneDto> phones;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
 	@XmlElement(name = "state")
 	private UserStateEnum state;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "group")
 	private List<GroupDto> groups;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Pattern(regexp = "^[0-9]{8}[A-Z]{1}$")
 	@XmlElement(name = "dni")
 	private String dni;
 

@@ -3,10 +3,16 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author Stormtroopers
@@ -18,12 +24,20 @@ public class SubjectDto implements Serializable {
 
 	private static final long serialVersionUID = -4648193946790819031L;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Size(min = 1, max = 30)
 	@XmlElement(name = "id")
 	private String id;
 
+	@NotNull
+	@Size(min = 1, max = 140)
 	@XmlElement(name = "description")
 	private String description;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "classes")
 	private List<ClassDto> classes;
 

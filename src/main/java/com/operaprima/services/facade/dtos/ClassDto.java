@@ -3,10 +3,17 @@ package com.operaprima.services.facade.dtos;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.operaprima.commons.service.facade.dtos.PriceDto;
 
@@ -20,21 +27,31 @@ public class ClassDto implements Serializable {
 
 	private static final long serialVersionUID = 5535803118011605983L;
 
+	@NotNull
+	@NotEmpty
+	@NotBlank
+	@Size(min = 1, max = 30)
 	@XmlElement(name = "id")
 	private String id;
 
+	@Max(value = 140)
 	@XmlElement(name = "note")
 	private String note;
 
+	@Valid
 	@XmlElement(name = "groups")
 	private List<GroupDto> groups;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "price")
 	private PriceDto price;
 
 	@XmlElement(name = "active")
 	private Boolean active;
 
+	@NotNull
+	@Valid
 	@XmlElement(name = "subject")
 	private SubjectDto subject;
 
