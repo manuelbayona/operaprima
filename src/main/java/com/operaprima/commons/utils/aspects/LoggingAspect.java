@@ -1,5 +1,7 @@
 package com.operaprima.commons.utils.aspects;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -7,10 +9,10 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * @author Stormtroopers
@@ -46,10 +48,13 @@ public class LoggingAspect {
 	/**
 	 * @param joinPoint
 	 * @param result
-	 * @throws JsonProcessingException
+	 * @throws IOException
+	 * @throws JsonMappingException
+	 * @throws JsonGenerationException
 	 */
 	@AfterReturning(pointcut = "isRepository()", returning = "result")
-	public void logAfterReturning(final JoinPoint joinPoint, final Object result) throws JsonProcessingException {
+	public void logAfterReturning(final JoinPoint joinPoint, final Object result) throws JsonGenerationException, JsonMappingException,
+			IOException {
 		logger.info("[INFO-REPOSITORY] : " + joinPoint.getSignature().getName() + " : ["
 				+ objectMapper.writeValueAsString(joinPoint.getArgs()) + "] RETURNS :  [" + objectMapper.writeValueAsString(result) + "]");
 	}
