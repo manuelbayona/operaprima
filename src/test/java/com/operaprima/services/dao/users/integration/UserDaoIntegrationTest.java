@@ -25,7 +25,7 @@ import com.operaprima.services.dao.users.IUsersDao;
  */
 @Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml", "classpath*:/META-INF/aspectj-context-test.xml" })
+@ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml" })
 public class UserDaoIntegrationTest {
 
 	@Autowired
