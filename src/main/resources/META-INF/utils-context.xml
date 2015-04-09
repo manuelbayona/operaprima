@@ -19,23 +19,6 @@
 	
 	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
 	
-	<!-- JAXB CONFIGURATION -->
-
-	<bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
-		<property name="packagesToScan">
-			<list>
-				<value>com.operaprima.commons.business.dtos.*</value>
-				<value>com.operaprima.services.facade.dtos.*</value>
-			</list>
-		</property>
-			<property name="adapters">
-				<list>
-					<bean class="com.operaprima.commons.utils.adapter.DateTimeAdapter" />
-					<bean class="com.operaprima.commons.utils.adapter.DateAdapter" />
-				</list>
-			</property>
-	</bean>
-	
 	<!-- BeanPostProcessors -->
     <bean class="com.operaprima.mock.MockPostProcessor"/>
 

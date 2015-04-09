@@ -1,4 +1,4 @@
-package com.operaprima.commons.utils.exceptions;
+package com.operaprima.commons.utils.exceptions.handler;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -12,7 +12,7 @@ import com.operaprima.commons.utils.ErrorDto;
  * @author Stormtroopers
  *
  */
-public class OperaPrimaExceptionHandler implements ExceptionMapper<OperaPrimaException> {
+public class OperaPrimaExceptionHandler implements ExceptionMapper<Exception> {
 
 	final static Logger logger = Logger.getLogger(OperaPrimaExceptionHandler.class);
 
@@ -20,9 +20,10 @@ public class OperaPrimaExceptionHandler implements ExceptionMapper<OperaPrimaExc
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Response toResponse(final OperaPrimaException exception) {
-		final ErrorDto error = exception.getError();
+	public Response toResponse(final Exception arg0) {
+		final ErrorDto error = new ErrorDto();
+		error.setTrace(arg0.getStackTrace().toString());
+		error.setMessage(arg0.getMessage());
 		return Response.status(Status.INTERNAL_SERVER_ERROR).entity(error).build();
 	}
-
 }

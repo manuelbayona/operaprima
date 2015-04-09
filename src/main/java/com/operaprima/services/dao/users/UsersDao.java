@@ -17,7 +17,7 @@ import com.operaprima.services.repositories.entities.UserEntity;
 
 /**
  * @author Stormtroopers
- * 
+ *
  */
 @Repository
 @Primary
@@ -30,7 +30,7 @@ public class UsersDao implements IUsersDao {
 	private IDozerUtils dozerUtils;
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -46,7 +46,7 @@ public class UsersDao implements IUsersDao {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override

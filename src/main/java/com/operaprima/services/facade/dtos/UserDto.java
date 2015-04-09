@@ -5,10 +5,13 @@ import java.util.List;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+<<<<<<< HEAD
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+=======
+>>>>>>> 428ba5c5657f843ee426c452632d234a1ca765d2
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -22,7 +25,6 @@ import com.operaprima.commons.service.facade.dtos.EmailDto;
  *
  */
 @XmlRootElement(name = "user")
-@XmlAccessorType(XmlAccessType.FIELD)
 public class UserDto implements Serializable {
 
 	private static final long serialVersionUID = 1122507404235396620L;

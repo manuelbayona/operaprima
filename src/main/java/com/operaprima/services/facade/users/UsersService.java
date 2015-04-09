@@ -1,5 +1,6 @@
 package com.operaprima.services.facade.users;
 
+import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -45,7 +46,8 @@ public class UsersService implements IUsersService {
 	@Override
 	@POST
 	@Path("/")
-	public UserDto addUser(final UserDto user) {
+	@Valid
+	public UserDto addUser(@Valid final UserDto user) {
 		final UserIntDto map = mapper.map(user, UserIntDto.class);
 		final UserIntDto addUser = iIntUsersService.addUser(map);
 		return mapper.map(addUser, UserDto.class);
