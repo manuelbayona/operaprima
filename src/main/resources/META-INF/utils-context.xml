@@ -17,7 +17,7 @@
 	<!-- DOZER MAPPER BEAN -->
 	<bean id="mapper" class="org.dozer.DozerBeanMapper" />
 	
-	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+	<bean id="objectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
 	
 	<!-- BeanPostProcessors -->
     <bean class="com.operaprima.mock.MockPostProcessor"/>

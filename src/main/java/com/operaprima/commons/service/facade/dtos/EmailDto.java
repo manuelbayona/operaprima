@@ -29,6 +29,15 @@ public class EmailDto implements Serializable {
 	@XmlElement(name = "address")
 	private String address;
 
+	public EmailDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public EmailDto(final String address) {
+		this.address = address;
+	}
+
 	/**
 	 * @return the address
 	 */

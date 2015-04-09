@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.operaprima.commons.service.business.dtos.EmailIntDto;
-import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.PersonIntDto;
+import com.operaprima.services.business.dtos.PersonsIntDto;
 import com.operaprima.services.business.dtos.UserIntDto;
 import com.operaprima.services.business.dtos.UsersIntDto;
 import com.operaprima.services.dao.persons.IPersonsDao;
@@ -20,8 +21,9 @@ import com.operaprima.services.dao.users.IUsersDao;
 
 /**
  * @author Stormtroopers
- * 
+ *
  */
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml", "classpath*:/META-INF/aspectj-context-test.xml" })
 public class UserDaoIntegrationTest {
