@@ -2,6 +2,7 @@ package com.operaprima.services.dao.persons.integration;
 
 import org.joda.time.DateTime;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import com.operaprima.services.facade.dtos.enums.UserTypeEnum;
  * @author Javier Lacalle
  *
  */
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml" })
 public class PersonsDaoIntegrationTest {
