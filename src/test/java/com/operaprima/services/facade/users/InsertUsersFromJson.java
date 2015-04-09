@@ -21,7 +21,7 @@ import com.operaprima.services.facade.dtos.UserDto;
 @Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/META-INF/sping-context-test.xml", "classpath*:/META-INF/aspectj-context-test.xml" })
-public class AnsertUsersFromJson {
+public class InsertUsersFromJson {
 
 	@Autowired
 	ObjectMapper objmapper;
