@@ -5,6 +5,6 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 
     <import resource="classpath:META-INF/spring-cxf-rest-context.xml"/>
     <import resource="classpath:META-INF/utils-context.xml"/>
-    <import resource="classpath:META-INF/aspectj-context.xml"/>
+    <import resource="classpath:META-INF/security-app-context.xml"/>
 
 </beans>
